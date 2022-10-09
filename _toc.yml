@@ -1,0 +1,21 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: syns
+  sections:
+  - file: syns/milano4
+- file: avrs
+  sections:
+  - file: avrs/sexs
+  - file: avrs/ntsst1
+  - file: avrs/ntsst4
+- file: govs
+  sections:
+  - file: govs/tgov1
+  - file: govs/ntsieeeg1
+- file: psss
+  sections:
+  - file: psss/ntspss2
