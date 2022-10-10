@@ -6,6 +6,8 @@ root: intro
 chapters:
 - file: models
   sections:
+  - file: buses
+  - file: lines
   - file: syns
     sections:
     - file: syns/milano4
@@ -21,6 +23,10 @@ chapters:
   - file: psss
     sections:
     - file: psss/ntspss2
+  - file: vscs
+    sections:
+    - file: vscs/vsc_pq
+- file: builder
 - file: ini
 - file: simulation
 - file: ssa
