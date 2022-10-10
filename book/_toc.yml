@@ -6,3 +6,7 @@ root: intro
 chapters:
 - file: markdown
 - file: notebooks
+- file: syns
+  sections:
+  - file: syns/milano4
+
