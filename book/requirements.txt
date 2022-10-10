@@ -1,3 +1,4 @@
 jupyter-book
+sphinx_panels
 matplotlib
 numpy
