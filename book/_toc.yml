@@ -21,6 +21,7 @@ chapters:
   - file: psss
     sections:
     - file: psss/ntspss2
+- file: ini
 - file: simulation
 - file: ssa
 
