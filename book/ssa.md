@@ -1,0 +1,9 @@
+# SSA
+
+Small signal analisys.
+
+
+
+
+ 
+

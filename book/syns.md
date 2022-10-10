@@ -1,4 +1,4 @@
-# SYNSs
+## SYNSs
 
 Abailable Automatic Voltage Regulators (and excitation) models.
 
