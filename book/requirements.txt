@@ -3,3 +3,5 @@ sphinx_panels
 matplotlib
 numpy
 pydae
+sympy 
+numba
