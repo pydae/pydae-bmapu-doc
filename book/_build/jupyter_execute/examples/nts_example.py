@@ -9,7 +9,7 @@
 from pydae.bmapu import bmapu_builder
 
 
-# In[2]:
+# In[10]:
 
 
 grid = bmapu_builder.bmapu('nts.json')
@@ -23,7 +23,7 @@ grid.build('nts')
 
 
 
-# In[3]:
+# In[4]:
 
 
 import numpy as np
@@ -36,7 +36,7 @@ import nts
 
 # ## Initialization
 
-# In[29]:
+# In[ ]:
 
 
 lf = 1.0
@@ -58,17 +58,22 @@ model.report_y()
 
 # ## Small signal analysis
 
-# In[5]:
+# In[ ]:
 
 
 ssa.A_eval(model);
 ssa.damp_report(model).round(2).sort_values('Damp')
 
 
-# In[6]:
+# In[ ]:
 
 
 fig,axes = plt.subplots(nrows=1)
+
+gt.change_line(model,'2','3',R_pu=0.0,X_pu=0.6,S_mva=100)
+ssa.A_eval(model);
+
+model.ini(params,'xy_0.json')
 
 df = ssa.damp_report(model)
 reals = df['Real'].values

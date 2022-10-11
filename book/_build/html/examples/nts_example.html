@@ -52,7 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Examples" href="../examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../models.html">
    Models
@@ -255,18 +254,28 @@ const thebe_selector_output = ".output, .cell_output"
    SSA
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../examples.html">
    Examples
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="smib/smib.html">
+     SMIB
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="k12p6/k12p6.html">
+     Kundur example 12.6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nts_base/nts_base.html">
      NTS base case
     </a>
    </li>
@@ -331,7 +340,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/nts_example.ipynb"
+        <a href="https://mybinder.org/v2/gh/pydae/pydae-bmapu-doc/main?urlpath=tree/book/examples/nts_example.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -374,7 +383,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/pydae/pydae-bmapu-doc"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -391,7 +400,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/nts_example.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pydae/pydae-bmapu-doc/issues/new?title=Issue%20on%20page%20%2Fexamples/nts_example.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -545,12 +554,41 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_27596</span><span class="o">/</span><span class="mf">341762431.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pydae&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;nts.json&#39;</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;nts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21092</span><span class="o">/</span><span class="mf">338811345.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;nts.json&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;nts&#39;</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">__init__</span><span class="nt">(self, data_input)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> 
+<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">data_input</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">51</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_input</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fobj</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">fobj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s1">&#39;&quot;&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>         <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">data_input</span><span class="p">)</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;nts.json&#39;
 </pre></div>
 </div>
 </div>
@@ -2113,7 +2151,17 @@ if (force === true) {
       run_inline_js();
     });
   }
-}(window));</script></div>
+}(window));</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21092</span><span class="o">/</span><span class="mf">1059797295.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pydae.ssa</span> <span class="k">as</span> <span class="nn">ssa</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">SVG</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">nts</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;nts&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <section id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
@@ -2137,37 +2185,6 @@ if (force === true) {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P_g1 = 1389 MW, P_g4 = 3861 MW
-V_1   =  1.00
-theta_1 =  0.22
-V_2   =  0.98
-theta_2 =  0.07
-V_3   =  0.99
-theta_3 = -0.95
-V_4   =  1.00
-theta_4 = -0.83
-V_5   =  0.98
-theta_5 =  0.07
-i_d_1 =  0.86
-i_q_1 =  0.40
-p_g_1 =  0.93
-q_g_1 =  0.18
-v_f_1 =  2.42
-p_m_ref_1 =  0.93
-p_m_1 =  0.93
-v_pss_1 = -0.00
-i_d_4 =  0.64
-i_q_4 =  0.44
-p_g_4 =  0.77
-q_g_4 =  0.11
-v_f_4 =  1.84
-p_m_4 =  0.78
-omega_coi =  1.00
-p_agc = -0.12
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="small-signal-analysis">
@@ -2179,263 +2196,15 @@ p_agc = -0.12
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Real</th>
-      <th>Imag</th>
-      <th>Freq.</th>
-      <th>Damp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mode 15</th>
-      <td>-0.17</td>
-      <td>-1.24</td>
-      <td>0.20</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>Mode 14</th>
-      <td>-0.17</td>
-      <td>1.24</td>
-      <td>0.20</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>Mode 22</th>
-      <td>-0.21</td>
-      <td>-0.38</td>
-      <td>0.06</td>
-      <td>0.48</td>
-    </tr>
-    <tr>
-      <th>Mode 21</th>
-      <td>-0.21</td>
-      <td>0.38</td>
-      <td>0.06</td>
-      <td>0.48</td>
-    </tr>
-    <tr>
-      <th>Mode 12</th>
-      <td>-2.01</td>
-      <td>-1.96</td>
-      <td>0.31</td>
-      <td>0.71</td>
-    </tr>
-    <tr>
-      <th>Mode 11</th>
-      <td>-2.01</td>
-      <td>1.96</td>
-      <td>0.31</td>
-      <td>0.71</td>
-    </tr>
-    <tr>
-      <th>Mode 17</th>
-      <td>-1.53</td>
-      <td>0.96</td>
-      <td>0.15</td>
-      <td>0.85</td>
-    </tr>
-    <tr>
-      <th>Mode 18</th>
-      <td>-1.53</td>
-      <td>-0.96</td>
-      <td>0.15</td>
-      <td>0.85</td>
-    </tr>
-    <tr>
-      <th>Mode 7</th>
-      <td>-9.59</td>
-      <td>-3.67</td>
-      <td>0.58</td>
-      <td>0.93</td>
-    </tr>
-    <tr>
-      <th>Mode 6</th>
-      <td>-9.59</td>
-      <td>3.67</td>
-      <td>0.58</td>
-      <td>0.93</td>
-    </tr>
-    <tr>
-      <th>Mode 9</th>
-      <td>-6.67</td>
-      <td>1.50</td>
-      <td>0.24</td>
-      <td>0.98</td>
-    </tr>
-    <tr>
-      <th>Mode 10</th>
-      <td>-6.67</td>
-      <td>-1.50</td>
-      <td>0.24</td>
-      <td>0.98</td>
-    </tr>
-    <tr>
-      <th>Mode 5</th>
-      <td>-13.11</td>
-      <td>-2.04</td>
-      <td>0.33</td>
-      <td>0.99</td>
-    </tr>
-    <tr>
-      <th>Mode 4</th>
-      <td>-13.11</td>
-      <td>2.04</td>
-      <td>0.33</td>
-      <td>0.99</td>
-    </tr>
-    <tr>
-      <th>Mode 28</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 27</th>
-      <td>-0.41</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 29</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 30</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 26</th>
-      <td>-0.50</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 25</th>
-      <td>-0.50</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 24</th>
-      <td>-0.63</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 1</th>
-      <td>-1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 16</th>
-      <td>-2.42</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 20</th>
-      <td>-1.88</td>
-      <td>-0.08</td>
-      <td>0.01</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 19</th>
-      <td>-1.88</td>
-      <td>0.08</td>
-      <td>0.01</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 31</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 13</th>
-      <td>-3.45</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 8</th>
-      <td>-10.18</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 3</th>
-      <td>-23.74</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 2</th>
-      <td>-47.29</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 23</th>
-      <td>-1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 32</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">gt</span><span class="o">.</span><span class="n">change_line</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">R_pu</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">X_pu</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">S_mva</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;xy_0.json&#39;</span><span class="p">)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">ssa</span><span class="o">.</span><span class="n">damp_report</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 <span class="n">reals</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Real&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -2451,9 +2220,6 @@ p_agc = -0.12
 <span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/nts_example_9_0.png" src="../_images/nts_example_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2621,13 +2387,6 @@ Name: Mode 15, dtype: float64
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../examples.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Examples</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" id="tooltip-svg-5">
+	<style>
+		#tooltip {
+			dominant-baseline: hanging; 
+		}
+	</style>
+
+<path d="M 200,200 h 1.32292 v -52.916665 h 1.32291 l -2.64583,-5.291666 -2.64583,5.291666 h 1.32291 v 52.916665 z" fill="#337ab7" id="arrow_1" class="tooltip-trigger" data-tooltip-text="arrow_1  v" data_v="v = 2.0 V" data_i="i = 0.0 A" stroke-width="0" transform="translate(-200,-200) scale(2)  rotate(0,200,200)"/><path d="M 200,200 h 1.32292 v -52.916665 h 1.32291 l -2.64583,-5.291666 -2.64583,5.291666 h 1.32291 v 52.916665 z" fill="#337ab7" id="arrow_1" class="tooltip-trigger" data-tooltip-text="arrow_2" data_v="v = 2.0 V" data_i="i = 90.0 A" stroke-width="0" transform="translate(-200,-200) scale(2)  rotate(90,200,200)"/><path d="M 200,200 h 1.32292 v -52.916665 h 1.32291 l -2.64583,-5.291666 -2.64583,5.291666 h 1.32291 v 52.916665 z" fill="#337ab7" id="arrow_1" class="tooltip-trigger" data-tooltip-text="arrow_3" data_v="v = 1.5 V" data_i="i = 180.0 A" stroke-width="0" transform="translate(-100.0,-100.0) scale(1.5)  rotate(180,200,200)"/>    <g id="tooltip" visibility="hidden">
+		<rect x="2" y="2" width="80" height="55" fill="black" opacity="0.4" rx="2" ry="2"/>
+		<rect width="80" height="54" fill="white" rx="2" ry="2"/>
+		<text x="3" y="6">Tooltip
+        <tspan dy="1.2em" x="4" fill="red">line1</tspan>
+        <tspan dy="1.2em" x="4" fill="red">line2</tspan>
+        </text>
+	</g>
+
+
+	<script type="text/ecmascript"><![CDATA[
+		(function() {
+			var svg = document.getElementById('tooltip-svg-5');
+			var tooltip = svg.getElementById('tooltip');
+			var tooltipText = tooltip.getElementsByTagName('text')[0].firstChild;
+            var tooltipTspan_1 = tooltip.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].firstChild;
+            var tooltipTspan_2 = tooltip.getElementsByTagName('text')[0].getElementsByTagName('tspan')[1].firstChild;
+			var triggers = svg.getElementsByClassName('tooltip-trigger');
+
+			for (var i = 0; i < triggers.length; i++) {
+				triggers[i].addEventListener('mousemove', showTooltip);
+				triggers[i].addEventListener('mouseout', hideTooltip);
+			}
+
+			function showTooltip(evt) {
+				var CTM = svg.getScreenCTM();
+				var x = (evt.clientX - CTM.e + 6) / CTM.a;
+				var y = (evt.clientY - CTM.f + 20) / CTM.d;
+				tooltip.setAttributeNS(null, "transform", "translate(" + x + " " + y + ")");
+				tooltip.setAttributeNS(null, "visibility", "visible");
+				tooltipText.data = evt.target.getAttributeNS(null, "data-tooltip-text");
+                tooltipTspan_1.data = evt.target.getAttributeNS(null, "data_v");
+                tooltipTspan_2.data = evt.target.getAttributeNS(null, "data_i");
+			}
+
+			function hideTooltip(evt) {
+				tooltip.setAttributeNS(null, "visibility", "hidden");
+			}
+		})()
+    ]]></script>
+</svg>

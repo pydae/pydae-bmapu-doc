@@ -32,4 +32,6 @@ chapters:
 - file: ssa
 - file: examples
   sections:
-  - file: examples/nts_example
+  - file: examples/smib/smib
+  - file: examples/k12p6/k12p6
+  - file: examples/nts_base/nts_base
