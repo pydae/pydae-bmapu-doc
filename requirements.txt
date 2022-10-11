@@ -1,0 +1,10 @@
+jupyter-book
+sphinx_panels
+numpy
+scipy
+sympy 
+matplotlib
+numba
+bokeh
+pydae
+pandas
