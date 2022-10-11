@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # NTS base case
+
 # In[1]:
 
 
@@ -130,16 +132,4 @@ axes[1].plot(model.Time,  model.get_values('V_4'),label='V_4')
 for ax in axes:
     ax.grid()
     ax.legend()
-
-
-# In[12]:
-
-
-model.get_value('K_ai_4')
-
-
-# In[ ]:
-
-
-
 

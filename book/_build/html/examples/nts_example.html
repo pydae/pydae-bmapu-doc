@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Initialization &#8212; pydae-bmapu</title>
+    <title>NTS base case &#8212; pydae-bmapu</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Initialization
+     NTS base case
     </a>
    </li>
   </ul>
@@ -478,17 +478,17 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
    Initialization
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#small-signal-analysis">
    Small signal analysis
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#time-domain-simulation">
    Time domain simulation
   </a>
@@ -502,7 +502,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Initialization</h1>
+                <h1>NTS base case</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -512,17 +512,17 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
    Initialization
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#small-signal-analysis">
    Small signal analysis
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#time-domain-simulation">
    Time domain simulation
   </a>
@@ -537,7 +537,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="nts-base-case">
+<h1>NTS base case<a class="headerlink" href="#nts-base-case" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
 </pre></div>
@@ -2114,7 +2116,7 @@ if (force === true) {
 }(window));</script></div>
 </div>
 <section id="initialization">
-<h1>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h1>
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lf</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -2169,7 +2171,7 @@ p_agc = -0.12
 </div>
 </section>
 <section id="small-signal-analysis">
-<h1>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this headline">#</a></h1>
+<h2>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
@@ -2451,7 +2453,7 @@ p_agc = -0.12
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/nts_example_8_0.png" src="../_images/nts_example_8_0.png" />
+<img alt="../_images/nts_example_9_0.png" src="../_images/nts_example_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2550,11 +2552,11 @@ Name: Mode 15, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/nts_example_11_0.svg" src="../_images/nts_example_11_0.svg" /></div>
+<img alt="../_images/nts_example_12_0.svg" src="../_images/nts_example_12_0.svg" /></div>
 </div>
 </section>
 <section id="time-domain-simulation">
-<h1>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this headline">#</a></h1>
+<h2>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.01</span>
@@ -2586,21 +2588,10 @@ Name: Mode 15, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/nts_example_14_0.png" src="../_images/nts_example_14_0.png" />
+<img alt="../_images/nts_example_15_0.png" src="../_images/nts_example_15_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s1">&#39;K_ai_4&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1e-10
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
