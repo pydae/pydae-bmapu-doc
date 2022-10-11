@@ -1,7 +1,9 @@
 jupyter-book
 sphinx_panels
-matplotlib
 numpy
-pydae
+scipy
 sympy 
+matplotlib
 numba
+pydae
+
