@@ -30,4 +30,6 @@ chapters:
 - file: ini
 - file: simulation
 - file: ssa
-
+- file: examples
+  sections:
+  - file: examples/nts_example

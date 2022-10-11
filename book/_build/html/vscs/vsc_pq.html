@@ -258,6 +258,23 @@ const thebe_selector_output = ".output, .cell_output"
    SSA
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../examples.html">
+   Examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/nts_example.html">
+     Initialization
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -477,7 +494,7 @@ title="Print to PDF"
   <section id="vsc-in-pq-mode">
 <h1>VSC in PQ mode<a class="headerlink" href="#vsc-in-pq-mode" title="Permalink to this headline">#</a></h1>
 <figure class="align-default" id="vsc-pq">
-<a class="reference internal image-reference" href="../_images/vsc_pq.svg"><img alt="../_images/vsc_pq.svg" height="150px" src="../_images/vsc_pq.svg" /></a>
+<a class="reference internal image-reference" href="../_images/vsc_pq.svg"><img alt="../_images/vsc_pq.svg" height="100px" src="../_images/vsc_pq.svg" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">VSC in PQ mode with saturation</span><a class="headerlink" href="#vsc-pq" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -504,9 +521,24 @@ q_{out}^{\max} = \sqrt{S_n^2 - p_{out}^2}
 <h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>...
 ``&quot;vscs&quot;:[{&quot;type&quot;:&quot;vsc_pq&quot;,&quot;bus&quot;:&quot;1&quot;,&quot;p_in&quot;:0.5,&quot;S_n&quot;:10e6,&quot;K_delta&quot;:0.0}],
-``
 </pre></div>
 </div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Variable</p></th>
+<th class="text-align:left head"><p>Code</p></th>
+<th class="text-align:left head"><p>Description</p></th>
+<th class="text-align:center head"><p>Units</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(S_n\)</span></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">S_n</span></code></p></td>
+<td class="text-align:left"><p>Nominal power</p></td>
+<td class="text-align:center"><p>VA</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 

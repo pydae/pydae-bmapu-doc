@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:ns0="http://www.iki.fi/pav/software/textext/"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="404.77679"
    height="145.35454"
    id="svg3564"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="New document 3">
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="tgov1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:ns0="http://www.iki.fi/pav/software/textext/">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,20 +24,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="191.2562"
-     inkscape:cy="145.6618"
+     inkscape:cx="191.42857"
+     inkscape:cy="145.71429"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="959"
-     inkscape:window-height="1027"
-     inkscape:window-x="960"
+     inkscape:window-height="856"
+     inkscape:window-x="625"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0" />
   <defs
      id="defs3566">
     <clipPath
@@ -66,7 +67,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -86,20 +87,19 @@
            id="g74">
           <text
              id="text80"
-             transform="matrix(1,0,0,-1,128.58,635.4)">
-            <tspan
+             transform="matrix(1,0,0,-1,128.58,635.4)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan82"
                sodipodi:role="line"
                y="0"
                x="0 4.738524 10.55754 15.897756 18.53754 23.398956"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">VAR(L)</tspan>
-            <tspan
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">VAR(L)</tspan><tspan
                id="tspan84"
                sodipodi:role="line"
                y="-6.6002579"
                x="-2.1601861 3.15609 6.6928258 9.3437824 12.945156 15.596112 19.132849 23.153172 26.694696"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">Reference</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">Reference</tspan></text>
           <g
              transform="translate(179.04,640.92)"
              id="g86">
@@ -150,18 +150,16 @@
              inkscape:connector-curvature="0" />
           <text
              id="text106"
-             transform="matrix(1,0,0,-1,227.22,644.88)">
-            <tspan
+             transform="matrix(1,0,0,-1,227.22,644.88)"
+             style="line-height:0%"><tspan
                id="tspan108"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">1</tspan>
-            <tspan
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">1</tspan><tspan
                id="tspan110"
                y="12.000324"
                x="-0.719796"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">R</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">R</tspan></text>
           <path
              id="path112"
              style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -220,13 +218,12 @@
           </g>
           <text
              id="text136"
-             transform="matrix(1,0,0,-1,196.08,620.82)">
-            <tspan
+             transform="matrix(1,0,0,-1,196.08,620.82)"
+             style="line-height:0%"><tspan
                id="tspan138"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">–</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">–</tspan></text>
           <g
              transform="translate(193.2,626.7)"
              id="g144">
@@ -277,22 +274,20 @@
              inkscape:connector-curvature="0" />
           <text
              id="text164"
-             transform="matrix(1,0,0,-1,263.04,574.92)">
-            <tspan
+             transform="matrix(1,0,0,-1,263.04,574.92)"
+             style="line-height:0%"><tspan
                id="tspan166"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">D</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">D</tspan></text>
           <text
              id="text168"
-             transform="matrix(1,0,0,-1,268.8,572.64)">
-            <tspan
+             transform="matrix(1,0,0,-1,268.8,572.64)"
+             style="line-height:0%"><tspan
                id="tspan170"
                y="0"
                x="0"
-               style="font-size:9px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">t</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">t</tspan></text>
           <g
              transform="translate(250.02,575.88)"
              id="g172">
@@ -371,37 +366,34 @@
              inkscape:connector-curvature="0" />
           <text
              id="text204"
-             transform="matrix(1,0,0,-1,273.18,645.9)">
-            <tspan
+             transform="matrix(1,0,0,-1,273.18,645.9)"
+             style="line-height:0%"
+             y="13.980162"><tspan
                id="tspan206"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">1</tspan>
-            <tspan
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">1</tspan><tspan
                id="tspan208"
                sodipodi:role="line"
                y="13.980162"
                x="-10.500084 -6.4949222 -4.5150838 0.00079800002 2.0404861"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">1 + T</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">1 + T</tspan></text>
           <text
              id="text210"
-             transform="matrix(1,0,0,-1,280.08,629.64)">
-            <tspan
+             transform="matrix(1,0,0,-1,280.08,629.64)"
+             style="line-height:0%"><tspan
                id="tspan212"
                y="0"
                x="0"
-               style="font-size:9px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">1</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">1</tspan></text>
           <text
              id="text214"
-             transform="matrix(1,0,0,-1,284.58,631.92)">
-            <tspan
+             transform="matrix(1,0,0,-1,284.58,631.92)"
+             style="line-height:0%"><tspan
                id="tspan216"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">s</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">s</tspan></text>
           <path
              id="path218"
              style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -462,32 +454,30 @@
              inkscape:connector-curvature="0" />
           <text
              id="text242"
-             transform="matrix(1,0,0,-1,317.7,631.92)">
-            <tspan
+             transform="matrix(1,0,0,-1,317.7,631.92)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan244"
                sodipodi:role="line"
                y="0"
                x="0 3.97404 6.0137281 10.498488 12.478326"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">1 + T</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">1 + T</tspan></text>
           <text
              id="text246"
-             transform="matrix(1,0,0,-1,335.1,629.64)">
-            <tspan
+             transform="matrix(1,0,0,-1,335.1,629.64)"
+             style="line-height:0%"><tspan
                id="tspan248"
                y="0"
                x="0"
-               style="font-size:9px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">3</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">3</tspan></text>
           <text
              id="text250"
-             transform="matrix(1,0,0,-1,339.6,631.92)">
-            <tspan
+             transform="matrix(1,0,0,-1,339.6,631.92)"
+             style="line-height:0%"><tspan
                id="tspan252"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">s</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">s</tspan></text>
           <path
              id="path254"
              style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -534,23 +524,22 @@
           </g>
           <text
              id="text272"
-             transform="matrix(1,0,0,-1,278.7,675.66)">
-            <tspan
+             transform="matrix(1,0,0,-1,278.7,675.66)"
+             style="line-height:0%"><tspan
                id="tspan274"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">V</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">V</tspan></text>
           <text
              id="text276"
-             transform="matrix(1,0,0,-1,284.52,673.44)">
-            <tspan
+             transform="matrix(1,0,0,-1,284.52,673.44)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan278"
                sodipodi:role="line"
                y="0"
                x="0 7.9794002 14.4558"
-               style="font-size:9px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">MAX</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">MAX</tspan></text>
           <path
              id="path280"
              style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -585,51 +574,48 @@
           </g>
           <text
              id="text294"
-             transform="matrix(1,0,0,-1,245.7,604.6801)">
-            <tspan
+             transform="matrix(1,0,0,-1,245.7,604.6801)"
+             style="line-height:0%"><tspan
                id="tspan296"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">V</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">V</tspan></text>
           <text
              id="text298"
-             transform="matrix(1,0,0,-1,251.52,602.4)">
-            <tspan
+             transform="matrix(1,0,0,-1,251.52,602.4)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan300"
                sodipodi:role="line"
                y="0"
                x="0 8.0216999 11.0394"
-               style="font-size:9px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">MIN</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">MIN</tspan></text>
           <text
              id="text302"
-             transform="matrix(1,0,0,-1,317.7,646.92)">
-            <tspan
+             transform="matrix(1,0,0,-1,317.7,646.92)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan304"
                sodipodi:role="line"
                y="0"
                x="0 3.97404 6.0137281 10.498488 12.478326"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">1 + T</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">1 + T</tspan></text>
           <text
              id="text306"
-             transform="matrix(1,0,0,-1,335.1,644.64)">
-            <tspan
+             transform="matrix(1,0,0,-1,335.1,644.64)"
+             style="line-height:0%"><tspan
                id="tspan308"
                y="0"
                x="0"
-               style="font-size:9px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">2</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">2</tspan></text>
           <text
              id="text310"
-             transform="matrix(1,0,0,-1,339.6,646.92)">
-            <tspan
+             transform="matrix(1,0,0,-1,339.6,646.92)"
+             style="line-height:0%"><tspan
                id="tspan312"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">s</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">s</tspan></text>
           <g
              transform="translate(195.18,575.4)"
              id="g314">
@@ -659,19 +645,18 @@
           </g>
           <text
              id="text330"
-             transform="matrix(1,0,0,-1,128.58,567.42)">
-            <tspan
+             transform="matrix(1,0,0,-1,128.58,567.42)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan332"
                sodipodi:role="line"
                y="0"
                x="0 4.4320922 8.8641844 13.78545 18.656443"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">SPEED</tspan>
-            <tspan
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">SPEED</tspan><tspan
                id="tspan334"
                y="-75.779678"
                x="43.980175"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">+</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">+</tspan></text>
           <path
              id="path336"
              style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -753,18 +738,16 @@
           </g>
           <text
              id="text374"
-             transform="matrix(1,0,0,-1,378.84,622.08)">
-            <tspan
+             transform="matrix(1,0,0,-1,378.84,622.08)"
+             style="line-height:0%"><tspan
                id="tspan376"
                y="0"
                x="0"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">–</tspan>
-            <tspan
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">–</tspan><tspan
                id="tspan378"
                y="-21.900312"
                x="-22.739807"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">+</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">+</tspan></text>
           <g
              transform="translate(375.18,626.7)"
              id="g380">
@@ -833,14 +816,14 @@
              inkscape:connector-curvature="0" />
           <text
              id="text408"
-             transform="matrix(1,0,0,-1,423.06,639.1801)">
-            <tspan
+             transform="matrix(1,0,0,-1,423.06,639.1801)"
+             style="line-height:0%"
+             y="0"><tspan
                id="tspan410"
                sodipodi:role="line"
                y="0"
                x="0 4.429698 11.516736 16.438002 21.718369"
-               style="font-size:7.98000002px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Times New Roman;-inkscape-font-specification:TimesNewRomanPSMT">PMECH</tspan>
-          </text>
+               style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.98px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none">PMECH</tspan></text>
         </g>
       </g>
     </g>
@@ -866,5 +849,6 @@
          id="path4086"
          d="m 237.75,710.82 0,0.04 0,0.04 0,0.04 -0.01,0.04 0,0.03 0,0.04 -0.01,0.03 -0.01,0.04 -0.01,0.03 -0.01,0.03 0,0.03 -0.02,0.03 -0.01,0.02 -0.01,0.03 -0.01,0.02 -0.01,0.03 -0.02,0.02 -0.01,0.02 -0.02,0.02 -0.01,0.01 -0.02,0.02 -0.02,0.01 -0.01,0.02 -0.02,0.01 -0.02,0.01 -0.02,0.01 -0.02,0.01 -0.02,0 -0.01,0.01 -0.02,0 -0.02,0.01 -0.03,0 c -0.25,0 -0.52,-0.24 -0.52,-0.47 0,-0.1 0.05,-0.21 0.15,-0.3 0.17,-0.15 0.35,-0.42 0.35,-0.83 0,-0.4 -0.19,-0.97 -0.5,-1.42 -0.3,-0.43 -0.67,-0.77 -1.14,-0.77 -0.56,0 -0.87,0.36 -0.96,0.89 0.11,0.26 0.34,0.9 0.34,1.18 0,0.12 -0.05,0.22 -0.18,0.22 -0.08,0 -0.19,-0.02 -0.27,-0.17 -0.11,-0.2 -0.23,-0.85 -0.23,-1.2 -0.33,-0.47 -0.73,-0.92 -1.35,-0.92 -0.66,0 -0.87,0.59 -0.87,1.14 0,1.24 1.02,2.29 1.02,2.42 0,0.11 -0.08,0.19 -0.19,0.19 -0.13,0 -0.2,-0.13 -0.26,-0.22 -0.51,-0.74 -0.89,-1.92 -0.89,-2.82 0,-0.69 0.23,-1.42 1.05,-1.42 0.7,0 1.17,0.49 1.53,1.04 0.09,-0.58 0.48,-1.04 1.09,-1.04 0.78,0 1.26,0.6 1.62,1.35 0.24,0.48 0.61,1.83 0.61,2.45 z"
          inkscape:connector-curvature="0"
-         style="fill:#000000;stroke-width:0" /></g>  </g>
+         style="fill:#000000;stroke-width:0" /></g>
+  </g>
 </svg>
