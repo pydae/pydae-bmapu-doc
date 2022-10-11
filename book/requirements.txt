@@ -5,5 +5,6 @@ scipy
 sympy 
 matplotlib
 numba
+bokeh
 pydae
 
