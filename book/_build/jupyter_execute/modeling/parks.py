@@ -1,9 +1,63 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ### Park transform
+# ### EASY-RES
 
 # In[1]:
+
+
+# sin base
+X_m = 20.0  # phasor module
+X_a =-np.pi/4  # phasor angle 
+
+X = X_m*np.exp(1j*X_a) #np.exp(1j*omega*t)
+
+print(f'X_m = {X_m:0.3f}, X_a = {X_a:0.3f}')
+
+r = X.real   # X_m*cos(X_a)
+i = X.imag   # X_m*sin(X_a)
+print(f'r = {r:0.3f}, i = {i:0.3f}')
+
+alpha = i
+beta  =-r
+
+print(f'alpha = {alpha:0.3f}, beta = {beta:0.3f}')
+
+#print(f'D = {D:0.3f}, Q = {Q:0.3f}')
+
+delta = 0.0
+
+d = alpha * np.cos(delta) + beta * np.sin(delta)   
+q =-alpha * np.sin(delta) + beta * np.cos(delta)
+
+print(f'd = {d:0.3f}, q = {q:0.3f}')
+
+# dq2ab
+alpha =  d * np.cos(delta) - q * np.sin(delta)   
+beta  =  d * np.sin(delta) + q * np.cos(delta) 
+
+print(f'alpha = {alpha:0.3f}, beta = {beta:0.3f}')
+
+i = -alpha
+r = -beta 
+
+print(f'r = {r:0.3f}, i = {i:0.3f}')
+
+m = np.sqrt(r**2 + i**2)
+theta = np.arctan2(i,r) 
+
+print(f'm = {m:0.3f}, theta = {theta:0.3f}')
+
+
+# In[ ]:
+
+
+theta
+
+
+# ### Park transform
+
+# In[ ]:
 
 
 import sympy as sym
@@ -12,11 +66,11 @@ import numpy as np
 
 # #### Phasor definition
 
-# In[2]:
+# In[ ]:
 
 
 X_m =  1.0  # phasor module
-X_a =  0.2  # phasor angle 
+X_a =  0.1  # phasor angle 
 
 X = X_m*np.exp(1j*X_a)
 
@@ -25,7 +79,7 @@ print(f'X_m = {X_m:0.3f}, X_a = {X_a:0.3f}')
 
 # #### Phasor to generic DQ
 
-# In[3]:
+# In[ ]:
 
 
 r = X.real   # X_m*cos(X_a)
@@ -39,10 +93,10 @@ print(f'D = {D:0.3f}, Q = {Q:0.3f}')
 
 # ### Park transform DQ to dq with angle $\delta$
 
-# In[4]:
+# In[ ]:
 
 
-delta = 0.1
+delta = 0.0
 
 d = D * np.cos(delta) - Q * np.sin(delta)   
 q = D * np.sin(delta) + Q * np.cos(delta)
@@ -52,7 +106,7 @@ print(f'd = {d:0.3f}, q = {q:0.3f}')
 
 # #### Inverse Park transform dq to DQ with angle $\delta$
 
-# In[5]:
+# In[ ]:
 
 
 D =  d * np.cos(delta) + q * np.sin(delta)   
@@ -63,7 +117,7 @@ print(f'D = {D:0.3f}, Q = {Q:0.3f}')
 
 # #### From DQ to phasor
 
-# In[6]:
+# In[ ]:
 
 
 i = D
@@ -75,13 +129,68 @@ P_a = np.arctan2(i,r)
 print(f'P_m = {P_m:0.3f}, P_a = {P_a:0.3f}')
 
 
+# ### RL circuit
+
+# In[ ]:
+
+
+X_s = 0.1
+R_s = 1.0
+V_s = 1.0
+theta_vs = 0.0
+I_s = 1.0
+theta_is = 0.2
+
+v_s = V_s*np.exp(1j*theta_vs)
+i_s = I_s*np.exp(1j*theta_is)
+
+v_sr = v_s.real   # X_m*cos(X_a)
+v_si = v_s.imag   # X_m*sin(X_a)
+
+i_sr = i_s.real   # X_m*cos(X_a)
+i_si = i_s.imag   # X_m*sin(X_a)
+
+v_ti =  R_s*i_si + X_s*i_sr + v_si  
+v_tr =  R_s*i_sr - X_s*i_si + v_sr 
+
+print(f'v_tr = {v_tr:0.3f}, v_ti = {v_ti:0.3f}')
+
+delta = -0.1
+v_sd = v_si * np.cos(delta) - v_sr * np.sin(delta)   
+v_sq = v_si * np.sin(delta) + v_sr * np.cos(delta)
+i_sd = i_si * np.cos(delta) - i_sr * np.sin(delta)   
+i_sq = i_si * np.sin(delta) + i_sr * np.cos(delta)
+
+v_td =  R_s*i_sd + X_s*i_sq + v_sd  
+v_tq =  R_s*i_sq - X_s*i_sd + v_sq 
+
+v_ti =  v_td * np.cos(delta) + v_tq * np.sin(delta)   
+v_tr = -v_td * np.sin(delta) + v_tq * np.cos(delta) 
+
+print(f'v_tr = {v_tr:0.3f}, v_ti = {v_ti:0.3f}')
+
+s_s = v_s*np.conj(i_s)
+
+p_s_ri = i_sr*v_sr + i_si*v_si
+q_s_ri = i_sr*v_si - i_si*v_sr
+
+p_s_dq = i_sd*v_sd + i_sq*v_sq
+q_s_dq = i_sq*v_sd - i_sd*v_sq
+
+print(f'p_s =    {s_s.real:0.3f},    q_s = {s_s.imag:0.3f}')
+print(f'p_s_ri = {p_s_ri:0.3f}, q_s_ri = {q_s_ri:0.3f}')
+print(f'p_s_dq = {p_s_dq:0.3f}, q_s_dq = {q_s_dq:0.3f}')
+
+
+# ### Powers
+
 # In[ ]:
 
 
 
 
 
-# In[7]:
+# In[ ]:
 
 
 re,im = sym.symbols('d,q', real = True)
@@ -108,8 +217,14 @@ delta = sym.Symbol('delta', real = True)
 # q = X_m \cos\left(\delta - X_a\right)
 # $$
 
-# In[8]:
+# In[ ]:
 
+
+X_m = 20.0  # phasor module
+X_a =-np.pi/4  # phasor angle 
+
+delta = 0.0
+X = X_m*np.exp(1j*X_a) #np.exp(1j*omega*t)
 
 d = X_m*np.sin(delta - X_a) 
 q = X_m*np.cos(delta - X_a) 
@@ -377,6 +492,182 @@ e_vd
 
 
 e_vq
+
+
+# In[ ]:
+
+
+
+
+
+# ### Park transform in USE-LABS
+
+# In[ ]:
+
+
+import sympy as sym
+import numpy as np
+
+
+# In[ ]:
+
+
+X_m =  1.0  # phasor module
+X_ang =  0.0  # phasor angle 
+
+X_ma = X_mb = X_mc = X_m
+
+X_a = X_ma*np.exp(1j*X_ang) 
+X_b = X_mb*np.exp(1j*(X_ang-2/3*np.pi)) 
+X_c = X_mc*np.exp(1j*(X_ang-4/3*np.pi)) 
+
+theta = 0.5
+
+a = np.real(factor*X_a*np.exp(1j*theta)) 
+b = np.real(factor*X_b*np.exp(1j*theta)) 
+c = np.real(factor*X_c*np.exp(1j*theta)) 
+
+alpha = 2/3*(a - 0.5*b - 0.5*c)
+beta = 2/3*(np.sqrt(3)/2*b - np.sqrt(3)/2*c)
+
+d =  ( alpha*np.cos(theta) + beta*np.sin(theta));
+q =  (-alpha*np.sin(theta) + beta*np.cos(theta));
+
+print(f'a = {a:0.2f}, b = {b:0.2f}, c = {c:0.2f}')
+print(f'alpha = {alpha:0.2f}, beta = {beta:0.2f}')
+print(f'd = {d:0.2f}, q = {q:0.2f}')
+
+
+# ## Equivalencia con pydae 1
+
+# In[ ]:
+
+
+factor = 1.0
+a = np.real(factor*X_a*np.exp(1j*theta)) 
+b = np.real(factor*X_b*np.exp(1j*theta)) 
+c = np.real(factor*X_c*np.exp(1j*theta)) 
+
+alpha = 2/3*(a - 0.5*b - 0.5*c)
+beta  =-2/3*(np.sqrt(3)/2*b - np.sqrt(3)/2*c)
+
+d = alpha * np.cos(theta) - beta * np.sin(theta)   
+q = alpha * np.sin(theta) + beta * np.cos(theta)
+
+print(f'a = {a:0.2f}, b = {b:0.2f}, c = {c:0.2f}')
+print(f'alpha = {alpha:0.2f}, beta = {beta:0.2f}')
+print(f'd = {d:0.2f}, q = {q:0.2f}')
+
+
+# #### Phasor definition
+
+# In[ ]:
+
+
+X_m =  1.0  # phasor module
+X_ang =  0.2  # phasor angle 
+
+X = X_m*np.exp(1j*X_a)
+
+print(f'X_m = {X_m:0.3f}, X_a = {X_ang:0.3f}')
+
+
+# #### Phasor to generic DQ
+
+# In[ ]:
+
+
+r = X.real   # X_m*cos(X_a)
+i = X.imag   # X_m*sin(X_a)
+
+D = i
+Q = r
+
+print(f'D = {D:0.3f}, Q = {Q:0.3f}')
+
+
+# ### Park transform DQ to dq with angle $\delta$
+
+# In[ ]:
+
+
+delta = 0.1
+
+d = D * np.cos(delta) - Q * np.sin(delta)   
+q = D * np.sin(delta) + Q * np.cos(delta)
+
+print(f'd = {d:0.3f}, q = {q:0.3f}')
+
+
+# #### Inverse Park transform dq to DQ with angle $\delta$
+
+# In[ ]:
+
+
+D =  d * np.cos(delta) + q * np.sin(delta)   
+Q = -d * np.sin(delta) + q * np.cos(delta) 
+
+print(f'D = {D:0.3f}, Q = {Q:0.3f}')
+
+
+# #### From DQ to phasor
+
+# In[ ]:
+
+
+i = D
+r = Q
+print(f'r = {r:0.3f}, i = {i:0.3f}')
+
+P_m = np.sqrt(r**2 + i**2)
+P_a = np.arctan2(i,r)
+print(f'P_m = {P_m:0.3f}, P_a = {P_a:0.3f}')
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+sin = np.sin
+cos = np.cos
+pi23 = 2.0/3.0*np.pi
+
+X_m = 1.0
+theta = np.pi/3
+
+a = X_m*sin(theta);
+b = X_m*sin(theta - pi23);
+c = X_m*sin(theta + pi23);
+
+print(f'a = {a:0.3f}, b = {b:0.3f}, c = {c:0.3f}')
+
+d =  2.0/3.0*(a*cos(theta) + b*cos(theta-pi23)  + c*cos(theta+pi23));
+q = -2.0/3.0*(a*sin(theta) + b*sin(theta-pi23)  + c*sin(theta+pi23));
+
+print(f'd = {d:0.3f}, q = {q:0.3f}')
+
+a =  (d*cos(theta)      - q*sin(theta));
+b =  (d*cos(theta-pi23) - q*sin(theta-pi23));
+c =  (d*cos(theta+pi23) - q*sin(theta+pi23));
+
+print(f'a = {a:0.3f}, b = {b:0.3f}, c = {c:0.3f}')
+
+
+# In[ ]:
+
+
+.866/0.183
+
+
+# In[ ]:
+
+
+c
 
 
 # In[ ]:

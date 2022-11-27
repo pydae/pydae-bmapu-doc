@@ -28,7 +28,7 @@ from pydae.bmapu import bmapu_builder
 
 ```{code-cell} ipython3
 data = {
-"sys":{"name":"smib","S_base":100e6, "K_p_agc":0.0,"K_i_agc":0.0,"K_xif":0.01},       
+"system":{"name":"smib","S_base":100e6, "K_p_agc":0.0,"K_i_agc":0.0,"K_xif":0.01},       
 "buses":[{"name":"1", "P_W":0.0,"Q_var":0.0,"U_kV":20.0},
          {"name":"2", "P_W":0.0,"Q_var":0.0,"U_kV":20.0}
         ],
@@ -41,7 +41,6 @@ data = {
          "H":5.0,"D":1.0,
          "Omega_b":314.1592653589793,"omega_s":1.0,"K_sec":0.0,
          "avr":{"type":"kundur_tgr","K_a":200,"T_r":0.01,"E_fmin":-5,"E_fmax":10.0,"T_a":1,"T_b":10,"v_ref":1.03},
-         "gov":{"type":"agov1","Droop":0.05,"T_1":1.0,"T_2":2.0,"T_3":10.0, "p_c":0.8,"omega_ref":1.0, "K_imw":0.0},
          "pss":{"type":"pss_kundur_2","K_stab":20, "T_1":0.05, "T_2":0.02, "T_3":3.0, "T_4":5.4, "T_w":10.0},      
          "gov":{"type":"tgov1","Droop":0.05,"T_1":1.0,"T_2":1.0,"T_3":1.0,"D_t":0.0,"K_sec":0.0,"p_c":0.8},
          "K_delta":0.0}],
@@ -54,8 +53,9 @@ data = {
 ```{code-cell} ipython3
 grid = bmapu_builder.bmapu(data)
 grid.checker()
+grid.uz_jacs = True
+grid.verbose = False
 grid.build('smib')
-del grid # just to don't have a large ipynb file
 ```
 
 ### System analysis and simulation
@@ -121,20 +121,4 @@ for ax in axes:
     ax.set_xlim([0,20])
 ax.set_xlabel('Time (s)')
 fig.tight_layout()
-```
-
-```{code-cell} ipython3
-del model
-```
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
-```
-
-```{code-cell} ipython3
-
 ```

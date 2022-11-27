@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Park transform &#8212; pydae-bmapu</title>
+    <title>EASY-RES &#8212; pydae-bmapu</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -256,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Park transform
+     EASY-RES
     </a>
    </li>
   </ul>
@@ -533,6 +533,11 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   EASY-RES
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#park-transform">
    Park transform
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -572,6 +577,16 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rl-circuit">
+   RL circuit
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#powers">
+   Powers
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#park-from-milano">
    Park from milano
   </a>
@@ -580,6 +595,51 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#parks-symbolic">
    Parks symbolic
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#park-transform-in-use-labs">
+   Park transform in USE-LABS
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equivalencia-con-pydae-1">
+   Equivalencia con pydae 1
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Phasor definition
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Phasor to generic DQ
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Park transform DQ to dq with angle
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Inverse Park transform dq to DQ with angle
+       <span class="math notranslate nohighlight">
+        \(\delta\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       From DQ to phasor
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -590,7 +650,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Park transform</h1>
+                <h1>EASY-RES</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -602,6 +662,11 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
+   EASY-RES
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#park-transform">
    Park transform
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -641,6 +706,16 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rl-circuit">
+   RL circuit
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#powers">
+   Powers
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#park-from-milano">
    Park from milano
   </a>
@@ -649,6 +724,51 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#parks-symbolic">
    Parks symbolic
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#park-transform-in-use-labs">
+   Park transform in USE-LABS
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equivalencia-con-pydae-1">
+   Equivalencia con pydae 1
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Phasor definition
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Phasor to generic DQ
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Park transform DQ to dq with angle
+     <span class="math notranslate nohighlight">
+      \(\delta\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Inverse Park transform dq to DQ with angle
+       <span class="math notranslate nohighlight">
+        \(\delta\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       From DQ to phasor
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -660,7 +780,78 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="park-transform">
+  <section id="easy-res">
+<h1>EASY-RES<a class="headerlink" href="#easy-res" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sin base</span>
+<span class="n">X_m</span> <span class="o">=</span> <span class="mf">20.0</span>  <span class="c1"># phasor module</span>
+<span class="n">X_a</span> <span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>  <span class="c1"># phasor angle </span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">X_a</span><span class="p">)</span> <span class="c1">#np.exp(1j*omega*t)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_m = </span><span class="si">{</span><span class="n">X_m</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, X_a = </span><span class="si">{</span><span class="n">X_a</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">real</span>   <span class="c1"># X_m*cos(X_a)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">imag</span>   <span class="c1"># X_m*sin(X_a)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r = </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, i = </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">i</span>
+<span class="n">beta</span>  <span class="o">=-</span><span class="n">r</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;alpha = </span><span class="si">{</span><span class="n">alpha</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1">#print(f&#39;D = {D:0.3f}, Q = {Q:0.3f}&#39;)</span>
+
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">q</span> <span class="o">=-</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># dq2ab</span>
+<span class="n">alpha</span> <span class="o">=</span>  <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">beta</span>  <span class="o">=</span>  <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;alpha = </span><span class="si">{</span><span class="n">alpha</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="n">alpha</span>
+<span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="n">beta</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r = </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, i = </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;m = </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, theta = </span><span class="si">{</span><span class="n">theta</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_13264</span><span class="o">/</span><span class="mf">2346995559.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># sin base</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">X_m</span> <span class="o">=</span> <span class="mf">20.0</span>  <span class="c1"># phasor module</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">X_a</span> <span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>  <span class="c1"># phasor angle</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">X</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">X_a</span><span class="p">)</span> <span class="c1">#np.exp(1j*omega*t)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="park-transform">
 <h1>Park transform<a class="headerlink" href="#park-transform" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,16 +866,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_m</span> <span class="o">=</span>  <span class="mf">1.0</span>  <span class="c1"># phasor module</span>
-<span class="n">X_a</span> <span class="o">=</span>  <span class="mf">0.2</span>  <span class="c1"># phasor angle </span>
+<span class="n">X_a</span> <span class="o">=</span>  <span class="mf">0.1</span>  <span class="c1"># phasor angle </span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">X_a</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_m = </span><span class="si">{</span><span class="n">X_m</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, X_a = </span><span class="si">{</span><span class="n">X_a</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X_m = 1.000, X_a = 0.200
 </pre></div>
 </div>
 </div>
@@ -704,11 +890,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D = 0.199, Q = 0.980
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -716,17 +897,12 @@ title="Print to PDF"
 <h1>Park transform DQ to dq with angle <span class="math notranslate nohighlight">\(\delta\)</span><a class="headerlink" href="#park-transform-dq-to-dq-with-angle-delta" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="mf">0.1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
 <span class="n">q</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d = 0.100, q = 0.995
 </pre></div>
 </div>
 </div>
@@ -739,11 +915,6 @@ title="Print to PDF"
 <span class="n">Q</span> <span class="o">=</span> <span class="o">-</span><span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;D = </span><span class="si">{</span><span class="n">D</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, Q = </span><span class="si">{</span><span class="n">Q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D = 0.199, Q = 0.980
 </pre></div>
 </div>
 </div>
@@ -763,13 +934,66 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r = 0.980, i = 0.199
-P_m = 1.000, P_a = 0.200
+</div>
+</section>
+</section>
+<section id="rl-circuit">
+<h1>RL circuit<a class="headerlink" href="#rl-circuit" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_s</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">R_s</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">V_s</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">theta_vs</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">I_s</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">theta_is</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="n">v_s</span> <span class="o">=</span> <span class="n">V_s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta_vs</span><span class="p">)</span>
+<span class="n">i_s</span> <span class="o">=</span> <span class="n">I_s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta_is</span><span class="p">)</span>
+
+<span class="n">v_sr</span> <span class="o">=</span> <span class="n">v_s</span><span class="o">.</span><span class="n">real</span>   <span class="c1"># X_m*cos(X_a)</span>
+<span class="n">v_si</span> <span class="o">=</span> <span class="n">v_s</span><span class="o">.</span><span class="n">imag</span>   <span class="c1"># X_m*sin(X_a)</span>
+
+<span class="n">i_sr</span> <span class="o">=</span> <span class="n">i_s</span><span class="o">.</span><span class="n">real</span>   <span class="c1"># X_m*cos(X_a)</span>
+<span class="n">i_si</span> <span class="o">=</span> <span class="n">i_s</span><span class="o">.</span><span class="n">imag</span>   <span class="c1"># X_m*sin(X_a)</span>
+
+<span class="n">v_ti</span> <span class="o">=</span>  <span class="n">R_s</span><span class="o">*</span><span class="n">i_si</span> <span class="o">+</span> <span class="n">X_s</span><span class="o">*</span><span class="n">i_sr</span> <span class="o">+</span> <span class="n">v_si</span>  
+<span class="n">v_tr</span> <span class="o">=</span>  <span class="n">R_s</span><span class="o">*</span><span class="n">i_sr</span> <span class="o">-</span> <span class="n">X_s</span><span class="o">*</span><span class="n">i_si</span> <span class="o">+</span> <span class="n">v_sr</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;v_tr = </span><span class="si">{</span><span class="n">v_tr</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, v_ti = </span><span class="si">{</span><span class="n">v_ti</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">delta</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span>
+<span class="n">v_sd</span> <span class="o">=</span> <span class="n">v_si</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">v_sr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">v_sq</span> <span class="o">=</span> <span class="n">v_si</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">v_sr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+<span class="n">i_sd</span> <span class="o">=</span> <span class="n">i_si</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">i_sr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">i_sq</span> <span class="o">=</span> <span class="n">i_si</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">i_sr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+
+<span class="n">v_td</span> <span class="o">=</span>  <span class="n">R_s</span><span class="o">*</span><span class="n">i_sd</span> <span class="o">+</span> <span class="n">X_s</span><span class="o">*</span><span class="n">i_sq</span> <span class="o">+</span> <span class="n">v_sd</span>  
+<span class="n">v_tq</span> <span class="o">=</span>  <span class="n">R_s</span><span class="o">*</span><span class="n">i_sq</span> <span class="o">-</span> <span class="n">X_s</span><span class="o">*</span><span class="n">i_sd</span> <span class="o">+</span> <span class="n">v_sq</span> 
+
+<span class="n">v_ti</span> <span class="o">=</span>  <span class="n">v_td</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">v_tq</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">v_tr</span> <span class="o">=</span> <span class="o">-</span><span class="n">v_td</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">v_tq</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;v_tr = </span><span class="si">{</span><span class="n">v_tr</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, v_ti = </span><span class="si">{</span><span class="n">v_ti</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">s_s</span> <span class="o">=</span> <span class="n">v_s</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">i_s</span><span class="p">)</span>
+
+<span class="n">p_s_ri</span> <span class="o">=</span> <span class="n">i_sr</span><span class="o">*</span><span class="n">v_sr</span> <span class="o">+</span> <span class="n">i_si</span><span class="o">*</span><span class="n">v_si</span>
+<span class="n">q_s_ri</span> <span class="o">=</span> <span class="n">i_sr</span><span class="o">*</span><span class="n">v_si</span> <span class="o">-</span> <span class="n">i_si</span><span class="o">*</span><span class="n">v_sr</span>
+
+<span class="n">p_s_dq</span> <span class="o">=</span> <span class="n">i_sd</span><span class="o">*</span><span class="n">v_sd</span> <span class="o">+</span> <span class="n">i_sq</span><span class="o">*</span><span class="n">v_sq</span>
+<span class="n">q_s_dq</span> <span class="o">=</span> <span class="n">i_sq</span><span class="o">*</span><span class="n">v_sd</span> <span class="o">-</span> <span class="n">i_sd</span><span class="o">*</span><span class="n">v_sq</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p_s =    </span><span class="si">{</span><span class="n">s_s</span><span class="o">.</span><span class="n">real</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">,    q_s = </span><span class="si">{</span><span class="n">s_s</span><span class="o">.</span><span class="n">imag</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p_s_ri = </span><span class="si">{</span><span class="n">p_s_ri</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q_s_ri = </span><span class="si">{</span><span class="n">q_s_ri</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p_s_dq = </span><span class="si">{</span><span class="n">p_s_dq</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q_s_dq = </span><span class="si">{</span><span class="n">q_s_dq</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="powers">
+<h1>Powers<a class="headerlink" href="#powers" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="p">,</span><span class="n">im</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;d,q&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -780,7 +1004,6 @@ P_m = 1.000, P_a = 0.200
 </div>
 </div>
 </section>
-</section>
 <section id="park-from-milano">
 <h1>Park from milano<a class="headerlink" href="#park-from-milano" title="Permalink to this heading">#</a></h1>
 <div class="math notranslate nohighlight">
@@ -790,28 +1013,16 @@ q = X_m \cos\left(\delta - X_a\right)
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span> <span class="o">-</span> <span class="n">X_a</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_m</span> <span class="o">=</span> <span class="mf">20.0</span>  <span class="c1"># phasor module</span>
+<span class="n">X_a</span> <span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>  <span class="c1"># phasor angle </span>
+
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">X_a</span><span class="p">)</span> <span class="c1">#np.exp(1j*omega*t)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span> <span class="o">-</span> <span class="n">X_a</span><span class="p">)</span> 
 <span class="n">q</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span> <span class="o">-</span> <span class="n">X_a</span><span class="p">)</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: &#39;Add&#39; object has no attribute &#39;sin&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_17072</span><span class="o">/</span><span class="mf">3719262324.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span> <span class="o">-</span> <span class="n">X_a</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">q</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span> <span class="o">-</span> <span class="n">X_a</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: loop of ufunc does not support argument 0 of type Add which has no callable sin method
 </pre></div>
 </div>
 </div>
@@ -1068,6 +1279,188 @@ q = X_m \cos\left(\delta - X_a\right)
 </div>
 </div>
 </div>
+</section>
+<section id="park-transform-in-use-labs">
+<h1>Park transform in USE-LABS<a class="headerlink" href="#park-transform-in-use-labs" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_m</span> <span class="o">=</span>  <span class="mf">1.0</span>  <span class="c1"># phasor module</span>
+<span class="n">X_ang</span> <span class="o">=</span>  <span class="mf">0.0</span>  <span class="c1"># phasor angle </span>
+
+<span class="n">X_ma</span> <span class="o">=</span> <span class="n">X_mb</span> <span class="o">=</span> <span class="n">X_mc</span> <span class="o">=</span> <span class="n">X_m</span>
+
+<span class="n">X_a</span> <span class="o">=</span> <span class="n">X_ma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">X_ang</span><span class="p">)</span> 
+<span class="n">X_b</span> <span class="o">=</span> <span class="n">X_mb</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">X_ang</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> 
+<span class="n">X_c</span> <span class="o">=</span> <span class="n">X_mc</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">X_ang</span><span class="o">-</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> 
+
+<span class="n">theta</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">factor</span><span class="o">*</span><span class="n">X_a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta</span><span class="p">))</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">factor</span><span class="o">*</span><span class="n">X_b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta</span><span class="p">))</span> 
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">factor</span><span class="o">*</span><span class="n">X_c</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta</span><span class="p">))</span> 
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span>  <span class="p">(</span> <span class="n">alpha</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span>
+<span class="n">q</span> <span class="o">=</span>  <span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;alpha = </span><span class="si">{</span><span class="n">alpha</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="equivalencia-con-pydae-1">
+<h1>Equivalencia con pydae 1<a class="headerlink" href="#equivalencia-con-pydae-1" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factor</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">factor</span><span class="o">*</span><span class="n">X_a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta</span><span class="p">))</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">factor</span><span class="o">*</span><span class="n">X_b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta</span><span class="p">))</span> 
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">factor</span><span class="o">*</span><span class="n">X_c</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">theta</span><span class="p">))</span> 
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+<span class="n">beta</span>  <span class="o">=-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>   
+<span class="n">q</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;alpha = </span><span class="si">{</span><span class="n">alpha</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h2>Phasor definition<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_m</span> <span class="o">=</span>  <span class="mf">1.0</span>  <span class="c1"># phasor module</span>
+<span class="n">X_ang</span> <span class="o">=</span>  <span class="mf">0.2</span>  <span class="c1"># phasor angle </span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">X_a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_m = </span><span class="si">{</span><span class="n">X_m</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, X_a = </span><span class="si">{</span><span class="n">X_ang</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Phasor to generic DQ<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">real</span>   <span class="c1"># X_m*cos(X_a)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">imag</span>   <span class="c1"># X_m*sin(X_a)</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="n">i</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">r</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;D = </span><span class="si">{</span><span class="n">D</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, Q = </span><span class="si">{</span><span class="n">Q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Park transform DQ to dq with angle <span class="math notranslate nohighlight">\(\delta\)</span><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">-</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">q</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">Q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3>Inverse Park transform dq to DQ with angle <span class="math notranslate nohighlight">\(\delta\)</span><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span>  <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>   
+<span class="n">Q</span> <span class="o">=</span> <span class="o">-</span><span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;D = </span><span class="si">{</span><span class="n">D</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, Q = </span><span class="si">{</span><span class="n">Q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3>From DQ to phasor<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">D</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Q</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r = </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, i = </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">P_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">P_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;P_m = </span><span class="si">{</span><span class="n">P_m</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, P_a = </span><span class="si">{</span><span class="n">P_a</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span>
+<span class="n">cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span>
+<span class="n">pi23</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">X_m</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span> <span class="o">-</span> <span class="n">pi23</span><span class="p">);</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">X_m</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span> <span class="o">+</span> <span class="n">pi23</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span>  <span class="mf">2.0</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="o">-</span><span class="n">pi23</span><span class="p">)</span>  <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="o">+</span><span class="n">pi23</span><span class="p">));</span>
+<span class="n">q</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">-</span><span class="n">pi23</span><span class="p">)</span>  <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">+</span><span class="n">pi23</span><span class="p">));</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, q = </span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span>  <span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>      <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span>
+<span class="n">b</span> <span class="o">=</span>  <span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="o">-</span><span class="n">pi23</span><span class="p">)</span> <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">-</span><span class="n">pi23</span><span class="p">));</span>
+<span class="n">c</span> <span class="o">=</span>  <span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="o">+</span><span class="n">pi23</span><span class="p">)</span> <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">+</span><span class="n">pi23</span><span class="p">));</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">.866</span><span class="o">/</span><span class="mf">0.183</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
