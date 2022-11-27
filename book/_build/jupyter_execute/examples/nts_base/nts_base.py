@@ -12,7 +12,7 @@
 from pydae.bmapu import bmapu_builder
 
 
-# In[8]:
+# In[2]:
 
 
 grid = bmapu_builder.bmapu('nts_base.json')

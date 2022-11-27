@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Kundur example 12.6 &#8212; pydae-bmapu</title>
     
@@ -34,6 +34,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -55,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="NTS base case" href="../nts_base/nts_base.html" />
     <link rel="prev" title="SMIB" href="../smib/smib.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -229,6 +230,11 @@ const thebe_selector_output = ".output, .cell_output"
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../vscs/vsc_pq.html">
+       VSC in PQ mode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vscs/vsc_l.html">
        VSC in PQ mode
       </a>
      </li>
@@ -583,7 +589,7 @@ title="Print to PDF"
               <div>
                 
   <section id="kundur-example-12-6">
-<h1>Kundur example 12.6<a class="headerlink" href="#kundur-example-12-6" title="Permalink to this headline">#</a></h1>
+<h1>Kundur example 12.6<a class="headerlink" href="#kundur-example-12-6" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
@@ -593,168 +599,28 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6.json&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6_pss.json&#39;</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Synchornous machine at bus 3 has p_c &gt; 0, therefore K_imw should be larger than 0
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">DistutilsExecError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\_msvccompiler.py</span> in <span class="ni">link</span><span class="nt">(self, target_desc, objects, output_filename, output_dir, libraries, library_dirs, runtime_library_dirs, export_symbols, debug, extra_preargs, extra_postargs, build_temp, target_lang)</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span>                 <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Executing &quot;</span><span class="si">%s</span><span class="s1">&quot; </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">linker</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ld_args</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">536</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">spawn</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">linker</span><span class="p">]</span> <span class="o">+</span> <span class="n">ld_args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>             <span class="k">except</span> <span class="n">DistutilsExecError</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\_msvccompiler.py</span> in <span class="ni">spawn</span><span class="nt">(self, cmd)</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fallback_spawn</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span> <span class="k">as</span> <span class="n">fallback</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">545</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span>         <span class="k">return</span> <span class="n">fallback</span><span class="o">.</span><span class="n">value</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\ccompiler.py</span> in <span class="ni">spawn</span><span class="nt">(self, cmd, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">986</span>     <span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">987</span>         <span class="n">spawn</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dry_run</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\spawn.py</span> in <span class="ni">spawn</span><span class="nt">(cmd, search_path, verbose, dry_run, env)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>             <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">70</span>         <span class="k">raise</span> <span class="n">DistutilsExecError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="s2">&quot;command </span><span class="si">{!r}</span><span class="s2"> failed with exit code </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">exitcode</span><span class="p">)</span>
-
-<span class="ne">DistutilsExecError</span>: command &#39;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\link.exe&#39; failed with exit code 1104
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">LinkError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\anaconda3\lib\site-packages\cffi\ffiplatform.py</span> in <span class="ni">_build</span><span class="nt">(tmpdir, ext, compiler_verbose, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>             <span class="n">distutils</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">compiler_verbose</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>             <span class="n">dist</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="s1">&#39;build_ext&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="n">cmd_obj</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_command_obj</span><span class="p">(</span><span class="s1">&#39;build_ext&#39;</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\dist.py</span> in <span class="ni">run_command</span><span class="nt">(self, command)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1216</span> 
-<span class="ne">-&gt; </span><span class="mi">1217</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\dist.py</span> in <span class="ni">run_command</span><span class="nt">(self, command)</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span>         <span class="n">cmd_obj</span><span class="o">.</span><span class="n">ensure_finalized</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">992</span>         <span class="n">cmd_obj</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span>         <span class="bp">self</span><span class="o">.</span><span class="n">have_run</span><span class="p">[</span><span class="n">command</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\command\build_ext.py</span> in <span class="ni">run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="n">old_inplace</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span><span class="p">,</span> <span class="mi">0</span>
-<span class="ne">---&gt; </span><span class="mi">79</span>         <span class="n">_build_ext</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span> <span class="o">=</span> <span class="n">old_inplace</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\Cython\Distutils\old_build_ext.py</span> in <span class="ni">run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> 
-<span class="ne">--&gt; </span><span class="mi">186</span>         <span class="n">_build_ext</span><span class="o">.</span><span class="n">build_ext</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>         <span class="c1"># Now actually compile and link everything.</span>
-<span class="ne">--&gt; </span><span class="mi">346</span>         <span class="bp">self</span><span class="o">.</span><span class="n">build_extensions</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\Cython\Distutils\old_build_ext.py</span> in <span class="ni">build_extensions</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>         <span class="c1"># Call original build_extensions</span>
-<span class="ne">--&gt; </span><span class="mi">195</span>         <span class="n">_build_ext</span><span class="o">.</span><span class="n">build_ext</span><span class="o">.</span><span class="n">build_extensions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">build_extensions</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">466</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_build_extensions_serial</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">_build_extensions_serial</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_build_errors</span><span class="p">(</span><span class="n">ext</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">492</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">build_extension</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\command\build_ext.py</span> in <span class="ni">build_extension</span><span class="nt">(self, ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shlib_compiler</span>
-<span class="ne">--&gt; </span><span class="mi">202</span>             <span class="n">_build_ext</span><span class="o">.</span><span class="n">build_extension</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>             <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">_needs_stub</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">build_extension</span><span class="nt">(self, ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span> 
-<span class="ne">--&gt; </span><span class="mi">571</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">link_shared_object</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>             <span class="n">objects</span><span class="p">,</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\ccompiler.py</span> in <span class="ni">link_shared_object</span><span class="nt">(self, objects, output_filename, output_dir, libraries, library_dirs, runtime_library_dirs, export_symbols, debug, extra_preargs, extra_postargs, build_temp, target_lang)</span>
-<span class="g g-Whitespace">    </span><span class="mi">750</span>     <span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">751</span>         <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>             <span class="n">CCompiler</span><span class="o">.</span><span class="n">SHARED_OBJECT</span><span class="p">,</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\_msvccompiler.py</span> in <span class="ni">link</span><span class="nt">(self, target_desc, objects, output_filename, output_dir, libraries, library_dirs, runtime_library_dirs, export_symbols, debug, extra_preargs, extra_postargs, build_temp, target_lang)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>             <span class="k">except</span> <span class="n">DistutilsExecError</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">538</span>                 <span class="k">raise</span> <span class="n">LinkError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">LinkError</span>: command &#39;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\link.exe&#39; failed with exit code 1104
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">VerificationError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_26076</span><span class="o">/</span><span class="mf">1901053911.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6.json&#39;</span><span class="p">)</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_23504</span><span class="o">/</span><span class="mf">3431721230.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6_pss.json&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">build</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span> 
-<span class="g g-Whitespace">    </span><span class="mi">469</span>             <span class="n">bldr</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="n">sys_dict</span><span class="p">);</span>
-<span class="ne">--&gt; </span><span class="mi">470</span>             <span class="n">bldr</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span> 
-<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="k">def</span> <span class="nf">checker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">__init__</span><span class="nt">(self, data_input)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span>             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;transformers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> 
+<span class="ne">---&gt; </span><span class="mi">65</span>         <span class="bp">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buses</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;buses&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\pydae\build_cffi.py</span> in <span class="ni">build</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1087</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./build/source_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_cffi.c&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1088</span>                 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1089</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compile_module</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1090</span>         <span class="bp">self</span><span class="o">.</span><span class="n">sys2num</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1091</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\pydae\build_cffi.py</span> in <span class="ni">compile_module</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1056</span>         <span class="n">ffi</span><span class="o">.</span><span class="n">set_source</span><span class="p">(</span><span class="n">module_name</span><span class="o">=</span><span class="n">module_name</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1057</span>         <span class="n">t_0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1058</span>         <span class="n">ffi</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1059</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Compilation time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t_0</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\api.py</span> in <span class="ni">compile</span><span class="nt">(self, tmpdir, verbose, target, debug)</span>
-<span class="g g-Whitespace">    </span><span class="mi">723</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;set_source() must be called before compile()&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">724</span>         <span class="n">module_name</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">source_extension</span><span class="p">,</span> <span class="n">kwds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assigned_source</span>
-<span class="ne">--&gt; </span><span class="mi">725</span>         <span class="k">return</span> <span class="n">recompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">tmpdir</span><span class="o">=</span><span class="n">tmpdir</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span>                          <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">source_extension</span><span class="o">=</span><span class="n">source_extension</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>                          <span class="n">compiler_verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\recompiler.py</span> in <span class="ni">recompile</span><span class="nt">(ffi, module_name, preamble, tmpdir, call_c_compiler, c_file, source_extension, extradir, compiler_verbose, target, debug, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1562</span>                     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1563</span>                 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1564</span>                 <span class="n">outputfilename</span> <span class="o">=</span> <span class="n">ffiplatform</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1565</span>                                                      <span class="n">compiler_verbose</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1566</span>             <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\ffiplatform.py</span> in <span class="ni">compile</span><span class="nt">(tmpdir, ext, compiler_verbose, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">saved_environ</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>         <span class="n">outputfilename</span> <span class="o">=</span> <span class="n">_build</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">compiler_verbose</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="n">outputfilename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">outputfilename</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\ffiplatform.py</span> in <span class="ni">_build</span><span class="nt">(tmpdir, ext, compiler_verbose, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="k">except</span> <span class="p">(</span><span class="n">distutils</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">CompileError</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>             <span class="n">distutils</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">LinkError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">58</span>         <span class="k">raise</span> <span class="n">VerificationError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">return</span> <span class="n">soname</span>
-
-<span class="ne">VerificationError</span>: LinkError: command &#39;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\link.exe&#39; failed with exit code 1104
+<span class="ne">KeyError</span>: &#39;system&#39;
 </pre></div>
 </div>
 </div>
@@ -767,7 +633,6 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">pydae.ssa</span> <span class="k">as</span> <span class="nn">ssa</span>
 <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">SVG</span>
 <span class="kn">from</span> <span class="nn">pydae.svg_tools</span> <span class="kn">import</span> <span class="n">svg</span>
-<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">sopt</span>
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_formats = [&#39;svg&#39;]
 </pre></div>
 </div>
@@ -2338,49 +2203,92 @@ if (force === true) {
 </div>
 </div>
 <section id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">k12p6</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
 
-<span class="n">K_delta</span> <span class="o">=</span> <span class="mf">0.001</span>
-<span class="n">K_sec</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">K_a</span> <span class="o">=</span> <span class="mf">200.0</span>
-<span class="n">T_r</span> <span class="o">=</span> <span class="mf">0.02</span>
-<span class="n">D</span> <span class="o">=</span> <span class="mf">0.5</span>
 
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;P_7&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">967e6</span><span class="p">,</span><span class="s1">&#39;P_9&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">1_767e6</span><span class="p">,</span><span class="s1">&#39;Q_7&#39;</span><span class="p">:</span><span class="mf">100e6</span><span class="p">,</span><span class="s1">&#39;Q_9&#39;</span><span class="p">:</span><span class="mf">250e6</span><span class="p">,</span>
-                  <span class="s1">&#39;K_delta_1&#39;</span><span class="p">:</span><span class="n">K_delta</span><span class="p">,</span><span class="s1">&#39;K_delta_2&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-                  <span class="s1">&#39;K_delta_3&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;K_delta_4&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="c1"># Cases:</span>
+<span class="c1"># (ii) Thyristor exciter with a high transient gain   (K_stab=0, T_b=1)</span>
+<span class="c1"># (iii)Thyristor exciter with a transient gain reduction (TGR) (K_stab=0, T_b=10)</span>
+<span class="c1"># (iv) Thyristor exciter with high transient gain and PSS  (K_stab=20, T_b=1)</span>
+
+<span class="n">K_a</span> <span class="o">=</span> <span class="mf">200.0</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">T_b</span> <span class="o">=</span> <span class="mf">10.0</span>     <span class="c1"># AVR lag time constant: (ii) T_b=1, (iii) T_b=10, (iv) T_b = 1</span>
+<span class="n">K_stab</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># PSS main gain: (ii) K_stab=0, (iii) K_stab=0, (iv) K_stab=20</span>
+<span class="n">lf</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;P_7&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">967e6</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span><span class="s1">&#39;P_9&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">1_767e6</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span><span class="s1">&#39;Q_7&#39;</span><span class="p">:</span><span class="mf">100e6</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span><span class="s1">&#39;Q_9&#39;</span><span class="p">:</span><span class="mf">250e6</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span>
                   <span class="s1">&#39;K_a_1&#39;</span><span class="p">:</span><span class="n">K_a</span><span class="p">,</span><span class="s1">&#39;K_a_2&#39;</span><span class="p">:</span><span class="n">K_a</span><span class="p">,</span><span class="s1">&#39;K_a_3&#39;</span><span class="p">:</span><span class="n">K_a</span><span class="p">,</span><span class="s1">&#39;K_a_4&#39;</span><span class="p">:</span><span class="n">K_a</span><span class="p">,</span>
-                  <span class="c1">#&#39;T_r_1&#39;:T_r,&#39;T_r_2&#39;:T_r,&#39;T_r_3&#39;:T_r,&#39;T_r_4&#39;:T_r,</span>
-                  <span class="s1">&#39;p_c_1&#39;</span><span class="p">:</span><span class="mf">701.4</span><span class="o">/</span><span class="mi">900</span><span class="p">,</span><span class="s1">&#39;p_c_2&#39;</span><span class="p">:</span><span class="mf">701.4</span><span class="o">/</span><span class="mi">900</span><span class="p">,</span><span class="s1">&#39;p_c_4&#39;</span><span class="p">:</span><span class="mf">701.4</span><span class="o">/</span><span class="mi">900</span><span class="p">,</span>
-                  <span class="c1">#&#39;v_ref_1&#39;:1.03,&#39;v_ref_2&#39;:1.01,&#39;v_ref_3&#39;:1.03,&#39;v_ref_4&#39;:1.01,</span>
-                     <span class="s1">&#39;K_sec_1&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;K_sec_2&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;K_sec_3&#39;</span><span class="p">:</span><span class="n">K_sec</span><span class="p">,</span><span class="s1">&#39;K_sec_4&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-                  <span class="s1">&#39;K_imw_1&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;K_imw_2&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span><span class="s1">&#39;K_imw_3&#39;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;K_imw_4&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span>
-                  <span class="s1">&#39;D_1&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D_2&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D_3&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D_4&#39;</span><span class="p">:</span><span class="n">D</span>
-                    <span class="p">}</span>
+                  <span class="s1">&#39;K_stab_1&#39;</span><span class="p">:</span><span class="n">K_stab</span><span class="p">,</span><span class="s1">&#39;K_stab_2&#39;</span><span class="p">:</span><span class="n">K_stab</span><span class="p">,</span><span class="s1">&#39;K_stab_3&#39;</span><span class="p">:</span><span class="n">K_stab</span><span class="p">,</span><span class="s1">&#39;K_stab_4&#39;</span><span class="p">:</span><span class="n">K_stab</span><span class="p">,</span> 
+                  <span class="s1">&#39;T_b_1&#39;</span><span class="p">:</span><span class="n">T_b</span><span class="p">,</span><span class="s1">&#39;T_b_2&#39;</span><span class="p">:</span><span class="n">T_b</span><span class="p">,</span><span class="s1">&#39;T_b_3&#39;</span><span class="p">:</span><span class="n">T_b</span><span class="p">,</span><span class="s1">&#39;T_b_4&#39;</span><span class="p">:</span><span class="n">T_b</span><span class="p">,</span>
+                  <span class="s2">&quot;K_imw_1&quot;</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span><span class="s2">&quot;K_imw_2&quot;</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span><span class="s2">&quot;K_imw_4&quot;</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span>
+                  <span class="s1">&#39;p_c_1&#39;</span><span class="p">:</span><span class="n">lf</span><span class="o">*</span><span class="mi">700</span><span class="o">/</span><span class="mi">900</span><span class="p">,</span><span class="s1">&#39;p_c_2&#39;</span><span class="p">:</span><span class="n">lf</span><span class="o">*</span><span class="mi">700</span><span class="o">/</span><span class="mi">900</span><span class="p">,</span><span class="s1">&#39;p_c_4&#39;</span><span class="p">:</span><span class="n">lf</span><span class="o">*</span><span class="mi">700</span><span class="o">/</span><span class="mi">900</span><span class="p">,</span>
+                  <span class="s1">&#39;D_1&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D_2&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D_3&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D_4&#39;</span><span class="p">:</span><span class="n">D</span><span class="p">}</span>
+
 
 <span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;xy_0.json&#39;</span><span class="p">)</span>
+<span class="c1">#model.report_y()</span>
+
+<span class="n">repo</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p_g_</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;S_n_</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;q_g_</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;S_n_</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;G</span><span class="si">{</span><span class="n">it</span><span class="si">}</span><span class="s2">: P = </span><span class="si">{</span><span class="n">p</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">0.1f</span><span class="si">}</span><span class="s2">   Q = </span><span class="si">{</span><span class="n">q</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">0.1f</span><span class="si">}</span><span class="s2">  &quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G1: P = 700.0   Q = 185.2  
+G2: P = 700.0   Q = 233.8  
+G3: P = 719.1   Q = 175.2  
+G4: P = 700.0   Q = 199.0  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">ss_eval</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_8600</span><span class="o">/</span><span class="mf">2657834451.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ssa</span><span class="o">.</span><span class="n">ss_eval</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pydae\ssa.py</span> in <span class="ni">ss_eval</span><span class="nt">(model)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="s1"> </span>
+<span class="ne">--&gt; </span><span class="mi">142</span><span class="s1">     model.full_jacs_eval()</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="s1">     Fx = model.Fx</span>
+
+<span class="nn">~\workspace\pydae-bmapu-doc\book\examples\k12p6\k12p6.py</span> in <span class="ni">full_jacs_eval</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span><span class="s1">         sp_jac_run = self.sp_jac_run</span>
+<span class="ne">--&gt; </span><span class="mi">800</span><span class="s1">         sp_Fu = self.sp_Fu_run</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span><span class="s1">         sp_Gu = self.sp_Gu_run</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span><span class="s1">         sp_Hx = self.sp_Hx_run</span>
+
+<span class="ne">AttributeError</span>: &#39;model&#39; object has no attribute &#39;sp_Fu_run&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="small-signal-analysis">
-<h2>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this headline">#</a></h2>
+<h2>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this heading">#</a></h2>
 <section id="eigenvalues">
-<h3>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this headline">#</a></h3>
+<h3>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 <span class="n">damp</span> <span class="o">=</span> <span class="n">ssa</span><span class="o">.</span><span class="n">damp_report</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-<span class="n">damp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Damp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">damp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Damp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2411,291 +2319,375 @@ if (force === true) {
   </thead>
   <tbody>
     <tr>
-      <th>Mode 13</th>
-      <td>-0.02</td>
-      <td>3.58</td>
-      <td>0.57</td>
-      <td>0.01</td>
-    </tr>
-    <tr>
-      <th>Mode 14</th>
-      <td>-0.02</td>
-      <td>-3.58</td>
-      <td>0.57</td>
-      <td>0.01</td>
+      <th>Mode 11</th>
+      <td>0.209</td>
+      <td>3.183</td>
+      <td>0.507</td>
+      <td>-0.066</td>
     </tr>
     <tr>
       <th>Mode 12</th>
-      <td>-0.55</td>
-      <td>-6.39</td>
-      <td>1.02</td>
-      <td>0.09</td>
-    </tr>
-    <tr>
-      <th>Mode 11</th>
-      <td>-0.55</td>
-      <td>6.39</td>
-      <td>1.02</td>
-      <td>0.09</td>
-    </tr>
-    <tr>
-      <th>Mode 10</th>
-      <td>-0.56</td>
-      <td>-6.22</td>
-      <td>0.99</td>
-      <td>0.09</td>
-    </tr>
-    <tr>
-      <th>Mode 9</th>
-      <td>-0.56</td>
-      <td>6.22</td>
-      <td>0.99</td>
-      <td>0.09</td>
-    </tr>
-    <tr>
-      <th>Mode 24</th>
-      <td>-0.14</td>
-      <td>-0.42</td>
-      <td>0.07</td>
-      <td>0.31</td>
-    </tr>
-    <tr>
-      <th>Mode 23</th>
-      <td>-0.14</td>
-      <td>0.42</td>
-      <td>0.07</td>
-      <td>0.31</td>
-    </tr>
-    <tr>
-      <th>Mode 1</th>
-      <td>-24.46</td>
-      <td>32.29</td>
-      <td>5.14</td>
-      <td>0.60</td>
-    </tr>
-    <tr>
-      <th>Mode 2</th>
-      <td>-24.46</td>
-      <td>-32.29</td>
-      <td>5.14</td>
-      <td>0.60</td>
-    </tr>
-    <tr>
-      <th>Mode 6</th>
-      <td>-24.98</td>
-      <td>-17.19</td>
-      <td>2.74</td>
-      <td>0.82</td>
+      <td>0.209</td>
+      <td>-3.183</td>
+      <td>0.507</td>
+      <td>-0.066</td>
     </tr>
     <tr>
       <th>Mode 5</th>
-      <td>-24.98</td>
-      <td>17.19</td>
-      <td>2.74</td>
-      <td>0.82</td>
+      <td>-0.360</td>
+      <td>6.144</td>
+      <td>0.978</td>
+      <td>0.058</td>
     </tr>
     <tr>
-      <th>Mode 15</th>
-      <td>-4.44</td>
-      <td>0.10</td>
-      <td>0.02</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 16</th>
-      <td>-4.44</td>
-      <td>-0.10</td>
-      <td>0.02</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 28</th>
-      <td>-0.01</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 29</th>
-      <td>-0.01</td>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 39</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 30</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 31</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 37</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 33</th>
-      <td>-10.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 36</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 35</th>
-      <td>-10.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 38</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 32</th>
-      <td>-10.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 34</th>
-      <td>-10.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 21</th>
-      <td>-0.99</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 26</th>
-      <td>-0.09</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 25</th>
-      <td>-0.10</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 22</th>
-      <td>-0.99</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 40</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 20</th>
-      <td>-0.99</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 19</th>
-      <td>-0.83</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 18</th>
-      <td>-4.31</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 17</th>
-      <td>-4.29</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 8</th>
-      <td>-12.62</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
+      <th>Mode 6</th>
+      <td>-0.360</td>
+      <td>-6.144</td>
+      <td>0.978</td>
+      <td>0.058</td>
     </tr>
     <tr>
       <th>Mode 7</th>
-      <td>-12.95</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
+      <td>-0.357</td>
+      <td>6.016</td>
+      <td>0.957</td>
+      <td>0.059</td>
     </tr>
     <tr>
-      <th>Mode 4</th>
-      <td>-38.11</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 3</th>
-      <td>-38.49</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
+      <th>Mode 8</th>
+      <td>-0.357</td>
+      <td>-6.016</td>
+      <td>0.957</td>
+      <td>0.059</td>
     </tr>
     <tr>
       <th>Mode 27</th>
-      <td>-0.09</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
+      <td>-0.136</td>
+      <td>0.415</td>
+      <td>0.066</td>
+      <td>0.311</td>
+    </tr>
+    <tr>
+      <th>Mode 28</th>
+      <td>-0.136</td>
+      <td>-0.415</td>
+      <td>0.066</td>
+      <td>0.311</td>
+    </tr>
+    <tr>
+      <th>Mode 22</th>
+      <td>-0.527</td>
+      <td>-0.706</td>
+      <td>0.112</td>
+      <td>0.598</td>
+    </tr>
+    <tr>
+      <th>Mode 21</th>
+      <td>-0.527</td>
+      <td>0.706</td>
+      <td>0.112</td>
+      <td>0.598</td>
+    </tr>
+    <tr>
+      <th>Mode 20</th>
+      <td>-0.542</td>
+      <td>-0.714</td>
+      <td>0.114</td>
+      <td>0.604</td>
+    </tr>
+    <tr>
+      <th>Mode 19</th>
+      <td>-0.542</td>
+      <td>0.714</td>
+      <td>0.114</td>
+      <td>0.604</td>
+    </tr>
+    <tr>
+      <th>Mode 16</th>
+      <td>-1.212</td>
+      <td>0.943</td>
+      <td>0.150</td>
+      <td>0.789</td>
+    </tr>
+    <tr>
+      <th>Mode 17</th>
+      <td>-1.212</td>
+      <td>-0.943</td>
+      <td>0.150</td>
+      <td>0.789</td>
+    </tr>
+    <tr>
+      <th>Mode 15</th>
+      <td>-2.920</td>
+      <td>-2.110</td>
+      <td>0.336</td>
+      <td>0.811</td>
+    </tr>
+    <tr>
+      <th>Mode 14</th>
+      <td>-2.920</td>
+      <td>2.110</td>
+      <td>0.336</td>
+      <td>0.811</td>
+    </tr>
+    <tr>
+      <th>Mode 34</th>
+      <td>-0.001</td>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 33</th>
+      <td>-0.001</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 45</th>
+      <td>-50.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 36</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 37</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 38</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 39</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 51</th>
+      <td>-0.185</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 40</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
     </tr>
     <tr>
       <th>Mode 41</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
+      <td>-0.185</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 46</th>
+      <td>-0.100</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 44</th>
+      <td>-0.185</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 50</th>
+      <td>-0.100</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 49</th>
+      <td>-50.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 48</th>
+      <td>-0.185</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 47</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 42</th>
+      <td>-50.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 43</th>
+      <td>-0.100</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 1</th>
+      <td>-96.389</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 32</th>
+      <td>-0.002</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 2</th>
+      <td>-98.115</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 3</th>
+      <td>-99.119</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 4</th>
+      <td>-99.096</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 9</th>
+      <td>-5.671</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 10</th>
+      <td>-5.709</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 13</th>
+      <td>-4.106</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 18</th>
+      <td>-1.345</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 23</th>
+      <td>-0.828</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 24</th>
+      <td>-0.986</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 25</th>
+      <td>-0.996</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 26</th>
+      <td>-0.996</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 52</th>
+      <td>-50.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 29</th>
+      <td>-0.098</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 30</th>
+      <td>-0.099</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 31</th>
+      <td>-0.099</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 35</th>
+      <td>-0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>Mode 53</th>
+      <td>-0.100</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>1.000</td>
     </tr>
   </tbody>
 </table>
@@ -2703,16 +2695,16 @@ if (force === true) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">plot_eig</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">x_min</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">x_max</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="n">y_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y_max</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">plot_eig</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">x_min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">x_max</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="n">y_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y_max</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/k12p6_11_0.svg" src="../../_images/k12p6_11_0.svg" /></div>
+<img alt="../../_images/k12p6_12_0.svg" src="../../_images/k12p6_12_0.svg" /></div>
 </div>
 </section>
 <section id="participation-factors">
-<h3>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this headline">#</a></h3>
+<h3>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">participation</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s1">&#39;Mode 13&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2720,46 +2712,58 @@ if (force === true) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>omega_1      0.16
-delta_1      0.15
-omega_3      0.13
-delta_3      0.13
-omega_4      0.12
-delta_4      0.12
-omega_2      0.10
-delta_2      0.09
-e1d_3        0.01
-e1q_1        0.01
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e1d_2        0.37
+e1d_1        0.32
+e1d_4        0.18
+e1d_3        0.17
+delta_2      0.01
+omega_1      0.01
+delta_4      0.01
+omega_4      0.01
+omega_2      0.01
+delta_1      0.01
 e1q_2        0.01
-e1d_4        0.01
-x_ab_1       0.00
+e1q_1        0.01
+x_ab_4       0.00
+xi_v_3       0.00
 x_gov_1_3    0.00
 x_gov_2_3    0.00
 xi_imw_3     0.00
-x_ab_4       0.00
-e1q_4        0.00
-x_e_3        0.00
-x_e_4        0.00
+x_wo_3       0.00
+x_12_3       0.00
+x_34_3       0.00
 xi_v_4       0.00
-x_gov_1_4    0.00
-x_gov_2_4    0.00
+x_12_4       0.00
+e1q_4        0.00
+x_wo_4       0.00
 xi_imw_4     0.00
-xi_v_3       0.00
-e1q_3        0.00
 x_ab_3       0.00
-x_e_1        0.00
-e1d_1        0.00
-xi_imw_2     0.00
-x_gov_2_2    0.00
-x_gov_1_2    0.00
-xi_v_2       0.00
-x_e_2        0.00
-x_ab_2       0.00
-e1d_2        0.00
-xi_imw_1     0.00
-x_gov_2_1    0.00
-x_gov_1_1    0.00
+x_gov_2_4    0.00
+x_gov_1_4    0.00
+v_r_4        0.00
+x_34_4       0.00
+delta_3      0.00
+v_r_3        0.00
+e1q_3        0.00
+v_r_1        0.00
+x_ab_1       0.00
 xi_v_1       0.00
+x_gov_1_1    0.00
+x_gov_2_1    0.00
+xi_imw_1     0.00
+x_wo_1       0.00
+x_12_1       0.00
+x_34_1       0.00
+v_r_2        0.00
+x_ab_2       0.00
+xi_v_2       0.00
+x_gov_1_2    0.00
+x_gov_2_2    0.00
+xi_imw_2     0.00
+x_wo_2       0.00
+x_12_2       0.00
+x_34_2       0.00
+omega_3      0.00
 xi_freq      0.00
 Name: Mode 13, dtype: float64
 </pre></div>
@@ -2769,7 +2773,7 @@ Name: Mode 13, dtype: float64
 </section>
 </section>
 <section id="mode-shapes">
-<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this headline">#</a></h2>
+<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">shape2df</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Mode 14&#39;</span><span class="p">][[</span><span class="sa">f</span><span class="s1">&#39;omega_</span><span class="si">{</span><span class="n">it</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]]</span>
@@ -2777,10 +2781,10 @@ Name: Mode 13, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>omega_1    0.08∠-158.6
-omega_2    0.08∠-154.5
-omega_3     0.12∠ 22.0
-omega_4     0.01∠ 24.8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>omega_1    0.00∠-180.0
+omega_2     0.00∠ -0.0
+omega_3     0.01∠  0.0
+omega_4     0.01∠180.0
 Name: Mode 14, dtype: object
 </pre></div>
 </div>
@@ -2788,17 +2792,17 @@ Name: Mode 14, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svg_string</span> <span class="o">=</span> <span class="n">ssa</span><span class="o">.</span><span class="n">plot_shapes</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Mode 13&#39;</span><span class="p">,</span><span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;omega_</span><span class="si">{</span><span class="n">it</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svg_string</span> <span class="o">=</span> <span class="n">ssa</span><span class="o">.</span><span class="n">plot_shapes</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Mode 10&#39;</span><span class="p">,</span><span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;omega_</span><span class="si">{</span><span class="n">it</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
 <span class="n">SVG</span><span class="p">(</span><span class="n">svg_string</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/k12p6_16_0.svg" src="../../_images/k12p6_16_0.svg" /></div>
+<img alt="../../_images/k12p6_17_0.svg" src="../../_images/k12p6_17_0.svg" /></div>
 </div>
 </section>
 <section id="time-domain-simulation">
-<h2>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this headline">#</a></h2>
+<h2>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">k12p6</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
@@ -2807,6 +2811,7 @@ Name: Mode 14, dtype: object
 <span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,{</span><span class="s1">&#39;v_ref_1&#39;</span><span class="p">:</span> <span class="mf">1.03</span><span class="p">})</span>
 <span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,{</span><span class="s1">&#39;v_ref_1&#39;</span><span class="p">:</span> <span class="mf">1.03</span><span class="o">*</span><span class="mf">1.05</span><span class="p">});</span>
 <span class="n">model</span><span class="o">.</span><span class="n">post</span><span class="p">();</span>
+
 <span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;omega_1&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega_1&#39;</span><span class="p">)</span>
 <span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;omega_2&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega_2&#39;</span><span class="p">)</span>
@@ -2817,10 +2822,27 @@ Name: Mode 14, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x22cc79593d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x181c90cf250&gt;
 </pre></div>
 </div>
-<img alt="../../_images/k12p6_18_1.svg" src="../../_images/k12p6_18_1.svg" /></div>
+<img alt="../../_images/k12p6_19_1.svg" src="../../_images/k12p6_19_1.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;v_pss_1&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_pss_1&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;v_pss_2&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_pss_2&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;v_pss_3&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_pss_3&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;v_pss_4&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_pss_4&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x181d0bc56a0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/k12p6_20_1.svg" src="../../_images/k12p6_20_1.svg" /></div>
 </div>
 </section>
 </section>

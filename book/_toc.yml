@@ -26,6 +26,13 @@ chapters:
   - file: vscs
     sections:
     - file: vscs/vsc_pq
+    - file: vscs/vsc_l
+  - file: vsc_ctrls
+    sections:
+    - file: vsc_ctrls/vsg_l
+- file: modeling
+  sections:
+    - file: modeling/parks
 - file: builder
 - file: ini
 - file: simulation

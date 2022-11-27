@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>PYDGRID: simulación de la instalación fotovoltaica &#8212; pydae-bmapu</title>
     
@@ -34,6 +34,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -53,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -227,6 +228,11 @@ const thebe_selector_output = ".output, .cell_output"
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../vscs/vsc_pq.html">
+       VSC in PQ mode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vscs/vsc_l.html">
        VSC in PQ mode
       </a>
      </li>
@@ -634,7 +640,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_22504</span><span class="o">/</span><span class="mf">4009240306.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_14204</span><span class="o">/</span><span class="mf">4009240306.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pydgrid</span> <span class="kn">import</span> <span class="n">grid</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pydgrid.plot_bokeh</span> <span class="kn">import</span> <span class="n">plot_results</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -647,7 +653,7 @@ title="Print to PDF"
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="pydgrid-simulacion-de-la-instalacion-fotovoltaica">
-<h1>PYDGRID: simulación de la instalación fotovoltaica<a class="headerlink" href="#pydgrid-simulacion-de-la-instalacion-fotovoltaica" title="Permalink to this headline">#</a></h1>
+<h1>PYDGRID: simulación de la instalación fotovoltaica<a class="headerlink" href="#pydgrid-simulacion-de-la-instalacion-fotovoltaica" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_gen</span> <span class="o">=</span> <span class="mf">1000.0</span>  <span class="c1"># kW</span>
@@ -1004,7 +1010,7 @@ title="Print to PDF"
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="definicion-de-funciones-que-se-utilizaran-para-el-controlador">
-<h1>Definición de funciones que se utilizarán para el controlador<a class="headerlink" href="#definicion-de-funciones-que-se-utilizaran-para-el-controlador" title="Permalink to this headline">#</a></h1>
+<h1>Definición de funciones que se utilizarán para el controlador<a class="headerlink" href="#definicion-de-funciones-que-se-utilizaran-para-el-controlador" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_obj</span> <span class="o">=</span> <span class="n">pv_grid</span>
@@ -1124,7 +1130,7 @@ title="Print to PDF"
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ppc-centralizado">
-<h1>PPC centralizado<a class="headerlink" href="#ppc-centralizado" title="Permalink to this headline">#</a></h1>
+<h1>PPC centralizado<a class="headerlink" href="#ppc-centralizado" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1">#el paso de tiempo</span>
@@ -2054,9 +2060,9 @@ if (IPython.notebook.kernel != null) {
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ppc-individual-con-medida-en-bt">
-<h1>PPC individual con medida en BT<a class="headerlink" href="#ppc-individual-con-medida-en-bt" title="Permalink to this headline">#</a></h1>
+<h1>PPC individual con medida en BT<a class="headerlink" href="#ppc-individual-con-medida-en-bt" title="Permalink to this heading">#</a></h1>
 <section id="este-primer-codigo-representa-un-funcionamiento-idealizado-sin-problemas-de-la-potencia-maxima-admisible-por-el-inversor-es-simplemente-porque-las-graficas-que-salen-son-bastante-ilustrativas-del-comportamiento-del-controlador-que-mas-tarde-cuando-se-limite-la-variacion-de-la-grafica-resultara-menos-intuitiva">
-<h2>Este primer código representa un funcionamiento idealizado sin problemas de la potencia máxima admisible por el inversor. Es simplemente porque las graficas que salen son bastante ilustrativas del comportamiento del controlador que, más tarde, cuando se limite la variación de la gráfica resultará menos intuitiva<a class="headerlink" href="#este-primer-codigo-representa-un-funcionamiento-idealizado-sin-problemas-de-la-potencia-maxima-admisible-por-el-inversor-es-simplemente-porque-las-graficas-que-salen-son-bastante-ilustrativas-del-comportamiento-del-controlador-que-mas-tarde-cuando-se-limite-la-variacion-de-la-grafica-resultara-menos-intuitiva" title="Permalink to this headline">#</a></h2>
+<h2>Este primer código representa un funcionamiento idealizado sin problemas de la potencia máxima admisible por el inversor. Es simplemente porque las graficas que salen son bastante ilustrativas del comportamiento del controlador que, más tarde, cuando se limite la variación de la gráfica resultará menos intuitiva<a class="headerlink" href="#este-primer-codigo-representa-un-funcionamiento-idealizado-sin-problemas-de-la-potencia-maxima-admisible-por-el-inversor-es-simplemente-porque-las-graficas-que-salen-son-bastante-ilustrativas-del-comportamiento-del-controlador-que-mas-tarde-cuando-se-limite-la-variacion-de-la-grafica-resultara-menos-intuitiva" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -3800,7 +3806,7 @@ if (IPython.notebook.kernel != null) {
 </div>
 </section>
 <section id="en-este-codigo-ya-se-introduce-el-statcom-y-se-limita-la-potencia-reactiva">
-<h2>En este código ya se introduce el STATCOM y se limita la potencia reactiva<a class="headerlink" href="#en-este-codigo-ya-se-introduce-el-statcom-y-se-limita-la-potencia-reactiva" title="Permalink to this headline">#</a></h2>
+<h2>En este código ya se introduce el STATCOM y se limita la potencia reactiva<a class="headerlink" href="#en-este-codigo-ya-se-introduce-el-statcom-y-se-limita-la-potencia-reactiva" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -6316,9 +6322,9 @@ if (IPython.notebook.kernel != null) {
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ppc-individual-con-medida-en-bt-sin-acoplamiento">
-<h1>PPC individual con medida en BT (sin acoplamiento)<a class="headerlink" href="#ppc-individual-con-medida-en-bt-sin-acoplamiento" title="Permalink to this headline">#</a></h1>
+<h1>PPC individual con medida en BT (sin acoplamiento)<a class="headerlink" href="#ppc-individual-con-medida-en-bt-sin-acoplamiento" title="Permalink to this heading">#</a></h1>
 <section id="este-primer-codigo-representa-un-funcionamiento-idealizado-sin-problemas-de-la-potencia-maxima-admisible-por-el-inversor-es-simplemente-porque-las-graficas-que-salen-son-bastante-ilustrativas-del-comportamiento-del-controlador-que-mas-tarde-cuando-se-limite-la-variacion-de-la-grafica-resultara-menos-intuitiva-se-ha-anadido-una-variable-que-va-a-alternando-para-evitar-el-acoplamiento-de-los-generadores">
-<h2>Este primer código representa un funcionamiento idealizado sin problemas de la potencia máxima admisible por el inversor. Es simplemente porque las graficas que salen son bastante ilustrativas del comportamiento del controlador que, más tarde, cuando se limite la variación de la gráfica resultará menos intuitiva. Se ha añadido una variable que va a alternando para evitar el acoplamiento de los generadores.<a class="headerlink" href="#este-primer-codigo-representa-un-funcionamiento-idealizado-sin-problemas-de-la-potencia-maxima-admisible-por-el-inversor-es-simplemente-porque-las-graficas-que-salen-son-bastante-ilustrativas-del-comportamiento-del-controlador-que-mas-tarde-cuando-se-limite-la-variacion-de-la-grafica-resultara-menos-intuitiva-se-ha-anadido-una-variable-que-va-a-alternando-para-evitar-el-acoplamiento-de-los-generadores" title="Permalink to this headline">#</a></h2>
+<h2>Este primer código representa un funcionamiento idealizado sin problemas de la potencia máxima admisible por el inversor. Es simplemente porque las graficas que salen son bastante ilustrativas del comportamiento del controlador que, más tarde, cuando se limite la variación de la gráfica resultará menos intuitiva. Se ha añadido una variable que va a alternando para evitar el acoplamiento de los generadores.<a class="headerlink" href="#este-primer-codigo-representa-un-funcionamiento-idealizado-sin-problemas-de-la-potencia-maxima-admisible-por-el-inversor-es-simplemente-porque-las-graficas-que-salen-son-bastante-ilustrativas-del-comportamiento-del-controlador-que-mas-tarde-cuando-se-limite-la-variacion-de-la-grafica-resultara-menos-intuitiva-se-ha-anadido-una-variable-que-va-a-alternando-para-evitar-el-acoplamiento-de-los-generadores" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -7274,7 +7280,7 @@ if (IPython.notebook.kernel != null) {
 </div>
 </section>
 <section id="en-este-codigo-ya-se-introduce-el-statcom-y-se-limita-la-potencia-reactiva-mantiendo-el-sistema-para-evitar-el-acoplamiento">
-<h2>En este código ya se introduce el STATCOM y se limita la potencia reactiva, mantiendo el sistema para evitar el acoplamiento<a class="headerlink" href="#en-este-codigo-ya-se-introduce-el-statcom-y-se-limita-la-potencia-reactiva-mantiendo-el-sistema-para-evitar-el-acoplamiento" title="Permalink to this headline">#</a></h2>
+<h2>En este código ya se introduce el STATCOM y se limita la potencia reactiva, mantiendo el sistema para evitar el acoplamiento<a class="headerlink" href="#en-este-codigo-ya-se-introduce-el-statcom-y-se-limita-la-potencia-reactiva-mantiendo-el-sistema-para-evitar-el-acoplamiento" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.2</span>

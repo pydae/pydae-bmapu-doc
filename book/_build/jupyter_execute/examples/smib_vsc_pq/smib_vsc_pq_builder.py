@@ -8,13 +8,13 @@ import pydae.build_cffi as db
 from pydae.bmapu import bmapu_builder
 
 
-# In[13]:
+# In[2]:
 
 
 import pydae.grid_tools as gt
 
 
-# In[14]:
+# In[3]:
 
 
 grid = bmapu_builder.bmapu('smib_vsc_pq.json')

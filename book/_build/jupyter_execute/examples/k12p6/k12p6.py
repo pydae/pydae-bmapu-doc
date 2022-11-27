@@ -12,12 +12,12 @@ from pydae.bmapu import bmapu_builder
 # In[2]:
 
 
-grid = bmapu_builder.bmapu('k12p6.json')
+grid = bmapu_builder.bmapu('k12p6_pss.json')
 grid.checker()
 grid.build('k12p6')
 
 
-# In[5]:
+# In[3]:
 
 
 import numpy as np
@@ -26,17 +26,16 @@ import pydae.grid_tools as gt
 import pydae.ssa as ssa
 from IPython.core.display import HTML,SVG
 from pydae.svg_tools import svg
-import scipy.optimize as sopt
 get_ipython().run_line_magic('config', "InlineBackend.figure_formats = ['svg']")
 
 
-# In[7]:
+# In[4]:
 
 
 SVG('sp_k12p6.svg')
 
 
-# In[8]:
+# In[5]:
 
 
 import k12p6 
@@ -44,53 +43,68 @@ import k12p6
 
 # ### Initialization
 
-# In[12]:
+# In[57]:
 
 
 model = k12p6.model()
 
-K_delta = 0.001
-K_sec = 0.1
-K_a = 200.0
-T_r = 0.02
-D = 0.5
 
-params = {'P_7':-967e6,'P_9':-1_767e6,'Q_7':100e6,'Q_9':250e6,
-                  'K_delta_1':K_delta,'K_delta_2':0,
-                  'K_delta_3':0,'K_delta_4':0,
+# Cases:
+# (ii) Thyristor exciter with a high transient gain   (K_stab=0, T_b=1)
+# (iii)Thyristor exciter with a transient gain reduction (TGR) (K_stab=0, T_b=10)
+# (iv) Thyristor exciter with high transient gain and PSS  (K_stab=20, T_b=1)
+
+K_a = 200.0
+D = 0.0
+T_b = 10.0     # AVR lag time constant: (ii) T_b=1, (iii) T_b=10, (iv) T_b = 1
+K_stab = 0.0  # PSS main gain: (ii) K_stab=0, (iii) K_stab=0, (iv) K_stab=20
+lf = 1.0
+params = {'P_7':-967e6*lf,'P_9':-1_767e6*lf,'Q_7':100e6*lf,'Q_9':250e6*lf,
                   'K_a_1':K_a,'K_a_2':K_a,'K_a_3':K_a,'K_a_4':K_a,
-                  #'T_r_1':T_r,'T_r_2':T_r,'T_r_3':T_r,'T_r_4':T_r,
-                  'p_c_1':701.4/900,'p_c_2':701.4/900,'p_c_4':701.4/900,
-                  #'v_ref_1':1.03,'v_ref_2':1.01,'v_ref_3':1.03,'v_ref_4':1.01,
-                     'K_sec_1':0,'K_sec_2':0,'K_sec_3':K_sec,'K_sec_4':0,
-                  'K_imw_1':0.01, 'K_imw_2':0.01,'K_imw_3':0.0, 'K_imw_4':0.01,
-                  'D_1':D,'D_2':D,'D_3':D,'D_4':D
-                    }
+                  'K_stab_1':K_stab,'K_stab_2':K_stab,'K_stab_3':K_stab,'K_stab_4':K_stab, 
+                  'T_b_1':T_b,'T_b_2':T_b,'T_b_3':T_b,'T_b_4':T_b,
+                  "K_imw_1":0.001,"K_imw_2":0.001,"K_imw_4":0.001,
+                  'p_c_1':lf*700/900,'p_c_2':lf*700/900,'p_c_4':lf*700/900,
+                  'D_1':D,'D_2':D,'D_3':D,'D_4':D}
+
 
 model.ini(params,'xy_0.json')
+#model.report_y()
+
+repo = ''
+for it in range(1,5):
+    p = model.get_value(f'p_g_{it}')*model.get_value(f'S_n_{it}')
+    q = model.get_value(f'q_g_{it}')*model.get_value(f'S_n_{it}')
+    print(f"G{it}: P = {p/1e6:0.1f}   Q = {q/1e6:0.1f}  ")
+
+
+# In[65]:
+
+
+ssa.ss_eval(model)
 
 
 # ### Small signal analysis
 
 # #### Eigenvalues
 
-# In[27]:
+# In[59]:
 
 
 ssa.A_eval(model)
 damp = ssa.damp_report(model)
-damp.sort_values('Damp').round(2)
+damp.sort_values('Damp').round(3)
 
 
-# In[28]:
+# In[52]:
 
 
-ssa.plot_eig(model,x_min=-1,x_max=0.01,y_min=0,y_max=1.5);
+ssa.plot_eig(model,x_min=-2,x_max=0.01,y_min=0,y_max=1.5);
 
 
 # #### Participation factors
 
-# In[29]:
+# In[23]:
 
 
 ssa.participation(model)['Mode 13'].abs().round(2).sort_values(ascending=False)
@@ -98,22 +112,22 @@ ssa.participation(model)['Mode 13'].abs().round(2).sort_values(ascending=False)
 
 # ### Mode shapes
 
-# In[32]:
+# In[24]:
 
 
 ssa.shape2df(model).loc['Mode 14'][[f'omega_{it+1}' for it in range(4)]]
 
 
-# In[35]:
+# In[25]:
 
 
-svg_string = ssa.plot_shapes(model,mode='Mode 13',states=[f'omega_{it+1}' for it in range(4)])
+svg_string = ssa.plot_shapes(model,mode='Mode 10',states=[f'omega_{it+1}' for it in range(4)])
 SVG(svg_string)
 
 
 # ### Time domain simulation
 
-# In[40]:
+# In[26]:
 
 
 model = k12p6.model()
@@ -122,11 +136,23 @@ model.ini(params,'xy_0.json')
 model.run(1.0,{'v_ref_1': 1.03})
 model.run(10.0,{'v_ref_1': 1.03*1.05});
 model.post();
+
 fig,axes = plt.subplots()
 axes.plot(model.Time,model.get_values('omega_1'),label='omega_1')
 axes.plot(model.Time,model.get_values('omega_2'),label='omega_2')
 axes.plot(model.Time,model.get_values('omega_3'),label='omega_3')
 axes.plot(model.Time,model.get_values('omega_4'),label='omega_4')
+axes.legend()
+
+
+# In[27]:
+
+
+fig,axes = plt.subplots()
+axes.plot(model.Time,model.get_values('v_pss_1'),label='v_pss_1')
+axes.plot(model.Time,model.get_values('v_pss_2'),label='v_pss_2')
+axes.plot(model.Time,model.get_values('v_pss_3'),label='v_pss_3')
+axes.plot(model.Time,model.get_values('v_pss_4'),label='v_pss_4')
 axes.legend()
 
 

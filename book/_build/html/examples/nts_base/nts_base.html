@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>NTS base case &#8212; pydae-bmapu</title>
     
@@ -34,6 +34,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -54,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Kundur example 12.6" href="../k12p6/k12p6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -228,6 +229,11 @@ const thebe_selector_output = ".output, .cell_output"
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../vscs/vsc_pq.html">
+       VSC in PQ mode
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vscs/vsc_l.html">
        VSC in PQ mode
       </a>
      </li>
@@ -586,21 +592,11 @@ title="Print to PDF"
               <div>
                 
   <section id="nts-base-case">
-<h1>NTS base case<a class="headerlink" href="#nts-base-case" title="Permalink to this headline">#</a></h1>
+<h1>NTS base case<a class="headerlink" href="#nts-base-case" title="Permalink to this heading">#</a></h1>
 <img src="nts.png" width="600">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_23016</span><span class="o">/</span><span class="mf">341762431.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pydae&#39;
 </pre></div>
 </div>
 </div>
@@ -615,157 +611,20 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">DistutilsExecError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\_msvccompiler.py</span> in <span class="ni">link</span><span class="nt">(self, target_desc, objects, output_filename, output_dir, libraries, library_dirs, runtime_library_dirs, export_symbols, debug, extra_preargs, extra_postargs, build_temp, target_lang)</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span>                 <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Executing &quot;</span><span class="si">%s</span><span class="s1">&quot; </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">linker</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ld_args</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">536</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">spawn</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">linker</span><span class="p">]</span> <span class="o">+</span> <span class="n">ld_args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>             <span class="k">except</span> <span class="n">DistutilsExecError</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\_msvccompiler.py</span> in <span class="ni">spawn</span><span class="nt">(self, cmd)</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fallback_spawn</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span> <span class="k">as</span> <span class="n">fallback</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">545</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span>         <span class="k">return</span> <span class="n">fallback</span><span class="o">.</span><span class="n">value</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\ccompiler.py</span> in <span class="ni">spawn</span><span class="nt">(self, cmd, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">986</span>     <span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">987</span>         <span class="n">spawn</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dry_run</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\spawn.py</span> in <span class="ni">spawn</span><span class="nt">(cmd, search_path, verbose, dry_run, env)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>             <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">70</span>         <span class="k">raise</span> <span class="n">DistutilsExecError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="s2">&quot;command </span><span class="si">{!r}</span><span class="s2"> failed with exit code </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">exitcode</span><span class="p">)</span>
-
-<span class="ne">DistutilsExecError</span>: command &#39;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\link.exe&#39; failed with exit code 1104
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">LinkError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\anaconda3\lib\site-packages\cffi\ffiplatform.py</span> in <span class="ni">_build</span><span class="nt">(tmpdir, ext, compiler_verbose, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>             <span class="n">distutils</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">compiler_verbose</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>             <span class="n">dist</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="s1">&#39;build_ext&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="n">cmd_obj</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_command_obj</span><span class="p">(</span><span class="s1">&#39;build_ext&#39;</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\dist.py</span> in <span class="ni">run_command</span><span class="nt">(self, command)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1216</span> 
-<span class="ne">-&gt; </span><span class="mi">1217</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\dist.py</span> in <span class="ni">run_command</span><span class="nt">(self, command)</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span>         <span class="n">cmd_obj</span><span class="o">.</span><span class="n">ensure_finalized</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">992</span>         <span class="n">cmd_obj</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span>         <span class="bp">self</span><span class="o">.</span><span class="n">have_run</span><span class="p">[</span><span class="n">command</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\command\build_ext.py</span> in <span class="ni">run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="n">old_inplace</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span><span class="p">,</span> <span class="mi">0</span>
-<span class="ne">---&gt; </span><span class="mi">79</span>         <span class="n">_build_ext</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span> <span class="o">=</span> <span class="n">old_inplace</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\Cython\Distutils\old_build_ext.py</span> in <span class="ni">run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> 
-<span class="ne">--&gt; </span><span class="mi">186</span>         <span class="n">_build_ext</span><span class="o">.</span><span class="n">build_ext</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>         <span class="c1"># Now actually compile and link everything.</span>
-<span class="ne">--&gt; </span><span class="mi">346</span>         <span class="bp">self</span><span class="o">.</span><span class="n">build_extensions</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\Cython\Distutils\old_build_ext.py</span> in <span class="ni">build_extensions</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>         <span class="c1"># Call original build_extensions</span>
-<span class="ne">--&gt; </span><span class="mi">195</span>         <span class="n">_build_ext</span><span class="o">.</span><span class="n">build_ext</span><span class="o">.</span><span class="n">build_extensions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">build_extensions</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">466</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_build_extensions_serial</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">_build_extensions_serial</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_build_errors</span><span class="p">(</span><span class="n">ext</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">492</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">build_extension</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\command\build_ext.py</span> in <span class="ni">build_extension</span><span class="nt">(self, ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shlib_compiler</span>
-<span class="ne">--&gt; </span><span class="mi">202</span>             <span class="n">_build_ext</span><span class="o">.</span><span class="n">build_extension</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>             <span class="k">if</span> <span class="n">ext</span><span class="o">.</span><span class="n">_needs_stub</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\command\build_ext.py</span> in <span class="ni">build_extension</span><span class="nt">(self, ext)</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span> 
-<span class="ne">--&gt; </span><span class="mi">571</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">link_shared_object</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>             <span class="n">objects</span><span class="p">,</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\ccompiler.py</span> in <span class="ni">link_shared_object</span><span class="nt">(self, objects, output_filename, output_dir, libraries, library_dirs, runtime_library_dirs, export_symbols, debug, extra_preargs, extra_postargs, build_temp, target_lang)</span>
-<span class="g g-Whitespace">    </span><span class="mi">750</span>     <span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">751</span>         <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>             <span class="n">CCompiler</span><span class="o">.</span><span class="n">SHARED_OBJECT</span><span class="p">,</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\setuptools\_distutils\_msvccompiler.py</span> in <span class="ni">link</span><span class="nt">(self, target_desc, objects, output_filename, output_dir, libraries, library_dirs, runtime_library_dirs, export_symbols, debug, extra_preargs, extra_postargs, build_temp, target_lang)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>             <span class="k">except</span> <span class="n">DistutilsExecError</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">538</span>                 <span class="k">raise</span> <span class="n">LinkError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">LinkError</span>: command &#39;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\link.exe&#39; failed with exit code 1104
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">VerificationError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_16708</span><span class="o">/</span><span class="mf">3340201439.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;nts_base.json&#39;</span><span class="p">)</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_17644</span><span class="o">/</span><span class="mf">3340201439.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;nts_base.json&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;nts&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;nts&#39;</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">build</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span> 
-<span class="g g-Whitespace">    </span><span class="mi">469</span>             <span class="n">bldr</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="n">sys_dict</span><span class="p">);</span>
-<span class="ne">--&gt; </span><span class="mi">470</span>             <span class="n">bldr</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span> 
-<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="k">def</span> <span class="nf">checker</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">__init__</span><span class="nt">(self, data_input)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span>             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;transformers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> 
+<span class="ne">---&gt; </span><span class="mi">65</span>         <span class="bp">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buses</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;buses&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\pydae\build_cffi.py</span> in <span class="ni">build</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1087</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./build/source_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">_cffi.c&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1088</span>                 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1089</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compile_module</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1090</span>         <span class="bp">self</span><span class="o">.</span><span class="n">sys2num</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1091</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\pydae\build_cffi.py</span> in <span class="ni">compile_module</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1056</span>         <span class="n">ffi</span><span class="o">.</span><span class="n">set_source</span><span class="p">(</span><span class="n">module_name</span><span class="o">=</span><span class="n">module_name</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1057</span>         <span class="n">t_0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1058</span>         <span class="n">ffi</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1059</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Compilation time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t_0</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\api.py</span> in <span class="ni">compile</span><span class="nt">(self, tmpdir, verbose, target, debug)</span>
-<span class="g g-Whitespace">    </span><span class="mi">723</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;set_source() must be called before compile()&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">724</span>         <span class="n">module_name</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">source_extension</span><span class="p">,</span> <span class="n">kwds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assigned_source</span>
-<span class="ne">--&gt; </span><span class="mi">725</span>         <span class="k">return</span> <span class="n">recompile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">tmpdir</span><span class="o">=</span><span class="n">tmpdir</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span>                          <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">source_extension</span><span class="o">=</span><span class="n">source_extension</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>                          <span class="n">compiler_verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\recompiler.py</span> in <span class="ni">recompile</span><span class="nt">(ffi, module_name, preamble, tmpdir, call_c_compiler, c_file, source_extension, extradir, compiler_verbose, target, debug, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1562</span>                     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1563</span>                 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1564</span>                 <span class="n">outputfilename</span> <span class="o">=</span> <span class="n">ffiplatform</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1565</span>                                                      <span class="n">compiler_verbose</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1566</span>             <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\ffiplatform.py</span> in <span class="ni">compile</span><span class="nt">(tmpdir, ext, compiler_verbose, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">saved_environ</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>         <span class="n">outputfilename</span> <span class="o">=</span> <span class="n">_build</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">ext</span><span class="p">,</span> <span class="n">compiler_verbose</span><span class="p">,</span> <span class="n">debug</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="n">outputfilename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">outputfilename</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\cffi\ffiplatform.py</span> in <span class="ni">_build</span><span class="nt">(tmpdir, ext, compiler_verbose, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="k">except</span> <span class="p">(</span><span class="n">distutils</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">CompileError</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>             <span class="n">distutils</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">LinkError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">58</span>         <span class="k">raise</span> <span class="n">VerificationError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">return</span> <span class="n">soname</span>
-
-<span class="ne">VerificationError</span>: LinkError: command &#39;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\link.exe&#39; failed with exit code 1104
+<span class="ne">KeyError</span>: &#39;system&#39;
 </pre></div>
 </div>
 </div>
@@ -2331,7 +2190,7 @@ if (force === true) {
 }(window));</script></div>
 </div>
 <section id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lf</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -2387,7 +2246,7 @@ p_agc = -0.12
 </section>
 </section>
 <section id="small-signal-analysis">
-<h1>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this headline">#</a></h1>
+<h1>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
@@ -2660,7 +2519,7 @@ p_agc = -0.12
 </div>
 </div>
 <section id="participation-factors">
-<h2>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this headline">#</a></h2>
+<h2>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">participation</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s1">&#39;Mode 27&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2751,7 +2610,7 @@ Name: Mode 15, dtype: float64
 </div>
 </section>
 <section id="mode-shapes">
-<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this headline">#</a></h2>
+<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">shape2df</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -2765,7 +2624,7 @@ Name: Mode 15, dtype: float64
 </section>
 </section>
 <section id="time-domain-simulation">
-<h1>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this headline">#</a></h1>
+<h1>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.01</span>
