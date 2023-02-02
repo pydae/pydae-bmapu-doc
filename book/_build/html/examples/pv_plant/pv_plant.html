@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>&lt;no title&gt; &#8212; pydae-bmapu</title>
     
@@ -34,7 +34,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -54,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
@@ -233,10 +232,27 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../vscs/vsc_l.html">
-       VSC in PQ mode
+       VSC with coupling inductor
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../modeling.html">
+   Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modeling/parks.html">
+     EASY-RES
+    </a>
    </li>
   </ul>
  </li>
@@ -264,8 +280,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../examples.html">
    Examples
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -568,7 +584,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_20524</span><span class="o">/</span><span class="mf">4228694744.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_22748</span>\<span class="mf">4228694744.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">t_0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ini</span><span class="p">(</span><span class="n">syst</span><span class="o">.</span><span class="n">struct</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t_0</span><span class="p">)</span>
@@ -623,165 +639,88 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="k">def</span> <span class="nf">compile_ir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func_ir</span><span class="p">,</span> <span class="n">lifted</span><span class="o">=</span><span class="p">(),</span> <span class="n">lifted_from</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_bytecode</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd">         assert self.state.func_ir is None</span>
-<span class="ne">--&gt; </span><span class="mi">497</span><span class="sd">         return self._compile_core()</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="sd">     def _compile_ir(self):</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="s2">         assert self.state.func_ir is None</span>
+<span class="ne">--&gt; </span><span class="mi">497</span><span class="s2">         return self._compile_core()</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2">     def _compile_ir(self):</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">                 res = None</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="sd">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">463</span><span class="sd">                     pm.run(self.state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="sd">                     if self.state.cr is not None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd">                         break</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="s2">                 res = None</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="s2">                 try:</span>
+<span class="ne">--&gt; </span><span class="mi">463</span><span class="s2">                     pm.run(self.state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="s2">                     if self.state.cr is not None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2">                         break</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="sd">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="sd">                 if isinstance(pass_inst, CompilerPass):</span>
-<span class="ne">--&gt; </span><span class="mi">341</span><span class="sd">                     self._runPass(idx, pass_inst, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="sd">                 else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="sd">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="s2">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="s2">                 if isinstance(pass_inst, CompilerPass):</span>
+<span class="ne">--&gt; </span><span class="mi">341</span><span class="s2">                     self._runPass(idx, pass_inst, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="s2">                 else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="s2">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">         def _acquire_compile_lock(*args, **kwargs):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             with self:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">                 return func(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">         return _acquire_compile_lock</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s2">         def _acquire_compile_lock(*args, **kwargs):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="s2">             with self:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span><span class="s2">                 return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">         return _acquire_compile_lock</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="s2"> </span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">_runPass</span><span class="nt">(self, index, pss, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">             mutated |= check(pss.run_initialization, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="sd">         with SimpleTimer() as pass_time:</span>
-<span class="ne">--&gt; </span><span class="mi">296</span><span class="sd">             mutated |= check(pss.run_pass, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="sd">         with SimpleTimer() as finalize_time:</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="sd">             mutated |= check(pss.run_finalizer, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="s2">             mutated |= check(pss.run_initialization, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="s2">         with SimpleTimer() as pass_time:</span>
+<span class="ne">--&gt; </span><span class="mi">296</span><span class="s2">             mutated |= check(pss.run_pass, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="s2">         with SimpleTimer() as finalize_time:</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="s2">             mutated |= check(pss.run_finalizer, internal_state)</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">check</span><span class="nt">(func, compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd">         def check(func, compiler_state):</span>
-<span class="ne">--&gt; </span><span class="mi">269</span><span class="sd">             mangled = func(compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd">             if mangled not in (True, False):</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="sd">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="s2">         def check(func, compiler_state):</span>
+<span class="ne">--&gt; </span><span class="mi">269</span><span class="s2">             mangled = func(compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2">             if mangled not in (True, False):</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s2">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\typed_passes.py</span> in <span class="ni">run_pass</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span><span class="sd">                               % (state.func_id.func_name,)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span><span class="sd">             # Type inference</span>
-<span class="ne">--&gt; </span><span class="mi">105</span><span class="sd">             typemap, return_type, calltypes, errs = type_inference_stage(</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span><span class="sd">                 state.typingctx,</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span><span class="sd">                 state.targetctx,</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span><span class="s2">             with targetctx.push_code_library(library):</span>
+<span class="ne">--&gt; </span><span class="mi">392</span><span class="s2">                 lower = lowering.Lower(targetctx, library, fndesc, interp,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="s2">                                        metadata=metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span><span class="s2">                 lower.lower()</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typed_passes.py</span> in <span class="ni">type_inference_stage</span><span class="nt">(typingctx, targetctx, interp, args, return_type, locals, raise_errors)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="sd">         infer.build_constraint()</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">         # return errors in case of partial typing</span>
-<span class="ne">---&gt; </span><span class="mi">83</span><span class="sd">         errs = infer.propagate(raise_errors=raise_errors)</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="sd">         typemap, restype, calltypes = infer.unify(raise_errors=raise_errors)</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="sd"> </span>
+<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">__init__</span><span class="nt">(self, context, library, fndesc, func_ir, metadata)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="s2">         # Subclass initialization</span>
+<span class="ne">---&gt; </span><span class="mi">73</span><span class="s2">         self.init()</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="s2">     def init(self):</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">propagate</span><span class="nt">(self, raise_errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1076</span><span class="sd">             # Errors can appear when the type set is incomplete; only</span>
-<span class="g g-Whitespace">   </span><span class="mi">1077</span><span class="sd">             # raise them when there is no progress anymore.</span>
-<span class="ne">-&gt; </span><span class="mi">1078</span><span class="sd">             errors = self.constraints.propagate(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1079</span><span class="sd">             newtoken = self.get_state_token()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1080</span><span class="sd">             self.debug.propagate_finished()</span>
+<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">init</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span><span class="s2">         super().init()</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span><span class="s2">         # find all singly assigned variables</span>
+<span class="ne">--&gt; </span><span class="mi">339</span><span class="s2">         self._find_singly_assigned_variable()</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span><span class="s2">     @property</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">propagate</span><span class="nt">(self, typeinfer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="sd">                                                    lineno=loc.line):</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="sd">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">155</span><span class="sd">                     constraint(typeinfer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd">                 except ForceLiteralArg as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd">                     errors.append(e)</span>
+<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">_find_singly_assigned_variable</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="s2">                         [defblk] = var_assign_map[var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="s2">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
+<span class="ne">--&gt; </span><span class="mi">379</span><span class="s2">                         assigns = [stmt for stmt in assign_stmts</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="s2">                                    if stmt.target.name == var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="s2">                         if len(assigns) == 1:</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">__call__</span><span class="nt">(self, typeinfer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">817</span><span class="sd">                                                            self.index, valty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span><span class="sd">             if sig is None:</span>
-<span class="ne">--&gt; </span><span class="mi">819</span><span class="sd">                 sig = typeinfer.context.resolve_setitem(targetty, idxty, valty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span><span class="sd">             if sig is None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">821</span><span class="sd">                 raise TypingError(&quot;Cannot resolve setitem: %s[%r] = %s&quot; %</span>
+<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="s2">                         [defblk] = var_assign_map[var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="s2">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
+<span class="ne">--&gt; </span><span class="mi">379</span><span class="s2">                         assigns = [stmt for stmt in assign_stmts</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="s2">                                    if stmt.target.name == var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="s2">                         if len(assigns) == 1:</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typing\context.py</span> in <span class="ni">resolve_setitem</span><span class="nt">(self, target, index, value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span><span class="sd">     def resolve_setitem(self, target, index, value):</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span><span class="sd">         assert isinstance(index, types.Type), index</span>
-<span class="ne">--&gt; </span><span class="mi">331</span><span class="sd">         fnty = self.resolve_value_type(operator.setitem)</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="sd">         sig = fnty.get_call_type(self, (target, index, value), {})</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span><span class="sd">         return sig</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typing\context.py</span> in <span class="ni">resolve_value_type</span><span class="nt">(self, val)</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">381</span>             <span class="n">ty</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">Purpose</span><span class="o">.</span><span class="n">constant</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>             <span class="c1"># Make sure the exception doesn&#39;t hold a reference to the user</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typing\typeof.py</span> in <span class="ni">typeof</span><span class="nt">(val, purpose)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">ty</span> <span class="o">=</span> <span class="n">typeof_impl</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="k">if</span> <span class="n">ty</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">33</span>         <span class="n">msg</span> <span class="o">=</span> <span class="n">_termcolor</span><span class="o">.</span><span class="n">errmsg</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="sa">f</span><span class="s2">&quot;Cannot determine Numba type of </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\errors.py</span> in <span class="ni">errmsg</span><span class="nt">(self, msg)</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span> 
-<span class="g g-Whitespace">    </span><span class="mi">316</span>         <span class="k">def</span> <span class="nf">errmsg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">317</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markup</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_errmsg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span> 
-<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\errors.py</span> in <span class="ni">_markup</span><span class="nt">(self, msg, color, style)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>             <span class="k">if</span> <span class="n">style</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>                 <span class="n">features</span> <span class="o">+=</span> <span class="n">style</span>
-<span class="ne">--&gt; </span><span class="mi">307</span>             <span class="k">with</span> <span class="n">ColorShell</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>                 <span class="k">with</span> <span class="n">reset_terminal</span><span class="p">()</span> <span class="k">as</span> <span class="n">mu</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">mu</span> <span class="o">+=</span> <span class="n">features</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\errors.py</span> in <span class="ni">__init__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> 
-<span class="g g-Whitespace">    </span><span class="mi">224</span>         <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">225</span>             <span class="n">init</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_has_initialized</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\colorama\initialise.py</span> in <span class="ni">init</span><span class="nt">(autoreset, convert, strip, wrap)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">wrapped_stdout</span> <span class="o">=</span> \
-<span class="ne">---&gt; </span><span class="mi">38</span>             <span class="n">wrap_stream</span><span class="p">(</span><span class="n">orig_stdout</span><span class="p">,</span> <span class="n">convert</span><span class="p">,</span> <span class="n">strip</span><span class="p">,</span> <span class="n">autoreset</span><span class="p">,</span> <span class="n">wrap</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>         <span class="n">wrapped_stderr</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\colorama\initialise.py</span> in <span class="ni">wrap_stream</span><span class="nt">(stream, convert, strip, autoreset, wrap)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">def</span> <span class="nf">wrap_stream</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">convert</span><span class="p">,</span> <span class="n">strip</span><span class="p">,</span> <span class="n">autoreset</span><span class="p">,</span> <span class="n">wrap</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="k">if</span> <span class="n">wrap</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">76</span>         <span class="n">wrapper</span> <span class="o">=</span> <span class="n">AnsiToWin32</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>             <span class="n">convert</span><span class="o">=</span><span class="n">convert</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="n">strip</span><span class="p">,</span> <span class="n">autoreset</span><span class="o">=</span><span class="n">autoreset</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="k">if</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">should_wrap</span><span class="p">():</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\colorama\ansitowin32.py</span> in <span class="ni">__init__</span><span class="nt">(self, wrapped, convert, strip, autoreset)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>         <span class="c1"># (e.g. Cygwin Terminal). In this case it&#39;s up to the terminal</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>         <span class="c1"># to support the ANSI codes.</span>
-<span class="ne">---&gt; </span><span class="mi">96</span>         <span class="n">conversion_supported</span> <span class="o">=</span> <span class="n">on_windows</span> <span class="ow">and</span> <span class="n">winapi_test</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> 
-<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="c1"># should we strip ANSI sequences from our output?</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\colorama\win32.py</span> in <span class="ni">winapi_test</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> 
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">def</span> <span class="nf">winapi_test</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">99</span>         <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">_winapi_test</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>                    <span class="p">(</span><span class="n">_GetStdHandle</span><span class="p">(</span><span class="n">STDOUT</span><span class="p">),</span> <span class="n">_GetStdHandle</span><span class="p">(</span><span class="n">STDERR</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\colorama\win32.py</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> 
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">def</span> <span class="nf">winapi_test</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">99</span>         <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">_winapi_test</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>                    <span class="p">(</span><span class="n">_GetStdHandle</span><span class="p">(</span><span class="n">STDOUT</span><span class="p">),</span> <span class="n">_GetStdHandle</span><span class="p">(</span><span class="n">STDERR</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\colorama\win32.py</span> in <span class="ni">_winapi_test</span><span class="nt">(handle)</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="k">def</span> <span class="nf">_winapi_test</span><span class="p">(</span><span class="n">handle</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="n">csbi</span> <span class="o">=</span> <span class="n">CONSOLE_SCREEN_BUFFER_INFO</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">94</span>         <span class="n">success</span> <span class="o">=</span> <span class="n">_GetConsoleScreenBufferInfo</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>             <span class="n">handle</span><span class="p">,</span> <span class="n">byref</span><span class="p">(</span><span class="n">csbi</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">success</span><span class="p">)</span>
+<span class="nn">~\anaconda3\lib\site-packages\numba\core\ir.py</span> in <span class="ni">find_insts</span><span class="nt">(self, cls)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1225</span><span class="s2">         for inst in self.body:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1226</span><span class="s2">             if isinstance(inst, cls):</span>
+<span class="ne">-&gt; </span><span class="mi">1227</span><span class="s2">                 yield inst</span>
+<span class="g g-Whitespace">   </span><span class="mi">1228</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1229</span><span class="s2">     def find_variable_assignment(self, name):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

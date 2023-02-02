@@ -28,7 +28,7 @@ import smib_vsc_pq
 
 # ## Steady state
 
-# In[4]:
+# In[11]:
 
 
 model = smib_vsc_pq.model()

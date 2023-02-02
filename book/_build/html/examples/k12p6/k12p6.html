@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Kundur example 12.6 &#8212; pydae-bmapu</title>
     
@@ -34,7 +34,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -56,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="NTS base case" href="../nts_base/nts_base.html" />
     <link rel="prev" title="SMIB" href="../smib/smib.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
@@ -235,10 +234,27 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../vscs/vsc_l.html">
-       VSC in PQ mode
+       VSC with coupling inductor
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../modeling.html">
+   Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modeling/parks.html">
+     EASY-RES
+    </a>
    </li>
   </ul>
  </li>
@@ -266,8 +282,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../examples.html">
    Examples
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -589,7 +605,7 @@ title="Print to PDF"
               <div>
                 
   <section id="kundur-example-12-6">
-<h1>Kundur example 12.6<a class="headerlink" href="#kundur-example-12-6" title="Permalink to this heading">#</a></h1>
+<h1>Kundur example 12.6<a class="headerlink" href="#kundur-example-12-6" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
@@ -608,17 +624,17 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_23504</span><span class="o">/</span><span class="mf">3431721230.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_34656</span>\<span class="mf">3431721230.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6_pss.json&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">__init__</span><span class="nt">(self, data_input)</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;transformers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span> 
-<span class="ne">---&gt; </span><span class="mi">65</span>         <span class="bp">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buses</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;buses&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;transformers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> 
+<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="bp">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buses</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;buses&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: &#39;system&#39;
 </pre></div>
@@ -2203,7 +2219,7 @@ if (force === true) {
 </div>
 </div>
 <section id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this heading">#</a></h2>
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">k12p6</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
@@ -2281,9 +2297,9 @@ G4: P = 700.0   Q = 199.0
 </div>
 </section>
 <section id="small-signal-analysis">
-<h2>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this heading">#</a></h2>
+<h2>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this headline">#</a></h2>
 <section id="eigenvalues">
-<h3>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this heading">#</a></h3>
+<h3>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -2704,7 +2720,7 @@ G4: P = 700.0   Q = 199.0
 </div>
 </section>
 <section id="participation-factors">
-<h3>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this heading">#</a></h3>
+<h3>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">participation</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s1">&#39;Mode 13&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2773,7 +2789,7 @@ Name: Mode 13, dtype: float64
 </section>
 </section>
 <section id="mode-shapes">
-<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this heading">#</a></h2>
+<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">shape2df</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Mode 14&#39;</span><span class="p">][[</span><span class="sa">f</span><span class="s1">&#39;omega_</span><span class="si">{</span><span class="n">it</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]]</span>
@@ -2802,7 +2818,7 @@ Name: Mode 14, dtype: object
 </div>
 </section>
 <section id="time-domain-simulation">
-<h2>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this heading">#</a></h2>
+<h2>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">k12p6</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>

@@ -696,6 +696,7 @@ out[6] = y[4]*(p[16]*y[4] + y[0]*sin(x[0] - y[1])) + y[5]*(p[16]*y[5] + y[0]*cos
 out[7] = y[8];
 out[8] = y[10];
 out[9] = u[6];
+out[10] = x[14];
 
 }
 void de_jac_ini_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
@@ -1905,6 +1906,7 @@ void de_Hx_run_up_eval(double *out,double *x,double *y,double *u,double *p,doubl
 
 void de_Hx_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
 
+out[174] = 1.0;
 
 }
 
@@ -2028,6 +2030,7 @@ void sp_Hx_run_up_eval(double *out,double *x,double *y,double *u,double *p,doubl
 
 void sp_Hx_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
 
+out[1] = 1.0;
 
 }
 

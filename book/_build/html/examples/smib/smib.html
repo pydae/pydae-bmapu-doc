@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>SMIB &#8212; pydae-bmapu</title>
     
@@ -34,7 +34,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -56,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Kundur example 12.6" href="../k12p6/k12p6.html" />
     <link rel="prev" title="Examples" href="../../examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
@@ -637,10 +636,10 @@ title="Print to PDF"
               <div>
                 
   <section id="smib">
-<h1>SMIB<a class="headerlink" href="#smib" title="Permalink to this heading">#</a></h1>
+<h1>SMIB<a class="headerlink" href="#smib" title="Permalink to this headline">#</a></h1>
 <p>Synchronous Machine Infinite Bus (SMIB) system</p>
 <section id="system-building">
-<h2>System building<a class="headerlink" href="#system-building" title="Permalink to this heading">#</a></h2>
+<h2>System building<a class="headerlink" href="#system-building" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
@@ -649,7 +648,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="system-data">
-<h3>System data<a class="headerlink" href="#system-data" title="Permalink to this heading">#</a></h3>
+<h3>System data<a class="headerlink" href="#system-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -677,7 +676,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="system-generation-and-compilation">
-<h3>System generation and compilation<a class="headerlink" href="#system-generation-and-compilation" title="Permalink to this heading">#</a></h3>
+<h3>System generation and compilation<a class="headerlink" href="#system-generation-and-compilation" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -692,7 +691,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="system-analysis-and-simulation">
-<h2>System analysis and simulation<a class="headerlink" href="#system-analysis-and-simulation" title="Permalink to this heading">#</a></h2>
+<h2>System analysis and simulation<a class="headerlink" href="#system-analysis-and-simulation" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -2256,7 +2255,7 @@ if (force === true) {
 }(window));</script></div>
 </div>
 <section id="initialization">
-<h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this heading">#</a></h3>
+<h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">smib</span>
@@ -2326,7 +2325,7 @@ p_agc =  0.00
 </div>
 </section>
 <section id="small-signal-analysis">
-<h3>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this heading">#</a></h3>
+<h3>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -2479,7 +2478,7 @@ p_agc =  0.00
 </div>
 </section>
 <section id="time-domain-simulation">
-<h3>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this heading">#</a></h3>
+<h3>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">smib</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>

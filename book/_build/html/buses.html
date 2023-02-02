@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Buses &#8212; pydae-bmapu</title>
     
@@ -34,7 +34,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -56,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Lines" href="lines.html" />
     <link rel="prev" title="Models" href="models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
+    <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
@@ -235,10 +234,27 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="vscs/vsc_l.html">
-       VSC in PQ mode
+       VSC with coupling inductor
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modeling.html">
+   Modeling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modeling/parks.html">
+     EASY-RES
+    </a>
    </li>
   </ul>
  </li>
@@ -266,8 +282,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="examples.html">
    Examples
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -469,7 +485,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="buses">
-<h1>Buses<a class="headerlink" href="#buses" title="Permalink to this heading">#</a></h1>
+<h1>Buses<a class="headerlink" href="#buses" title="Permalink to this headline">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;buses&quot;</span><span class="p">:[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;P_W&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;Q_var&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;U_kV&quot;</span><span class="p">:</span><span class="mf">20.0</span><span class="p">},</span>
          <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;P_W&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;Q_var&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;U_kV&quot;</span><span class="p">:</span><span class="mf">20.0</span><span class="p">}</span>
         <span class="p">],</span>
