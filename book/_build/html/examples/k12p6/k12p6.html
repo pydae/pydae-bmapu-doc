@@ -167,6 +167,11 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../avrs/kundur_tgr.html">
+       Kundur TGR AVR equivalent
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../avrs/ntsst1.html">
        ST1 equivalent
       </a>
@@ -617,6 +622,9 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6_pss.json&#39;</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">uz_jacs</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+
 <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -624,19 +632,47 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_34656</span>\<span class="mf">3431721230.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;k12p6_pss.json&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_3192</span>\<span class="mf">21735003.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">grid</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">grid</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;k12p6&#39;</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">__init__</span><span class="nt">(self, data_input)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;transformers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> 
-<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="bp">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buses</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;buses&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;lines&#39;</span><span class="p">]</span>
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">build</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span>         <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: name is not provided.&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">490</span>         <span class="bp">self</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> 
 
-<span class="ne">KeyError</span>: &#39;system&#39;
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\bmapu_builder.py</span> in <span class="ni">construct</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">424</span>         <span class="c1">#grid = bmapu_builder.bmapu(data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>         <span class="k">if</span> <span class="s1">&#39;syns&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">426</span>             <span class="n">add_syns</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="k">if</span> <span class="s1">&#39;vscs&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>             <span class="n">add_vscs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\syns\syns.py</span> in <span class="ni">add_syns</span><span class="nt">(grid)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>             <span class="n">grid</span><span class="o">.</span><span class="n">dae</span><span class="p">[</span><span class="s1">&#39;xy_0_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">v_f</span><span class="p">):</span><span class="mf">1.5</span><span class="p">})</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="k">if</span> <span class="s1">&#39;gov&#39;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>             <span class="n">add_gov</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">dae</span><span class="p">,</span><span class="n">item</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>             <span class="n">grid</span><span class="o">.</span><span class="n">dae</span><span class="p">[</span><span class="s1">&#39;u_ini_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p_m</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>             <span class="n">grid</span><span class="o">.</span><span class="n">dae</span><span class="p">[</span><span class="s1">&#39;u_run_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p_m</span><span class="p">))</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\govs\govs.py</span> in <span class="ni">add_gov</span><span class="nt">(dae, syn_data, name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="k">if</span> <span class="n">syn_data</span><span class="p">[</span><span class="s1">&#39;gov&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;tgov1&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>         <span class="n">tgov1</span><span class="p">(</span><span class="n">dae</span><span class="p">,</span><span class="n">syn_data</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="k">if</span> <span class="n">syn_data</span><span class="p">[</span><span class="s1">&#39;gov&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;agov1&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="n">agov1</span><span class="p">(</span><span class="n">dae</span><span class="p">,</span><span class="n">syn_data</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pydae\bmapu\govs\tgov1.py</span> in <span class="ni">tgov1</span><span class="nt">(dae, syn_data, name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="n">dae</span><span class="p">[</span><span class="s1">&#39;params_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">T_1</span><span class="p">):</span><span class="n">gov_data</span><span class="p">[</span><span class="s1">&#39;T_1&#39;</span><span class="p">]})</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span>     <span class="n">dae</span><span class="p">[</span><span class="s1">&#39;params_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">T_2</span><span class="p">):</span><span class="n">gov_data</span><span class="p">[</span><span class="s1">&#39;T_2&#39;</span><span class="p">]})</span>
+<span class="ne">---&gt; </span><span class="mi">64</span>     <span class="n">dae</span><span class="p">[</span><span class="s1">&#39;params_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">T_3</span><span class="p">):</span><span class="n">gov_data</span><span class="p">[</span><span class="s1">&#39;T_3&#39;</span><span class="p">]})</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="n">dae</span><span class="p">[</span><span class="s1">&#39;params_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">D_t</span><span class="p">):</span><span class="n">gov_data</span><span class="p">[</span><span class="s1">&#39;D_t&#39;</span><span class="p">]})</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">dae</span><span class="p">[</span><span class="s1">&#39;params_dict&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">K_sec</span><span class="p">):</span><span class="n">gov_data</span><span class="p">[</span><span class="s1">&#39;K_sec&#39;</span><span class="p">]})</span>
+
+<span class="ne">KeyError</span>: &#39;T_3&#39;
 </pre></div>
 </div>
 </div>
@@ -2217,6 +2253,178 @@ if (force === true) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypingError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_27120</span>\<span class="mf">3455063561.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">k12p6</span>
+
+<span class="ne">c</span>:\Users\jmmau\workspace\pydae-bmapu-doc\book\examples\k12p6\k12p6.py in &lt;module&gt;
+<span class="g g-Whitespace">   </span><span class="mi">1774</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1775</span> <span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span><span class="p">(</span><span class="s2">&quot;(float64[:],float64[:],float64[:],float64[:],float64[:],float64)&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1776</span> <span class="k">def</span> <span class="nf">sp_Fu_run_eval</span><span class="p">(</span><span class="n">jac</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">Dt</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1777</span>     <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1778</span><span class="s1">     Computes the dense full initialization jacobian:</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span><span class="s1">             with typeinfer.register_dispatcher(disp):</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span><span class="s1">                 for sig in sigs:</span>
+<span class="ne">--&gt; </span><span class="mi">219</span><span class="s1">                     disp.compile(sig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span><span class="s1">                 disp.disable_compile()</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span><span class="s1">         return disp</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">compile</span><span class="nt">(self, sig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span><span class="s1">                 with ev.trigger_event(&quot;numba:compile&quot;, data=ev_details):</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span><span class="s1">                     try:</span>
+<span class="ne">--&gt; </span><span class="mi">965</span><span class="s1">                         cres = self._compiler.compile(args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span><span class="s1">                     except errors.ForceLiteralArg as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">967</span><span class="s1">                         def folded(args, kws):</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">compile</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span><span class="s1">             return retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="s1">         else:</span>
+<span class="ne">--&gt; </span><span class="mi">129</span><span class="s1">             raise retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span><span class="s1">     def _compile_cached(self, args, return_type):</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">_compile_cached</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="s1">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">139</span><span class="s1">             retval = self._compile_core(args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="s1">         except errors.TypingError as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="s1">             self._failed_cache[key] = e</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">_compile_core</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="s1">         impl = self._get_implementation(args, </span><span class="si">{}</span><span class="s1">)</span>
+<span class="ne">--&gt; </span><span class="mi">152</span><span class="s1">         cres = compiler.compile_extra(self.targetdescr.typing_context,</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="s1">                                       self.targetdescr.target_context,</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="s1">                                       impl,</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
+<span class="g g-Whitespace">    </span><span class="mi">691</span><span class="s1">     pipeline = pipeline_class(typingctx, targetctx, library,</span>
+<span class="g g-Whitespace">    </span><span class="mi">692</span><span class="s1">                               args, return_type, flags, locals)</span>
+<span class="ne">--&gt; </span><span class="mi">693</span><span class="s1">     return pipeline.compile_extra(func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">694</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">695</span><span class="s1"> </span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(self, func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span><span class="s1">         self.state.lifted = ()</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span><span class="s1">         self.state.lifted_from = None</span>
+<span class="ne">--&gt; </span><span class="mi">429</span><span class="s1">         return self._compile_bytecode()</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="s1">     def compile_ir(self, func_ir, lifted=(), lifted_from=None):</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_bytecode</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span><span class="s1">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="s1">         assert self.state.func_ir is None</span>
+<span class="ne">--&gt; </span><span class="mi">497</span><span class="s1">         return self._compile_core()</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s1">     def _compile_ir(self):</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span><span class="s1">                     self.state.status.fail_reason = e</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span><span class="s1">                     if is_final_pipeline:</span>
+<span class="ne">--&gt; </span><span class="mi">476</span><span class="s1">                         raise e</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span><span class="s1">             else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span><span class="s1">                 raise CompilerError(&quot;All available pipelines exhausted&quot;)</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="s1">                 res = None</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="s1">                 try:</span>
+<span class="ne">--&gt; </span><span class="mi">463</span><span class="s1">                     pm.run(self.state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="s1">                     if self.state.cr is not None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s1">                         break</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span><span class="s1">                     (self.pipeline_name, pass_desc)</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span><span class="s1">                 patched_exception = self._patch_error(msg, e)</span>
+<span class="ne">--&gt; </span><span class="mi">353</span><span class="s1">                 raise patched_exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="s1">     def dependency_analysis(self):</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="s1">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="s1">                 if isinstance(pass_inst, CompilerPass):</span>
+<span class="ne">--&gt; </span><span class="mi">341</span><span class="s1">                     self._runPass(idx, pass_inst, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="s1">                 else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="s1">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s1">         def _acquire_compile_lock(*args, **kwargs):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="s1">             with self:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span><span class="s1">                 return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s1">         return _acquire_compile_lock</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="s1"> </span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">_runPass</span><span class="nt">(self, index, pss, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="s1">             mutated |= check(pss.run_initialization, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="s1">         with SimpleTimer() as pass_time:</span>
+<span class="ne">--&gt; </span><span class="mi">296</span><span class="s1">             mutated |= check(pss.run_pass, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="s1">         with SimpleTimer() as finalize_time:</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="s1">             mutated |= check(pss.run_finalizer, internal_state)</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">check</span><span class="nt">(func, compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="s1">         def check(func, compiler_state):</span>
+<span class="ne">--&gt; </span><span class="mi">269</span><span class="s1">             mangled = func(compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s1">             if mangled not in (True, False):</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s1">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typed_passes.py</span> in <span class="ni">run_pass</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span><span class="s1">                               % (state.func_id.func_name,)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span><span class="s1">             # Type inference</span>
+<span class="ne">--&gt; </span><span class="mi">105</span><span class="s1">             typemap, return_type, calltypes, errs = type_inference_stage(</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span><span class="s1">                 state.typingctx,</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span><span class="s1">                 state.targetctx,</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typed_passes.py</span> in <span class="ni">type_inference_stage</span><span class="nt">(typingctx, targetctx, interp, args, return_type, locals, raise_errors)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s1">             infer.seed_type(k, v)</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span><span class="s1"> </span>
+<span class="ne">---&gt; </span><span class="mi">81</span><span class="s1">         infer.build_constraint()</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s1">         # return errors in case of partial typing</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s1">         errs = infer.propagate(raise_errors=raise_errors)</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">build_constraint</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1037</span><span class="s1">         for blk in self.blocks.values():</span>
+<span class="g g-Whitespace">   </span><span class="mi">1038</span><span class="s1">             for inst in blk.body:</span>
+<span class="ne">-&gt; </span><span class="mi">1039</span><span class="s1">                 self.constrain_statement(inst)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1040</span><span class="s1"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span><span class="s1">     def return_types_from_partial(self):</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">constrain_statement</span><span class="nt">(self, inst)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span><span class="s1">     def constrain_statement(self, inst):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span><span class="s1">         if isinstance(inst, ir.Assign):</span>
+<span class="ne">-&gt; </span><span class="mi">1386</span><span class="s1">             self.typeof_assign(inst)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span><span class="s1">         elif isinstance(inst, ir.SetItem):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span><span class="s1">             self.typeof_setitem(inst)</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">typeof_assign</span><span class="nt">(self, inst)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1457</span><span class="s1">                                               src=value.name, loc=inst.loc))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1458</span><span class="s1">         elif isinstance(value, (ir.Global, ir.FreeVar)):</span>
+<span class="ne">-&gt; </span><span class="mi">1459</span><span class="s1">             self.typeof_global(inst, inst.target, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span><span class="s1">         elif isinstance(value, ir.Arg):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span><span class="s1">             self.typeof_arg(inst, inst.target, value)</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">typeof_global</span><span class="nt">(self, inst, target, gvar)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1557</span><span class="s1">     def typeof_global(self, inst, target, gvar):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span><span class="s1">         try:</span>
+<span class="ne">-&gt; </span><span class="mi">1559</span><span class="s1">             typ = self.resolve_value_type(inst, gvar.value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1560</span><span class="s1">         except TypingError as e:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1561</span><span class="s1">             if (gvar.name == self.func_id.func_name</span>
+
+<span class="nn">c:\Users\jmmau\anaconda3\lib\site-packages\numba\core\typeinfer.py</span> in <span class="ni">resolve_value_type</span><span class="nt">(self, inst, val)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1478</span><span class="s1">         except ValueError as e:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1479</span><span class="s1">             msg = str(e)</span>
+<span class="ne">-&gt; </span><span class="mi">1480</span><span class="s1">         raise TypingError(msg, loc=inst.loc)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1481</span><span class="s1"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1482</span><span class="s1">     def typeof_arg(self, inst, target, arg):</span>
+
+<span class="nn">TypingError: Failed</span> in <span class="ni">nopython mode pipeline </span><span class="nt">(step: nopython frontend)</span>
+<span class="ne">NameError</span>: name &#39;sp_Fu_run_up_eval&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <section id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">#</a></h2>
@@ -2272,25 +2480,11 @@ G4: P = 700.0   Q = 199.0
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_8600</span><span class="o">/</span><span class="mf">2657834451.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_27120</span>\<span class="mf">2657834451.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ssa</span><span class="o">.</span><span class="n">ss_eval</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\pydae\ssa.py</span> in <span class="ni">ss_eval</span><span class="nt">(model)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="s1">&#39;&#39;&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="s1"> </span>
-<span class="ne">--&gt; </span><span class="mi">142</span><span class="s1">     model.full_jacs_eval()</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="s1"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="s1">     Fx = model.Fx</span>
-
-<span class="nn">~\workspace\pydae-bmapu-doc\book\examples\k12p6\k12p6.py</span> in <span class="ni">full_jacs_eval</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span><span class="s1"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span><span class="s1">         sp_jac_run = self.sp_jac_run</span>
-<span class="ne">--&gt; </span><span class="mi">800</span><span class="s1">         sp_Fu = self.sp_Fu_run</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span><span class="s1">         sp_Gu = self.sp_Gu_run</span>
-<span class="g g-Whitespace">    </span><span class="mi">802</span><span class="s1">         sp_Hx = self.sp_Hx_run</span>
-
-<span class="ne">AttributeError</span>: &#39;model&#39; object has no attribute &#39;sp_Fu_run&#39;
+<span class="ne">NameError</span>: name &#39;model&#39; is not defined
 </pre></div>
 </div>
 </div>

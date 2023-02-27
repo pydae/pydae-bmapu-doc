@@ -54,7 +54,6 @@ sp_jac_trap_num_eval= jacs.lib.sp_jac_trap_num_eval
 
 
 
-
 import json
 
 sin = np.sin
@@ -82,15 +81,15 @@ class model:
         self.imax = 100 
         self.N_x = 53
         self.N_y = 56 
-        self.N_z = 55 
+        self.N_z = 63 
         self.N_store = 100000 
         self.params_list = ['S_base', 'g_1_5', 'b_1_5', 'bs_1_5', 'g_2_6', 'b_2_6', 'bs_2_6', 'g_3_11', 'b_3_11', 'bs_3_11', 'g_4_10', 'b_4_10', 'bs_4_10', 'g_5_6', 'b_5_6', 'bs_5_6', 'g_6_7', 'b_6_7', 'bs_6_7', 'g_7_8', 'b_7_8', 'bs_7_8', 'g_8_9', 'b_8_9', 'bs_8_9', 'g_9_10', 'b_9_10', 'bs_9_10', 'g_10_11', 'b_10_11', 'bs_10_11', 'U_1_n', 'U_2_n', 'U_3_n', 'U_4_n', 'U_5_n', 'U_6_n', 'U_7_n', 'U_8_n', 'U_9_n', 'U_10_n', 'U_11_n', 'S_n_1', 'Omega_b_1', 'H_1', 'T1d0_1', 'T1q0_1', 'X_d_1', 'X_q_1', 'X1d_1', 'X1q_1', 'D_1', 'R_a_1', 'K_delta_1', 'K_sec_1', 'K_a_1', 'K_ai_1', 'T_r_1', 'T_a_1', 'T_b_1', 'E_fmin_1', 'E_fmax_1', 'Droop_1', 'T_gov_1_1', 'T_gov_2_1', 'T_gov_3_1', 'K_imw_1', 'omega_ref_1', 'T_wo_1', 'T_1_1', 'T_2_1', 'T_3_1', 'T_4_1', 'K_stab_1', 'V_lim_1', 'S_n_2', 'Omega_b_2', 'H_2', 'T1d0_2', 'T1q0_2', 'X_d_2', 'X_q_2', 'X1d_2', 'X1q_2', 'D_2', 'R_a_2', 'K_delta_2', 'K_sec_2', 'K_a_2', 'K_ai_2', 'T_r_2', 'T_a_2', 'T_b_2', 'E_fmin_2', 'E_fmax_2', 'Droop_2', 'T_gov_1_2', 'T_gov_2_2', 'T_gov_3_2', 'K_imw_2', 'omega_ref_2', 'T_wo_2', 'T_1_2', 'T_2_2', 'T_3_2', 'T_4_2', 'K_stab_2', 'V_lim_2', 'S_n_3', 'Omega_b_3', 'H_3', 'T1d0_3', 'T1q0_3', 'X_d_3', 'X_q_3', 'X1d_3', 'X1q_3', 'D_3', 'R_a_3', 'K_delta_3', 'K_sec_3', 'K_a_3', 'K_ai_3', 'T_r_3', 'T_a_3', 'T_b_3', 'E_fmin_3', 'E_fmax_3', 'Droop_3', 'T_gov_1_3', 'T_gov_2_3', 'T_gov_3_3', 'K_imw_3', 'omega_ref_3', 'T_wo_3', 'T_1_3', 'T_2_3', 'T_3_3', 'T_4_3', 'K_stab_3', 'V_lim_3', 'S_n_4', 'Omega_b_4', 'H_4', 'T1d0_4', 'T1q0_4', 'X_d_4', 'X_q_4', 'X1d_4', 'X1q_4', 'D_4', 'R_a_4', 'K_delta_4', 'K_sec_4', 'K_a_4', 'K_ai_4', 'T_r_4', 'T_a_4', 'T_b_4', 'E_fmin_4', 'E_fmax_4', 'Droop_4', 'T_gov_1_4', 'T_gov_2_4', 'T_gov_3_4', 'K_imw_4', 'omega_ref_4', 'T_wo_4', 'T_1_4', 'T_2_4', 'T_3_4', 'T_4_4', 'K_stab_4', 'V_lim_4', 'K_p_agc', 'K_i_agc', 'K_xif'] 
         self.params_values_list  = [100000000.0, 0.0, -60.0, 0.0, 0.0, -60.0, 0.0, 0.0, -60.0, 0.0, 0.0, -60.0, 0.0, 3.96039603960396, -39.603960396039604, 0.027772499999999995, 9.900990099009901, -99.00990099009901, 0.011108999999999999, 0.9000900090008999, -9.000900090009, 0.12219899999999999, 0.9000900090008999, -9.000900090009, 0.12219899999999999, 9.900990099009901, -99.00990099009901, 0.011108999999999999, 3.96039603960396, -39.603960396039604, 0.027772499999999995, 20000.0, 20000.0, 20000.0, 20000.0, 230000.0, 230000.0, 230000.0, 230000.0, 230000.0, 230000.0, 230000.0, 900000000.0, 314.1592653589793, 6.5, 8.0, 0.4, 1.8, 1.7, 0.3, 0.55, 1.0, 0.0025, 0.0, 0.001, 200, 1e-06, 0.01, 1, 10, -5, 10.0, 0.05, 1.0, 2.0, 10.0, 1e-06, 1.0, 10.0, 0.05, 0.02, 3.0, 5.4, 20, 0.1, 900000000.0, 314.1592653589793, 6.5, 8.0, 0.4, 1.8, 1.7, 0.3, 0.55, 1.0, 0.0025, 0.0, 0.001, 200, 1e-06, 0.01, 1, 10, -5, 10.0, 0.05, 1.0, 2.0, 10.0, 1e-06, 1.0, 10.0, 0.05, 0.02, 3.0, 5.4, 20, 0.1, 900000000.0, 314.1592653589793, 6.175, 8.0, 0.4, 1.8, 1.7, 0.3, 0.55, 1.0, 0.0025, 0.01, 0.001, 200, 1e-06, 0.01, 1, 10, -5, 10.0, 0.05, 1.0, 2.0, 10.0, 0.0, 1.0, 10.0, 0.05, 0.02, 3.0, 5.4, 20, 0.1, 900000000.0, 314.1592653589793, 6.175, 8.0, 0.4, 1.8, 1.7, 0.3, 0.55, 1.0, 0.0025, 0.0, 0.001, 200, 1e-06, 0.01, 1, 10, -5, 10.0, 0.05, 1.0, 2.0, 10.0, 1e-06, 1.0, 10.0, 0.05, 0.02, 3.0, 5.4, 20, 0.1, 0.01, 0.0001, 0.0] 
         self.inputs_ini_list = ['P_1', 'Q_1', 'P_2', 'Q_2', 'P_3', 'Q_3', 'P_4', 'Q_4', 'P_5', 'Q_5', 'P_6', 'Q_6', 'P_7', 'Q_7', 'P_8', 'Q_8', 'P_9', 'Q_9', 'P_10', 'Q_10', 'P_11', 'Q_11', 'v_ref_1', 'p_c_1', 'p_r_1', 'v_ref_2', 'p_c_2', 'p_r_2', 'v_ref_3', 'p_c_3', 'p_r_3', 'v_ref_4', 'p_c_4', 'p_r_4'] 
-        self.inputs_ini_values_list  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -967000000.0, 100000000.0, 0.0, 0.0, -1767000000.0, 250000000.0, 0.0, 0.0, 0.0, 0.0, 1.03, 0.8, 0.0, 1.01, 0.8, 0.0, 1.03, 0.8, 0.0, 1.01, 0.8, 0.0] 
+        self.inputs_ini_values_list  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -967000000.0, 100000000.0, 0.0, 0.0, -1767000000.0, 250000000.0, 0.0, 0.0, 0.0, 0.0, 1.03, 0.8, 0.0, 1.01, 0.8, 0.0, 1.03, 0.0, 0.0, 1.01, 0.8, 0.0] 
         self.inputs_run_list = ['P_1', 'Q_1', 'P_2', 'Q_2', 'P_3', 'Q_3', 'P_4', 'Q_4', 'P_5', 'Q_5', 'P_6', 'Q_6', 'P_7', 'Q_7', 'P_8', 'Q_8', 'P_9', 'Q_9', 'P_10', 'Q_10', 'P_11', 'Q_11', 'v_ref_1', 'p_c_1', 'p_r_1', 'v_ref_2', 'p_c_2', 'p_r_2', 'v_ref_3', 'p_c_3', 'p_r_3', 'v_ref_4', 'p_c_4', 'p_r_4'] 
-        self.inputs_run_values_list = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -967000000.0, 100000000.0, 0.0, 0.0, -1767000000.0, 250000000.0, 0.0, 0.0, 0.0, 0.0, 1.03, 0.8, 0.0, 1.01, 0.8, 0.0, 1.03, 0.8, 0.0, 1.01, 0.8, 0.0] 
-        self.outputs_list = ['V_1', 'V_2', 'V_3', 'V_4', 'V_5', 'V_6', 'V_7', 'V_8', 'V_9', 'V_10', 'V_11', 'p_line_1_5', 'q_line_1_5', 'p_line_5_1', 'q_line_5_1', 'p_line_2_6', 'q_line_2_6', 'p_line_6_2', 'q_line_6_2', 'p_line_3_11', 'q_line_3_11', 'p_line_11_3', 'q_line_11_3', 'p_line_4_10', 'q_line_4_10', 'p_line_10_4', 'q_line_10_4', 'p_line_5_6', 'q_line_5_6', 'p_line_6_5', 'q_line_6_5', 'p_line_6_7', 'q_line_6_7', 'p_line_7_6', 'q_line_7_6', 'p_line_7_8', 'q_line_7_8', 'p_line_8_7', 'q_line_8_7', 'p_line_8_9', 'q_line_8_9', 'p_line_9_8', 'q_line_9_8', 'p_line_9_10', 'q_line_9_10', 'p_line_10_9', 'q_line_10_9', 'p_line_10_11', 'q_line_10_11', 'p_line_11_10', 'q_line_11_10', 'p_e_1', 'p_e_2', 'p_e_3', 'p_e_4'] 
+        self.inputs_run_values_list = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -967000000.0, 100000000.0, 0.0, 0.0, -1767000000.0, 250000000.0, 0.0, 0.0, 0.0, 0.0, 1.03, 0.8, 0.0, 1.01, 0.8, 0.0, 1.03, 0.0, 0.0, 1.01, 0.8, 0.0] 
+        self.outputs_list = ['V_1', 'V_2', 'V_3', 'V_4', 'V_5', 'V_6', 'V_7', 'V_8', 'V_9', 'V_10', 'V_11', 'p_line_1_5', 'q_line_1_5', 'p_line_5_1', 'q_line_5_1', 'p_line_2_6', 'q_line_2_6', 'p_line_6_2', 'q_line_6_2', 'p_line_3_11', 'q_line_3_11', 'p_line_11_3', 'q_line_11_3', 'p_line_4_10', 'q_line_4_10', 'p_line_10_4', 'q_line_10_4', 'p_line_5_6', 'q_line_5_6', 'p_line_6_5', 'q_line_6_5', 'p_line_6_7', 'q_line_6_7', 'p_line_7_6', 'q_line_7_6', 'p_line_7_8', 'q_line_7_8', 'p_line_8_7', 'q_line_8_7', 'p_line_8_9', 'q_line_8_9', 'p_line_9_8', 'q_line_9_8', 'p_line_9_10', 'q_line_9_10', 'p_line_10_9', 'q_line_10_9', 'p_line_10_11', 'q_line_10_11', 'p_line_11_10', 'q_line_11_10', 'p_e_1', 'v_f_1', 'p_m_1', 'p_e_2', 'v_f_2', 'p_m_2', 'p_e_3', 'v_f_3', 'p_m_3', 'p_e_4', 'v_f_4', 'p_m_4'] 
         self.x_list = ['delta_1', 'omega_1', 'e1q_1', 'e1d_1', 'v_r_1', 'x_ab_1', 'xi_v_1', 'x_gov_1_1', 'x_gov_2_1', 'xi_imw_1', 'x_wo_1', 'x_12_1', 'x_34_1', 'delta_2', 'omega_2', 'e1q_2', 'e1d_2', 'v_r_2', 'x_ab_2', 'xi_v_2', 'x_gov_1_2', 'x_gov_2_2', 'xi_imw_2', 'x_wo_2', 'x_12_2', 'x_34_2', 'delta_3', 'omega_3', 'e1q_3', 'e1d_3', 'v_r_3', 'x_ab_3', 'xi_v_3', 'x_gov_1_3', 'x_gov_2_3', 'xi_imw_3', 'x_wo_3', 'x_12_3', 'x_34_3', 'delta_4', 'omega_4', 'e1q_4', 'e1d_4', 'v_r_4', 'x_ab_4', 'xi_v_4', 'x_gov_1_4', 'x_gov_2_4', 'xi_imw_4', 'x_wo_4', 'x_12_4', 'x_34_4', 'xi_freq'] 
         self.y_run_list = ['V_1', 'theta_1', 'V_2', 'theta_2', 'V_3', 'theta_3', 'V_4', 'theta_4', 'V_5', 'theta_5', 'V_6', 'theta_6', 'V_7', 'theta_7', 'V_8', 'theta_8', 'V_9', 'theta_9', 'V_10', 'theta_10', 'V_11', 'theta_11', 'i_d_1', 'i_q_1', 'p_g_1', 'q_g_1', 'v_f_1', 'p_m_ref_1', 'p_m_1', 'v_pss_1', 'i_d_2', 'i_q_2', 'p_g_2', 'q_g_2', 'v_f_2', 'p_m_ref_2', 'p_m_2', 'v_pss_2', 'i_d_3', 'i_q_3', 'p_g_3', 'q_g_3', 'v_f_3', 'p_m_ref_3', 'p_m_3', 'v_pss_3', 'i_d_4', 'i_q_4', 'p_g_4', 'q_g_4', 'v_f_4', 'p_m_ref_4', 'p_m_4', 'v_pss_4', 'omega_coi', 'p_agc'] 
         self.xy_list = self.x_list + self.y_run_list 
@@ -203,11 +202,11 @@ class model:
 
         self.lmax_it_ini,self.ltol_ini,self.ldamp_ini=50,1e-8,1.0
 
-        #self.sp_Fu_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Fu_run_num.npz')
-        #self.sp_Gu_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Gu_run_num.npz')
-        #self.sp_Hx_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Hx_run_num.npz')
-        #self.sp_Hy_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Hy_run_num.npz')
-        #self.sp_Hu_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Hu_run_num.npz')        
+        self.sp_Fu_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Fu_run_num.npz')
+        self.sp_Gu_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Gu_run_num.npz')
+        self.sp_Hx_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Hx_run_num.npz')
+        self.sp_Hy_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Hy_run_num.npz')
+        self.sp_Hu_run = sspa.load_npz(f'./{self.matrices_folder}/k12p6_Hu_run_num.npz')        
         
         self.ss_solver = 2
         self.lsolver = 2
@@ -1602,6 +1601,7 @@ def sp_jac_run_eval(sp_jac_run,x,y,u,p,Dt):
     u_c_ptr=ffi.from_buffer(np.ascontiguousarray(u))
     p_c_ptr=ffi.from_buffer(np.ascontiguousarray(p))
 
+    sp_jac_run_num_eval( sp_jac_run_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     sp_jac_run_up_eval( sp_jac_run_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     sp_jac_run_xy_eval( sp_jac_run_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     
@@ -1714,7 +1714,7 @@ def sstate(xy,u,p,jac_ini_ss,N_x,N_y,max_it=50,tol=1e-8):
     p_c_ptr=ffi.from_buffer(np.ascontiguousarray(p))
     jac_ini_ss_ptr=ffi.from_buffer(np.ascontiguousarray(jac_ini_ss))
 
-    de_jac_ini_num_eval(jac_ini_ss_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,1.0)
+    #de_jac_ini_num_eval(jac_ini_ss_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,1.0)
     de_jac_ini_up_eval(jac_ini_ss_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,1.0)
 
     for it in range(max_it):
@@ -1772,7 +1772,7 @@ def c_h_eval(z,x,y,u,p,Dt):
     
     return z
 
-#@numba.njit("(float64[:],float64[:],float64[:],float64[:],float64[:],float64)")
+@numba.njit("(float64[:],float64[:],float64[:],float64[:],float64[:],float64)")
 def sp_Fu_run_eval(jac,x,y,u,p,Dt):   
     '''
     Computes the dense full initialization jacobian:
@@ -1816,7 +1816,7 @@ def sp_Fu_run_eval(jac,x,y,u,p,Dt):
     
     #return jac
 
-#@numba.njit("(float64[:],float64[:],float64[:],float64[:],float64[:],float64)")
+@numba.njit("(float64[:],float64[:],float64[:],float64[:],float64[:],float64)")
 def sp_Gu_run_eval(jac,x,y,u,p,Dt):   
     '''
     Computes the dense full initialization jacobian:
@@ -1860,7 +1860,7 @@ def sp_Gu_run_eval(jac,x,y,u,p,Dt):
     
     #return jac
 
-#@numba.njit("(float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64)")
+@numba.njit("(float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64[:],float64)")
 def sp_H_jacs_run_eval(H_x,H_y,H_u,x,y,u,p,Dt):   
     '''
     Computes the dense full initialization jacobian:

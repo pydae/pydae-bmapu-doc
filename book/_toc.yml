@@ -14,6 +14,7 @@ chapters:
   - file: avrs
     sections:
     - file: avrs/sexs
+    - file: avrs/kundur_tgr
     - file: avrs/ntsst1
     - file: avrs/ntsst4
   - file: govs

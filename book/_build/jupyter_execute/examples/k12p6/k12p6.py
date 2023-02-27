@@ -14,10 +14,13 @@ from pydae.bmapu import bmapu_builder
 
 grid = bmapu_builder.bmapu('k12p6_pss.json')
 grid.checker()
+grid.uz_jacs = True
+grid.verbose = True
+
 grid.build('k12p6')
 
 
-# In[3]:
+# In[7]:
 
 
 import numpy as np
@@ -29,13 +32,13 @@ from pydae.svg_tools import svg
 get_ipython().run_line_magic('config', "InlineBackend.figure_formats = ['svg']")
 
 
-# In[4]:
+# In[8]:
 
 
 SVG('sp_k12p6.svg')
 
 
-# In[5]:
+# In[9]:
 
 
 import k12p6 
@@ -43,7 +46,7 @@ import k12p6
 
 # ### Initialization
 
-# In[57]:
+# In[ ]:
 
 
 model = k12p6.model()
@@ -78,7 +81,7 @@ for it in range(1,5):
     print(f"G{it}: P = {p/1e6:0.1f}   Q = {q/1e6:0.1f}  ")
 
 
-# In[65]:
+# In[11]:
 
 
 ssa.ss_eval(model)

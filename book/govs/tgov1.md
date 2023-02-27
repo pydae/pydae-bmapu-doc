@@ -20,7 +20,7 @@ This is an equivalent model for the TGOV1 governor. Some differences must be con
 
 ```{code} 
 ...
-``"gov":{"type":"tgov1","Droop":0.05,"T_1":1.0,"T_2":1.0,"T_1":1.0,"D_t":0.0,"p_c":0.8},``
+    "gov":{"type":"tgov1","Droop":0.05,"T_1":1.0,"T_2":1.0,"T_3":1.0,"D_t":0.0,"p_c":0.0,"K_sec":1.0},
 ...
 ```
 

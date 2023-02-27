@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>ST4 equivalent &#8212; pydae-bmapu</title>
+    <title>Kundur TGR AVR equivalent &#8212; pydae-bmapu</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GOVs" href="../govs.html" />
-    <link rel="prev" title="ST1 equivalent" href="ntsst1.html" />
+    <link rel="next" title="ST1 equivalent" href="ntsst1.html" />
+    <link rel="prev" title="SEXS equivalent" href="sexs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -168,9 +168,9 @@ const thebe_selector_output = ".output, .cell_output"
        SEXS equivalent
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="kundur_tgr.html">
-       Kundur AVR equivalent
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Kundur TGR AVR equivalent
       </a>
      </li>
      <li class="toctree-l3">
@@ -178,8 +178,8 @@ const thebe_selector_output = ".output, .cell_output"
        ST1 equivalent
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="ntsst4.html">
        ST4 equivalent
       </a>
      </li>
@@ -402,7 +402,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/pydae/pydae-bmapu-doc/issues/new?title=Issue%20on%20page%20%2Favrs/ntsst4.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/pydae/pydae-bmapu-doc/issues/new?title=Issue%20on%20page%20%2Favrs/kundur_tgr.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -430,7 +430,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/avrs/ntsst4.md"
+        <a href="../_sources/avrs/kundur_tgr.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -523,7 +523,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>ST4 equivalent</h1>
+                <h1>Kundur TGR AVR equivalent</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -568,25 +568,33 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="st4-equivalent">
-<h1>ST4 equivalent<a class="headerlink" href="#st4-equivalent" title="Permalink to this headline">#</a></h1>
+  <section id="kundur-tgr-avr-equivalent">
+<h1>Kundur TGR AVR equivalent<a class="headerlink" href="#kundur-tgr-avr-equivalent" title="Permalink to this headline">#</a></h1>
 <section id="model">
 <h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">#</a></h2>
-<figure class="align-default" id="avr-ntsst4">
-<a class="reference internal image-reference" href="../_images/ntsst4.png"><img alt="../_images/ntsst4.png" src="../_images/ntsst4.png" style="height: 250px;" /></a>
+<figure class="align-default" id="avr-tgr">
+<a class="reference internal image-reference" href="../_images/kundur_tgr_book.png"><img alt="../_images/kundur_tgr_book.png" src="../_images/kundur_tgr_book.png" style="height: 120px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">ST4 equivalent AVR implemented in pydae</span><a class="headerlink" href="#avr-ntsst4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">AVR-TGR model diagram from  Kundur’s Book</span><a class="headerlink" href="#avr-tgr" title="Permalink to this image">#</a></p>
+<div class="legend">
+<figure class="align-default" id="avr-tgr-pydae">
+<a class="reference internal image-reference" href="../_images/kundur_tgr.svg"><img alt="../_images/kundur_tgr.svg" height="150px" src="../_images/kundur_tgr.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Kundur TGR equivalent AVR implemented in pydae</span><a class="headerlink" href="#avr-tgr-pydae" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
 </figcaption>
 </figure>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is an equivalent model for the ST4 AVR. Some differences must be considered.</p>
+<p>This is an equivalent model for the Kundur’s Book AVR-TGR. Some differences must be considered.</p>
 </div>
 </section>
 <section id="example-input">
 <h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
- <span class="s2">&quot;avr&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ntsst4&quot;</span><span class="p">,</span><span class="s2">&quot;K_pr&quot;</span><span class="p">:</span><span class="mf">3.15</span><span class="p">,</span><span class="s2">&quot;K_ir&quot;</span><span class="p">:</span><span class="mf">3.15</span><span class="p">,</span><span class="s2">&quot;V_rmax&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;V_rmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.87</span><span class="p">,</span><span class="s2">&quot;T_a&quot;</span><span class="p">:</span><span class="mf">0.02</span><span class="p">,</span><span class="s2">&quot;K_pm&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;K_im&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;K_p&quot;</span><span class="p">:</span> <span class="mf">6.5</span><span class="p">,</span><span class="s2">&quot;v_ref&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">}</span>
+ <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;kundur_tgr&#39;</span><span class="p">,</span><span class="s1">&#39;K_a&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;T_a&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">&#39;T_b&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s1">&#39;T_r&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}</span>
 <span class="o">...</span>
 </pre></div>
 </div>
@@ -627,10 +635,25 @@ title="Print to PDF"
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(K_a\)</span></p></td>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(T_r\)</span></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">T_r</span></code></p></td>
+<td class="text-align:left"><p>Time Constant</p></td>
+<td class="text-align:center"><p>s</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(K_a\)</span></p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">K_a</span></code></p></td>
 <td class="text-align:left"><p>AVR Gain</p></td>
 <td class="text-align:center"><p>pu-m</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(T_a\)</span></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">T_a</span></code></p></td>
+<td class="text-align:left"><p>Time Constant</p></td>
+<td class="text-align:center"><p>s</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(T_b\)</span></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">T_b</span></code></p></td>
+<td class="text-align:left"><p>Time Constant</p></td>
+<td class="text-align:center"><p>s</p></td>
 </tr>
 </tbody>
 </table>
@@ -683,17 +706,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="ntsst1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="sexs.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">ST1 equivalent</p>
+            <p class="prev-next-title">SEXS equivalent</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../govs.html" title="next page">
+    <a class='right-next' id="next-link" href="ntsst1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GOVs</p>
+        <p class="prev-next-title">ST1 equivalent</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
