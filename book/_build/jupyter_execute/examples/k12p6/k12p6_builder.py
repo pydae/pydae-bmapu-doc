@@ -19,7 +19,7 @@ file_path = 'k12p6.json'
 grid = bpu(file_path)
 
 
-# In[3]:
+# In[12]:
 
 
 g_list = grid.dae['g'] 

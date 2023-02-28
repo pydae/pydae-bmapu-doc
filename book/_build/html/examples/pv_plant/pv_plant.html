@@ -165,6 +165,11 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../avrs/kundur_tgr.html">
+       Kundur TGR AVR equivalent
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../avrs/ntsst1.html">
        ST1 equivalent
       </a>
@@ -584,7 +589,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_22748</span>\<span class="mf">4228694744.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_16088</span>\<span class="mf">4228694744.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">t_0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ini</span><span class="p">(</span><span class="n">syst</span><span class="o">.</span><span class="n">struct</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t_0</span><span class="p">)</span>
@@ -639,88 +644,88 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="k">def</span> <span class="nf">compile_ir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func_ir</span><span class="p">,</span> <span class="n">lifted</span><span class="o">=</span><span class="p">(),</span> <span class="n">lifted_from</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_bytecode</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="s2">         assert self.state.func_ir is None</span>
-<span class="ne">--&gt; </span><span class="mi">497</span><span class="s2">         return self._compile_core()</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2">     def _compile_ir(self):</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd">         assert self.state.func_ir is None</span>
+<span class="ne">--&gt; </span><span class="mi">497</span><span class="sd">         return self._compile_core()</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="sd">     def _compile_ir(self):</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="s2">                 res = None</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="s2">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">463</span><span class="s2">                     pm.run(self.state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="s2">                     if self.state.cr is not None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2">                         break</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">                 res = None</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="sd">                 try:</span>
+<span class="ne">--&gt; </span><span class="mi">463</span><span class="sd">                     pm.run(self.state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="sd">                     if self.state.cr is not None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd">                         break</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="s2">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="s2">                 if isinstance(pass_inst, CompilerPass):</span>
-<span class="ne">--&gt; </span><span class="mi">341</span><span class="s2">                     self._runPass(idx, pass_inst, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="s2">                 else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="s2">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="sd">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="sd">                 if isinstance(pass_inst, CompilerPass):</span>
+<span class="ne">--&gt; </span><span class="mi">341</span><span class="sd">                     self._runPass(idx, pass_inst, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="sd">                 else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="sd">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s2">         def _acquire_compile_lock(*args, **kwargs):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="s2">             with self:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span><span class="s2">                 return func(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">         return _acquire_compile_lock</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">         def _acquire_compile_lock(*args, **kwargs):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             with self:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">                 return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">         return _acquire_compile_lock</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">_runPass</span><span class="nt">(self, index, pss, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="s2">             mutated |= check(pss.run_initialization, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="s2">         with SimpleTimer() as pass_time:</span>
-<span class="ne">--&gt; </span><span class="mi">296</span><span class="s2">             mutated |= check(pss.run_pass, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="s2">         with SimpleTimer() as finalize_time:</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="s2">             mutated |= check(pss.run_finalizer, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">             mutated |= check(pss.run_initialization, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="sd">         with SimpleTimer() as pass_time:</span>
+<span class="ne">--&gt; </span><span class="mi">296</span><span class="sd">             mutated |= check(pss.run_pass, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="sd">         with SimpleTimer() as finalize_time:</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="sd">             mutated |= check(pss.run_finalizer, internal_state)</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">check</span><span class="nt">(func, compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="s2">         def check(func, compiler_state):</span>
-<span class="ne">--&gt; </span><span class="mi">269</span><span class="s2">             mangled = func(compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2">             if mangled not in (True, False):</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s2">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd">         def check(func, compiler_state):</span>
+<span class="ne">--&gt; </span><span class="mi">269</span><span class="sd">             mangled = func(compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd">             if mangled not in (True, False):</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="sd">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\typed_passes.py</span> in <span class="ni">run_pass</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span><span class="s2">             with targetctx.push_code_library(library):</span>
-<span class="ne">--&gt; </span><span class="mi">392</span><span class="s2">                 lower = lowering.Lower(targetctx, library, fndesc, interp,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="s2">                                        metadata=metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span><span class="s2">                 lower.lower()</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span><span class="sd">             with targetctx.push_code_library(library):</span>
+<span class="ne">--&gt; </span><span class="mi">392</span><span class="sd">                 lower = lowering.Lower(targetctx, library, fndesc, interp,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="sd">                                        metadata=metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span><span class="sd">                 lower.lower()</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">__init__</span><span class="nt">(self, context, library, fndesc, func_ir, metadata)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="s2">         # Subclass initialization</span>
-<span class="ne">---&gt; </span><span class="mi">73</span><span class="s2">         self.init()</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="s2">     def init(self):</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">         # Subclass initialization</span>
+<span class="ne">---&gt; </span><span class="mi">73</span><span class="sd">         self.init()</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="sd">     def init(self):</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">init</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span><span class="s2">         super().init()</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span><span class="s2">         # find all singly assigned variables</span>
-<span class="ne">--&gt; </span><span class="mi">339</span><span class="s2">         self._find_singly_assigned_variable()</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span><span class="s2">     @property</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span><span class="sd">         super().init()</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span><span class="sd">         # find all singly assigned variables</span>
+<span class="ne">--&gt; </span><span class="mi">339</span><span class="sd">         self._find_singly_assigned_variable()</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span><span class="sd">     @property</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">_find_singly_assigned_variable</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="s2">                         [defblk] = var_assign_map[var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="s2">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
-<span class="ne">--&gt; </span><span class="mi">379</span><span class="s2">                         assigns = [stmt for stmt in assign_stmts</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="s2">                                    if stmt.target.name == var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="s2">                         if len(assigns) == 1:</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">                         [defblk] = var_assign_map[var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="sd">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
+<span class="ne">--&gt; </span><span class="mi">379</span><span class="sd">                         assigns = [stmt for stmt in assign_stmts</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="sd">                                    if stmt.target.name == var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="sd">                         if len(assigns) == 1:</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="s2">                         [defblk] = var_assign_map[var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="s2">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
-<span class="ne">--&gt; </span><span class="mi">379</span><span class="s2">                         assigns = [stmt for stmt in assign_stmts</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="s2">                                    if stmt.target.name == var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="s2">                         if len(assigns) == 1:</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">                         [defblk] = var_assign_map[var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="sd">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
+<span class="ne">--&gt; </span><span class="mi">379</span><span class="sd">                         assigns = [stmt for stmt in assign_stmts</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="sd">                                    if stmt.target.name == var]</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="sd">                         if len(assigns) == 1:</span>
 
 <span class="nn">~\anaconda3\lib\site-packages\numba\core\ir.py</span> in <span class="ni">find_insts</span><span class="nt">(self, cls)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span><span class="s2">         for inst in self.body:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1226</span><span class="s2">             if isinstance(inst, cls):</span>
-<span class="ne">-&gt; </span><span class="mi">1227</span><span class="s2">                 yield inst</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1229</span><span class="s2">     def find_variable_assignment(self, name):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1224</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1225</span>         <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1226</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1227</span>                 <span class="k">yield</span> <span class="n">inst</span>
+<span class="g g-Whitespace">   </span><span class="mi">1228</span> 
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

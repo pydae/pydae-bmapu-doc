@@ -826,7 +826,12 @@ out[18] = y[2]*y[8]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9])) - pow(y[8]
 out[19] = pow(y[2], 2)*p[10] + y[2]*y[8]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
 out[20] = -pow(y[2], 2)*p[11] + y[2]*y[8]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
 out[21] = y[10]*(p[28]*y[10] + y[0]*sin(x[0] - y[1])) + y[11]*(p[28]*y[11] + y[0]*cos(x[0] - y[1]));
-out[22] = y[18]*(p[65]*y[18] + y[6]*sin(x[21] - y[7])) + y[19]*(p[65]*y[19] + y[6]*cos(x[21] - y[7]));
+out[22] = y[14];
+out[23] = y[16];
+out[24] = y[18]*(p[65]*y[18] + y[6]*sin(x[21] - y[7])) + y[19]*(p[65]*y[19] + y[6]*cos(x[21] - y[7]));
+out[25] = y[22];
+out[26] = y[23];
+out[27] = u[13];
 
 }
 void de_jac_ini_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
@@ -2809,6 +2814,414 @@ out[226] = -1.0;
 
 }
 
+void de_Fu_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[447] = ((((p[90] < x[27]) ? (
+   p[89] > (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[90] + u[15])/p[79]
+)
+: (
+   ((p[91] > x[27]) ? (
+      p[89] > (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[91] + u[15])/p[79]
+   )
+   : (
+      p[89] > (p[72]*(1.0 - x[22]) + p[67]*y[25] + u[15] - x[27])/p[79]
+   ))
+)) || ((p[90] < x[27]) ? (
+   p[88] < (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[90] + u[15])/p[79]
+)
+: (
+   ((p[91] > x[27]) ? (
+      p[88] < (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[91] + u[15])/p[79]
+   )
+   : (
+      p[88] < (p[72]*(1.0 - x[22]) + p[67]*y[25] + u[15] - x[27])/p[79]
+   ))
+))) ? (
+   0
+)
+: (
+   1.0/p[79]
+));
+
+}
+
+void de_Fu_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[90] = 1.0*p[31]/p[33];
+out[155] = p[41];
+out[413] = 1.0/p[71];
+out[414] = 1.0/p[71];
+
+}
+
+void de_Fu_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[74] = 1.0;
+out[429] = 1.0;
+
+}
+
+void de_Gu_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void de_Gu_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = -1/p[0];
+out[17] = -1/p[0];
+out[34] = -1/p[0];
+out[51] = -1/p[0];
+out[68] = -1/p[0];
+out[85] = -1/p[0];
+out[102] = -1/p[0];
+out[119] = -1/p[0];
+out[136] = -1/p[0];
+out[153] = -1/p[0];
+out[365] = p[68]*p[70]/p[71];
+out[366] = p[68]*p[70]/p[71];
+
+}
+
+void de_Gu_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[252] = 1.0;
+
+}
+
+void de_Hx_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[672] = y[0]*y[10]*cos(x[0] - y[1]) - y[0]*y[11]*sin(x[0] - y[1]);
+out[789] = y[6]*y[18]*cos(x[21] - y[7]) - y[6]*y[19]*sin(x[21] - y[7]);
+
+}
+
+void de_Hx_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void de_Hx_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void de_Hy_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[130] = 2.0*y[0]*p[1] + y[2]*(-p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[131] = y[0]*y[2]*(-p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3]));
+out[132] = y[0]*(-p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[133] = y[0]*y[2]*(p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[156] = -2.0*y[0]*p[2] + y[2]*(p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[157] = y[0]*y[2]*(-p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[158] = y[0]*(p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[159] = y[0]*y[2]*(p[2]*sin(y[1] - y[3]) + p[1]*cos(y[1] - y[3]));
+out[182] = y[2]*(p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[183] = y[0]*y[2]*(p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3]));
+out[184] = y[0]*(p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3])) + 2.0*y[2]*p[1];
+out[185] = y[0]*y[2]*(-p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[208] = y[2]*(p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3]));
+out[209] = y[0]*y[2]*(-p[2]*sin(y[1] - y[3]) + p[1]*cos(y[1] - y[3]));
+out[210] = y[0]*(p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3])) - 2.0*y[2]*p[2];
+out[211] = y[0]*y[2]*(p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[236] = 2.0*y[2]*p[4] + y[4]*(-p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[237] = y[2]*y[4]*(-p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5]));
+out[238] = y[2]*(-p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[239] = y[2]*y[4]*(p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[262] = -2.0*y[2]*p[5] + y[4]*(p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[263] = y[2]*y[4]*(-p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[264] = y[2]*(p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[265] = y[2]*y[4]*(p[5]*sin(y[3] - y[5]) + p[4]*cos(y[3] - y[5]));
+out[288] = y[4]*(p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[289] = y[2]*y[4]*(p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5]));
+out[290] = y[2]*(p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5])) + 2.0*y[4]*p[4];
+out[291] = y[2]*y[4]*(-p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[314] = y[4]*(p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5]));
+out[315] = y[2]*y[4]*(-p[5]*sin(y[3] - y[5]) + p[4]*cos(y[3] - y[5]));
+out[316] = y[2]*(p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5])) - 2.0*y[4]*p[5];
+out[317] = y[2]*y[4]*(p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[342] = 2.0*y[4]*p[7] + y[6]*(-p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[343] = y[4]*y[6]*(-p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7]));
+out[344] = y[4]*(-p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[345] = y[4]*y[6]*(p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[368] = -2.0*y[4]*p[8] + y[6]*(p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[369] = y[4]*y[6]*(-p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[370] = y[4]*(p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[371] = y[4]*y[6]*(p[8]*sin(y[5] - y[7]) + p[7]*cos(y[5] - y[7]));
+out[394] = y[6]*(p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[395] = y[4]*y[6]*(p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7]));
+out[396] = y[4]*(p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7])) + 2.0*y[6]*p[7];
+out[397] = y[4]*y[6]*(-p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[420] = y[6]*(p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7]));
+out[421] = y[4]*y[6]*(-p[8]*sin(y[5] - y[7]) + p[7]*cos(y[5] - y[7]));
+out[422] = y[4]*(p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7])) - 2.0*y[6]*p[8];
+out[423] = y[4]*y[6]*(p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[444] = y[8]*(p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[445] = y[2]*y[8]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9]));
+out[450] = y[2]*(p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9])) + 2.0*y[8]*p[10];
+out[451] = y[2]*y[8]*(-p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[470] = y[8]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9]));
+out[471] = y[2]*y[8]*(-p[11]*sin(y[3] - y[9]) + p[10]*cos(y[3] - y[9]));
+out[476] = y[2]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9])) - 2.0*y[8]*p[11];
+out[477] = y[2]*y[8]*(p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[496] = 2.0*y[2]*p[10] + y[8]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[497] = y[2]*y[8]*(-p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9]));
+out[502] = y[2]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[503] = y[2]*y[8]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[522] = -2.0*y[2]*p[11] + y[8]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[523] = y[2]*y[8]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[528] = y[2]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[529] = y[2]*y[8]*(p[11]*sin(y[3] - y[9]) + p[10]*cos(y[3] - y[9]));
+out[546] = y[10]*sin(x[0] - y[1]) + y[11]*cos(x[0] - y[1]);
+out[547] = -y[0]*y[10]*cos(x[0] - y[1]) + y[0]*y[11]*sin(x[0] - y[1]);
+out[556] = 2.0*p[28]*y[10] + y[0]*sin(x[0] - y[1]);
+out[557] = 2.0*p[28]*y[11] + y[0]*cos(x[0] - y[1]);
+out[630] = y[18]*sin(x[21] - y[7]) + y[19]*cos(x[21] - y[7]);
+out[631] = -y[6]*y[18]*cos(x[21] - y[7]) + y[6]*y[19]*sin(x[21] - y[7]);
+out[642] = 2.0*p[65]*y[18] + y[6]*sin(x[21] - y[7]);
+out[643] = 2.0*p[65]*y[19] + y[6]*cos(x[21] - y[7]);
+
+}
+
+void de_Hy_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void de_Hy_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = 1.0;
+out[28] = 1.0;
+out[56] = 1.0;
+out[84] = 1.0;
+out[112] = 1.0;
+out[586] = 1.0;
+out[614] = 1.0;
+out[672] = 1.0;
+out[699] = 1.0;
+
+}
+
+void de_Hu_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void de_Hu_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void de_Hu_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[445] = 1.0;
+
+}
+
+void sp_Fu_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[6] = ((((p[90] < x[27]) ? (
+   p[89] > (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[90] + u[15])/p[79]
+)
+: (
+   ((p[91] > x[27]) ? (
+      p[89] > (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[91] + u[15])/p[79]
+   )
+   : (
+      p[89] > (p[72]*(1.0 - x[22]) + p[67]*y[25] + u[15] - x[27])/p[79]
+   ))
+)) || ((p[90] < x[27]) ? (
+   p[88] < (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[90] + u[15])/p[79]
+)
+: (
+   ((p[91] > x[27]) ? (
+      p[88] < (p[72]*(1.0 - x[22]) + p[67]*y[25] - p[91] + u[15])/p[79]
+   )
+   : (
+      p[88] < (p[72]*(1.0 - x[22]) + p[67]*y[25] + u[15] - x[27])/p[79]
+   ))
+))) ? (
+   0
+)
+: (
+   1.0/p[79]
+));
+
+}
+
+void sp_Fu_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[1] = 1.0*p[31]/p[33];
+out[2] = p[41];
+out[3] = 1.0/p[71];
+out[4] = 1.0/p[71];
+
+}
+
+void sp_Fu_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = 1.0;
+out[5] = 1.0;
+
+}
+
+void sp_Gu_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void sp_Gu_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = -1/p[0];
+out[1] = -1/p[0];
+out[2] = -1/p[0];
+out[3] = -1/p[0];
+out[4] = -1/p[0];
+out[5] = -1/p[0];
+out[6] = -1/p[0];
+out[7] = -1/p[0];
+out[8] = -1/p[0];
+out[9] = -1/p[0];
+out[11] = p[68]*p[70]/p[71];
+out[12] = p[68]*p[70]/p[71];
+
+}
+
+void sp_Gu_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[10] = 1.0;
+
+}
+
+void sp_Hx_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = y[0]*y[10]*cos(x[0] - y[1]) - y[0]*y[11]*sin(x[0] - y[1]);
+out[1] = y[6]*y[18]*cos(x[21] - y[7]) - y[6]*y[19]*sin(x[21] - y[7]);
+
+}
+
+void sp_Hx_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void sp_Hx_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void sp_Hy_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[5] = 2.0*y[0]*p[1] + y[2]*(-p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[6] = y[0]*y[2]*(-p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3]));
+out[7] = y[0]*(-p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[8] = y[0]*y[2]*(p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[9] = -2.0*y[0]*p[2] + y[2]*(p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[10] = y[0]*y[2]*(-p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[11] = y[0]*(p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[12] = y[0]*y[2]*(p[2]*sin(y[1] - y[3]) + p[1]*cos(y[1] - y[3]));
+out[13] = y[2]*(p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[14] = y[0]*y[2]*(p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3]));
+out[15] = y[0]*(p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3])) + 2.0*y[2]*p[1];
+out[16] = y[0]*y[2]*(-p[2]*cos(y[1] - y[3]) - p[1]*sin(y[1] - y[3]));
+out[17] = y[2]*(p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3]));
+out[18] = y[0]*y[2]*(-p[2]*sin(y[1] - y[3]) + p[1]*cos(y[1] - y[3]));
+out[19] = y[0]*(p[2]*cos(y[1] - y[3]) + p[1]*sin(y[1] - y[3])) - 2.0*y[2]*p[2];
+out[20] = y[0]*y[2]*(p[2]*sin(y[1] - y[3]) - p[1]*cos(y[1] - y[3]));
+out[21] = 2.0*y[2]*p[4] + y[4]*(-p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[22] = y[2]*y[4]*(-p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5]));
+out[23] = y[2]*(-p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[24] = y[2]*y[4]*(p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[25] = -2.0*y[2]*p[5] + y[4]*(p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[26] = y[2]*y[4]*(-p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[27] = y[2]*(p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[28] = y[2]*y[4]*(p[5]*sin(y[3] - y[5]) + p[4]*cos(y[3] - y[5]));
+out[29] = y[4]*(p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[30] = y[2]*y[4]*(p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5]));
+out[31] = y[2]*(p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5])) + 2.0*y[4]*p[4];
+out[32] = y[2]*y[4]*(-p[5]*cos(y[3] - y[5]) - p[4]*sin(y[3] - y[5]));
+out[33] = y[4]*(p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5]));
+out[34] = y[2]*y[4]*(-p[5]*sin(y[3] - y[5]) + p[4]*cos(y[3] - y[5]));
+out[35] = y[2]*(p[5]*cos(y[3] - y[5]) + p[4]*sin(y[3] - y[5])) - 2.0*y[4]*p[5];
+out[36] = y[2]*y[4]*(p[5]*sin(y[3] - y[5]) - p[4]*cos(y[3] - y[5]));
+out[37] = 2.0*y[4]*p[7] + y[6]*(-p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[38] = y[4]*y[6]*(-p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7]));
+out[39] = y[4]*(-p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[40] = y[4]*y[6]*(p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[41] = -2.0*y[4]*p[8] + y[6]*(p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[42] = y[4]*y[6]*(-p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[43] = y[4]*(p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[44] = y[4]*y[6]*(p[8]*sin(y[5] - y[7]) + p[7]*cos(y[5] - y[7]));
+out[45] = y[6]*(p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[46] = y[4]*y[6]*(p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7]));
+out[47] = y[4]*(p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7])) + 2.0*y[6]*p[7];
+out[48] = y[4]*y[6]*(-p[8]*cos(y[5] - y[7]) - p[7]*sin(y[5] - y[7]));
+out[49] = y[6]*(p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7]));
+out[50] = y[4]*y[6]*(-p[8]*sin(y[5] - y[7]) + p[7]*cos(y[5] - y[7]));
+out[51] = y[4]*(p[8]*cos(y[5] - y[7]) + p[7]*sin(y[5] - y[7])) - 2.0*y[6]*p[8];
+out[52] = y[4]*y[6]*(p[8]*sin(y[5] - y[7]) - p[7]*cos(y[5] - y[7]));
+out[53] = y[8]*(p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[54] = y[2]*y[8]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9]));
+out[55] = y[2]*(p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9])) + 2.0*y[8]*p[10];
+out[56] = y[2]*y[8]*(-p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[57] = y[8]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9]));
+out[58] = y[2]*y[8]*(-p[11]*sin(y[3] - y[9]) + p[10]*cos(y[3] - y[9]));
+out[59] = y[2]*(p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9])) - 2.0*y[8]*p[11];
+out[60] = y[2]*y[8]*(p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[61] = 2.0*y[2]*p[10] + y[8]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[62] = y[2]*y[8]*(-p[11]*cos(y[3] - y[9]) + p[10]*sin(y[3] - y[9]));
+out[63] = y[2]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[64] = y[2]*y[8]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[65] = -2.0*y[2]*p[11] + y[8]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[66] = y[2]*y[8]*(-p[11]*sin(y[3] - y[9]) - p[10]*cos(y[3] - y[9]));
+out[67] = y[2]*(p[11]*cos(y[3] - y[9]) - p[10]*sin(y[3] - y[9]));
+out[68] = y[2]*y[8]*(p[11]*sin(y[3] - y[9]) + p[10]*cos(y[3] - y[9]));
+out[69] = y[10]*sin(x[0] - y[1]) + y[11]*cos(x[0] - y[1]);
+out[70] = -y[0]*y[10]*cos(x[0] - y[1]) + y[0]*y[11]*sin(x[0] - y[1]);
+out[71] = 2.0*p[28]*y[10] + y[0]*sin(x[0] - y[1]);
+out[72] = 2.0*p[28]*y[11] + y[0]*cos(x[0] - y[1]);
+out[75] = y[18]*sin(x[21] - y[7]) + y[19]*cos(x[21] - y[7]);
+out[76] = -y[6]*y[18]*cos(x[21] - y[7]) + y[6]*y[19]*sin(x[21] - y[7]);
+out[77] = 2.0*p[65]*y[18] + y[6]*sin(x[21] - y[7]);
+out[78] = 2.0*p[65]*y[19] + y[6]*cos(x[21] - y[7]);
+
+}
+
+void sp_Hy_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void sp_Hy_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = 1.0;
+out[1] = 1.0;
+out[2] = 1.0;
+out[3] = 1.0;
+out[4] = 1.0;
+out[73] = 1.0;
+out[74] = 1.0;
+out[79] = 1.0;
+out[80] = 1.0;
+
+}
+
+void sp_Hu_run_xy_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void sp_Hu_run_up_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+
+}
+
+void sp_Hu_run_num_eval(double *out,double *x,double *y,double *u,double *p,double Dt){
+
+out[0] = 1.0;
+
+}
+
 
 
 /************************************************************/
@@ -2824,6 +3237,1356 @@ static void *_cffi_types[] = {
 /*  7 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
 /*  8 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
 };
+
+static void _cffi_d_de_Fu_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Fu_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Fu_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Fu_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Fu_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Fu_run_num_eval _cffi_d_de_Fu_run_num_eval
+#endif
+
+static void _cffi_d_de_Fu_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Fu_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Fu_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Fu_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Fu_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Fu_run_up_eval _cffi_d_de_Fu_run_up_eval
+#endif
+
+static void _cffi_d_de_Fu_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Fu_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Fu_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Fu_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Fu_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Fu_run_xy_eval _cffi_d_de_Fu_run_xy_eval
+#endif
+
+static void _cffi_d_de_Gu_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Gu_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Gu_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Gu_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Gu_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Gu_run_num_eval _cffi_d_de_Gu_run_num_eval
+#endif
+
+static void _cffi_d_de_Gu_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Gu_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Gu_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Gu_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Gu_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Gu_run_up_eval _cffi_d_de_Gu_run_up_eval
+#endif
+
+static void _cffi_d_de_Gu_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Gu_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Gu_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Gu_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Gu_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Gu_run_xy_eval _cffi_d_de_Gu_run_xy_eval
+#endif
+
+static void _cffi_d_de_Hu_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hu_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hu_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hu_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hu_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hu_run_num_eval _cffi_d_de_Hu_run_num_eval
+#endif
+
+static void _cffi_d_de_Hu_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hu_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hu_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hu_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hu_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hu_run_up_eval _cffi_d_de_Hu_run_up_eval
+#endif
+
+static void _cffi_d_de_Hu_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hu_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hu_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hu_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hu_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hu_run_xy_eval _cffi_d_de_Hu_run_xy_eval
+#endif
+
+static void _cffi_d_de_Hx_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hx_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hx_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hx_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hx_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hx_run_num_eval _cffi_d_de_Hx_run_num_eval
+#endif
+
+static void _cffi_d_de_Hx_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hx_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hx_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hx_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hx_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hx_run_up_eval _cffi_d_de_Hx_run_up_eval
+#endif
+
+static void _cffi_d_de_Hx_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hx_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hx_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hx_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hx_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hx_run_xy_eval _cffi_d_de_Hx_run_xy_eval
+#endif
+
+static void _cffi_d_de_Hy_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hy_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hy_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hy_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hy_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hy_run_num_eval _cffi_d_de_Hy_run_num_eval
+#endif
+
+static void _cffi_d_de_Hy_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hy_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hy_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hy_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hy_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hy_run_up_eval _cffi_d_de_Hy_run_up_eval
+#endif
+
+static void _cffi_d_de_Hy_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  de_Hy_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_de_Hy_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "de_Hy_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { de_Hy_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_de_Hy_run_xy_eval _cffi_d_de_Hy_run_xy_eval
+#endif
 
 static void _cffi_d_de_jac_ini_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
 {
@@ -4085,6 +5848,1356 @@ _cffi_f_h_eval(PyObject *self, PyObject *args)
 #  define _cffi_f_h_eval _cffi_d_h_eval
 #endif
 
+static void _cffi_d_sp_Fu_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Fu_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Fu_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Fu_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Fu_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Fu_run_num_eval _cffi_d_sp_Fu_run_num_eval
+#endif
+
+static void _cffi_d_sp_Fu_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Fu_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Fu_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Fu_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Fu_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Fu_run_up_eval _cffi_d_sp_Fu_run_up_eval
+#endif
+
+static void _cffi_d_sp_Fu_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Fu_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Fu_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Fu_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Fu_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Fu_run_xy_eval _cffi_d_sp_Fu_run_xy_eval
+#endif
+
+static void _cffi_d_sp_Gu_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Gu_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Gu_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Gu_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Gu_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Gu_run_num_eval _cffi_d_sp_Gu_run_num_eval
+#endif
+
+static void _cffi_d_sp_Gu_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Gu_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Gu_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Gu_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Gu_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Gu_run_up_eval _cffi_d_sp_Gu_run_up_eval
+#endif
+
+static void _cffi_d_sp_Gu_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Gu_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Gu_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Gu_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Gu_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Gu_run_xy_eval _cffi_d_sp_Gu_run_xy_eval
+#endif
+
+static void _cffi_d_sp_Hu_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hu_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hu_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hu_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hu_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hu_run_num_eval _cffi_d_sp_Hu_run_num_eval
+#endif
+
+static void _cffi_d_sp_Hu_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hu_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hu_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hu_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hu_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hu_run_up_eval _cffi_d_sp_Hu_run_up_eval
+#endif
+
+static void _cffi_d_sp_Hu_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hu_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hu_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hu_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hu_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hu_run_xy_eval _cffi_d_sp_Hu_run_xy_eval
+#endif
+
+static void _cffi_d_sp_Hx_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hx_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hx_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hx_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hx_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hx_run_num_eval _cffi_d_sp_Hx_run_num_eval
+#endif
+
+static void _cffi_d_sp_Hx_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hx_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hx_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hx_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hx_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hx_run_up_eval _cffi_d_sp_Hx_run_up_eval
+#endif
+
+static void _cffi_d_sp_Hx_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hx_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hx_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hx_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hx_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hx_run_xy_eval _cffi_d_sp_Hx_run_xy_eval
+#endif
+
+static void _cffi_d_sp_Hy_run_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hy_run_num_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hy_run_num_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hy_run_num_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hy_run_num_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hy_run_num_eval _cffi_d_sp_Hy_run_num_eval
+#endif
+
+static void _cffi_d_sp_Hy_run_up_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hy_run_up_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hy_run_up_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hy_run_up_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hy_run_up_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hy_run_up_eval _cffi_d_sp_Hy_run_up_eval
+#endif
+
+static void _cffi_d_sp_Hy_run_xy_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
+{
+  sp_Hy_run_xy_eval(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_sp_Hy_run_xy_eval(PyObject *self, PyObject *args)
+{
+  double * x0;
+  double * x1;
+  double * x2;
+  double * x3;
+  double * x4;
+  double x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "sp_Hy_run_xy_eval", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(1), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(1), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = (double)_cffi_to_c_double(arg5);
+  if (x5 == (double)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { sp_Hy_run_xy_eval(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_sp_Hy_run_xy_eval _cffi_d_sp_Hy_run_xy_eval
+#endif
+
 static void _cffi_d_sp_jac_ini_num_eval(double * x0, double * x1, double * x2, double * x3, double * x4, double x5)
 {
   sp_jac_ini_num_eval(x0, x1, x2, x3, x4, x5);
@@ -4896,6 +8009,21 @@ _cffi_f_sp_jac_trap_xy_eval(PyObject *self, PyObject *args)
 #endif
 
 static const struct _cffi_global_s _cffi_globals[] = {
+  { "de_Fu_run_num_eval", (void *)_cffi_f_de_Fu_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Fu_run_num_eval },
+  { "de_Fu_run_up_eval", (void *)_cffi_f_de_Fu_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Fu_run_up_eval },
+  { "de_Fu_run_xy_eval", (void *)_cffi_f_de_Fu_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Fu_run_xy_eval },
+  { "de_Gu_run_num_eval", (void *)_cffi_f_de_Gu_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Gu_run_num_eval },
+  { "de_Gu_run_up_eval", (void *)_cffi_f_de_Gu_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Gu_run_up_eval },
+  { "de_Gu_run_xy_eval", (void *)_cffi_f_de_Gu_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Gu_run_xy_eval },
+  { "de_Hu_run_num_eval", (void *)_cffi_f_de_Hu_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hu_run_num_eval },
+  { "de_Hu_run_up_eval", (void *)_cffi_f_de_Hu_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hu_run_up_eval },
+  { "de_Hu_run_xy_eval", (void *)_cffi_f_de_Hu_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hu_run_xy_eval },
+  { "de_Hx_run_num_eval", (void *)_cffi_f_de_Hx_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hx_run_num_eval },
+  { "de_Hx_run_up_eval", (void *)_cffi_f_de_Hx_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hx_run_up_eval },
+  { "de_Hx_run_xy_eval", (void *)_cffi_f_de_Hx_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hx_run_xy_eval },
+  { "de_Hy_run_num_eval", (void *)_cffi_f_de_Hy_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hy_run_num_eval },
+  { "de_Hy_run_up_eval", (void *)_cffi_f_de_Hy_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hy_run_up_eval },
+  { "de_Hy_run_xy_eval", (void *)_cffi_f_de_Hy_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_Hy_run_xy_eval },
   { "de_jac_ini_num_eval", (void *)_cffi_f_de_jac_ini_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_jac_ini_num_eval },
   { "de_jac_ini_up_eval", (void *)_cffi_f_de_jac_ini_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_jac_ini_up_eval },
   { "de_jac_ini_xy_eval", (void *)_cffi_f_de_jac_ini_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_de_jac_ini_xy_eval },
@@ -4910,6 +8038,21 @@ static const struct _cffi_global_s _cffi_globals[] = {
   { "g_ini_eval", (void *)_cffi_f_g_ini_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_g_ini_eval },
   { "g_run_eval", (void *)_cffi_f_g_run_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_g_run_eval },
   { "h_eval", (void *)_cffi_f_h_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_h_eval },
+  { "sp_Fu_run_num_eval", (void *)_cffi_f_sp_Fu_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Fu_run_num_eval },
+  { "sp_Fu_run_up_eval", (void *)_cffi_f_sp_Fu_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Fu_run_up_eval },
+  { "sp_Fu_run_xy_eval", (void *)_cffi_f_sp_Fu_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Fu_run_xy_eval },
+  { "sp_Gu_run_num_eval", (void *)_cffi_f_sp_Gu_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Gu_run_num_eval },
+  { "sp_Gu_run_up_eval", (void *)_cffi_f_sp_Gu_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Gu_run_up_eval },
+  { "sp_Gu_run_xy_eval", (void *)_cffi_f_sp_Gu_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Gu_run_xy_eval },
+  { "sp_Hu_run_num_eval", (void *)_cffi_f_sp_Hu_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hu_run_num_eval },
+  { "sp_Hu_run_up_eval", (void *)_cffi_f_sp_Hu_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hu_run_up_eval },
+  { "sp_Hu_run_xy_eval", (void *)_cffi_f_sp_Hu_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hu_run_xy_eval },
+  { "sp_Hx_run_num_eval", (void *)_cffi_f_sp_Hx_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hx_run_num_eval },
+  { "sp_Hx_run_up_eval", (void *)_cffi_f_sp_Hx_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hx_run_up_eval },
+  { "sp_Hx_run_xy_eval", (void *)_cffi_f_sp_Hx_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hx_run_xy_eval },
+  { "sp_Hy_run_num_eval", (void *)_cffi_f_sp_Hy_run_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hy_run_num_eval },
+  { "sp_Hy_run_up_eval", (void *)_cffi_f_sp_Hy_run_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hy_run_up_eval },
+  { "sp_Hy_run_xy_eval", (void *)_cffi_f_sp_Hy_run_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_Hy_run_xy_eval },
   { "sp_jac_ini_num_eval", (void *)_cffi_f_sp_jac_ini_num_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_jac_ini_num_eval },
   { "sp_jac_ini_up_eval", (void *)_cffi_f_sp_jac_ini_up_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_jac_ini_up_eval },
   { "sp_jac_ini_xy_eval", (void *)_cffi_f_sp_jac_ini_xy_eval, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_sp_jac_ini_xy_eval },
@@ -4928,7 +8071,7 @@ static const struct _cffi_type_context_s _cffi_type_context = {
   NULL,  /* no struct_unions */
   NULL,  /* no enums */
   NULL,  /* no typenames */
-  23,  /* num_globals */
+  53,  /* num_globals */
   0,  /* num_struct_unions */
   0,  /* num_enums */
   0,  /* num_typenames */
