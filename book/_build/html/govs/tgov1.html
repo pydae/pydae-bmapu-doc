@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../psss.html">PSSs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../psss/pss_kundur_2.html">PSS Kundur 2 equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../psss/ntspss2.html">PSS2 equivalent</a></li>
 </ul>
 </li>
@@ -429,7 +430,7 @@ document.write(`
 <figure class="align-default" id="gov-tgov1">
 <a class="reference internal image-reference" href="../_images/tgov1_pydae.svg"><img alt="../_images/tgov1_pydae.svg" height="250px" src="../_images/tgov1_pydae.svg" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">TGOV1 equivalent GOV implemented in pydae</span><a class="headerlink" href="#gov-tgov1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">TGOV1 equivalent GOV implemented in pydae</span><a class="headerlink" href="#gov-tgov1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -466,12 +467,7 @@ document.write(`
 <td class="text-left"><p>Machine speed</p></td>
 <td class="text-center"><p>pu</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\omega_{coi}\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">omega_coi</span></code></p></td>
-<td class="text-left"><p>Machine speed</p></td>
-<td class="text-center"><p>pu</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(p_{agc}\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(p_{agc}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">p_agc</span></code></p></td>
 <td class="text-left"><p>AGC power reference</p></td>
 <td class="text-center"><p>pu-s</p></td>
@@ -483,17 +479,42 @@ document.write(`
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h2>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Constant</p></th>
 <th class="head text-left"><p>Code</p></th>
+<th class="head text-left"><p>pydae name</p></th>
+<th class="head text-right"><p>Default</p></th>
 <th class="head text-left"><p>Description</p></th>
 <th class="head text-center"><p>Units</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_{sec}\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">K_sec</span></code></p></td>
-<td class="text-left"><p>Secondary frequency enable=1, disable = 0</p></td>
-<td class="text-center"><p>bool</p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(Droop\)</span></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Droop</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Droop</span></code></p></td>
+<td class="text-right"><p>0.05</p></td>
+<td class="text-left"><p>Permanent droop</p></td>
+<td class="text-center"><p>pu</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(T_1\)</span></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_1</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_gov_1_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-left"><p>Steam bowl time constant</p></td>
+<td class="text-center"><p>s</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(T_2\)</span></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_2</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_gov_2_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-left"><p>Numerator time constant of T2, T3 block</p></td>
+<td class="text-center"><p>s</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(T_3\)</span></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_3</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_gov_3_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-left"><p>Reheater time constant</p></td>
+<td class="text-center"><p>s</p></td>
 </tr>
 </tbody>
 </table>

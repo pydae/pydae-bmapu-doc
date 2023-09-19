@@ -23,6 +23,7 @@ chapters:
     - file: govs/ntsieeeg1
   - file: psss
     sections:
+    - file: psss/pss_kundur_2
     - file: psss/ntspss2
   - file: vscs
     sections:

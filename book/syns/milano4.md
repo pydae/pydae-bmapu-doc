@@ -3,6 +3,12 @@
 
 Synchronous machine model of order 4 from Federico Milano book.
 
+```{figure} ./sm_grid.svg
+:height: 400px
+:name: sm_grid
+
+ST1 equivalent AVR implemented in pydae 
+```
 
 ```{code} 
 ...
@@ -12,7 +18,7 @@ Synchronous machine model of order 4 from Federico Milano book.
        "X_q":2.046,"X1q":0.573,"T1q0":0.61,  
        "R_a":0.0,"X_l": 0.234, 
        "H":6.3,"D":0.0,
-       "Omega_b":314.1592653589793,"omega_s":1.0,"K_sec":0.0,
+       "Omega_b":314.159,"omega_s":1.0,"K_sec":0.0,
        "avr":{"type":"ntsst4","K_pr":3.15,"K_ir":3.15,"V_rmax":1.0,"V_rmin":-0.87,"T_a":0.02,"K_pm":1.0,"K_im":0.0,"K_p":6.5,"v_ref":1.0}, 
          "gov":{"type":"agov1","Droop":100.0,"T_1":1.0,"T_2":1.0,"T_3":1.0, "p_c":0.9,"omega_ref":1.0, "K_imw":0.0001},
        "pss":{"type":"pss2","K_s3":1.0,"T_wo1":2.0,"T_wo2":2.0,"T_9":0.1,

@@ -37,3 +37,13 @@ $$-q_{out}^{\max} \leq q_{out} \leq q_{out}^{\max}$$
 | Variable    | Code       | Description                          |  Units  |
 | :---------- | :--------- | :----------------------------------- |:-------:|  
 | $S_n$       | ``S_n``    | Nominal power                        | VA      |
+
+
+
+### Inputs
+
+| Variable       | Code         | Description              |  Units |
+| :--------------| :----------  | :----------------------- | :-----:| 
+| $p_s^\star$    | ``p_s_ref``  | Active power reference   |  pu-m  |    
+| $p_s^\star$    | ``q_s_ref``  | Reactive power reference |  pu-m  |    
+

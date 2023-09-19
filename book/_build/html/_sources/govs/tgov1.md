@@ -25,22 +25,25 @@ This is an equivalent model for the TGOV1 governor. Some differences must be con
 ```
 
 
-
 ### Inputs
 
 | Variable       | Code         | Description              |  Units |
 | :--------------| :----------  | :----------------------- | :-----:| 
 | $p_c$          | ``p_c``      | Local reference power    |  pu-m  |    
 | $\omega$       | ``omega``    | Machine speed            |  pu    |              
-| $\omega_{coi}$ | ``omega_coi``| Machine speed            |  pu    |              
 | $p_{agc}$      | ``p_agc``    | AGC power reference      |  pu-s  |  
+
 
 ### Parameters
 
-| Variable   | Code       | Description                               |  Units  |
-| :--------- |:---------  | :---------------------------------------- | :------:| 
-| $K_{sec}$  | ``K_sec``  | Secondary frequency enable=1, disable = 0 |  bool   | 
-                
+| Constant   | Code       | pydae name        | Default| Description                               |  Units  |
+| :--------- |:---------  |:---------         |-------:| :---------------------------------------- | :------:| 
+| $Droop$    | ``Droop``  | ``Droop``         | 0.05   | Permanent droop                           |  pu     | 
+| $T_1$      | ``T_1``    | ``T_gov_1_<id>``  | 1      | Steam bowl time constant                  |  s      | 
+| $T_2$      | ``T_2``    | ``T_gov_2_<id>``  | 1      | Numerator time constant of T2, T3 block   |  s      | 
+| $T_3$      | ``T_3``    | ``T_gov_3_<id>``  | 1      | Reheater time constant                    |  s      | 
+ 
+
 
 
 ### Outputs

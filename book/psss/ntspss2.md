@@ -38,7 +38,7 @@ This is an equivalent model for the PSS2 PSS. Some differences must be considere
 
 | Variable   | Code        | Description    |  Units  |
 | :--------- |:----------  | :------------- | :------:| 
-| $K_{s1}$      | ``K_s1``     | PSS Gain       |  pu-m   | 
+| $K_{s1}$   | ``K_s1``    | PSS Gain       |  pu-m   | 
                 
 
 

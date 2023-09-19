@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../psss.html">PSSs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../psss/pss_kundur_2.html">PSS Kundur 2 equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../psss/ntspss2.html">PSS2 equivalent</a></li>
 </ul>
 </li>
@@ -440,7 +441,7 @@ document.write(`
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="f2713f21-7506-47f0-b170-cd5329095ddc">Loading BokehJS ...</span>
+        <span id="d0b39a08-b784-4042-8279-4fae20ed9a8e">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">(function(root) {
   function now() {
@@ -599,7 +600,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded() {
-    const el = document.getElementById("f2713f21-7506-47f0-b170-cd5329095ddc");
+    const el = document.getElementById("d0b39a08-b784-4042-8279-4fae20ed9a8e");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -2077,7 +2078,7 @@ if (force === true) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("f2713f21-7506-47f0-b170-cd5329095ddc")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("d0b39a08-b784-4042-8279-4fae20ed9a8e")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }

@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../psss.html">PSSs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../psss/pss_kundur_2.html">PSS Kundur 2 equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../psss/ntspss2.html">PSS2 equivalent</a></li>
 </ul>
 </li>
@@ -429,13 +430,13 @@ document.write(`
 <figure class="align-default" id="avr-sexs">
 <a class="reference internal image-reference" href="../_images/sexs.png"><img alt="../_images/sexs.png" src="../_images/sexs.png" style="height: 150px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">SEXS AVR model diagram from  <a class="reference external" href="https://www.mdpi.com/1996-1073/14/15/4391/htm">Ippolito</a></span><a class="headerlink" href="#avr-sexs" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">SEXS AVR model diagram from  <a class="reference external" href="https://www.mdpi.com/1996-1073/14/15/4391/htm">Ippolito</a></span><a class="headerlink" href="#avr-sexs" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="avr-sexs-pydae">
 <a class="reference internal image-reference" href="../_images/sexs.svg"><img alt="../_images/sexs.svg" height="150px" src="../_images/sexs.svg" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">SEXS equivalent AVR implemented in pydae</span><a class="headerlink" href="#avr-sexs-pydae" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">SEXS equivalent AVR implemented in pydae</span><a class="headerlink" href="#avr-sexs-pydae" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -485,7 +486,7 @@ document.write(`
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
 <th class="head text-left"><p>Code</p></th>
-<th class="head text-right"><p>Default</p></th>
+<th class="head text-left"><p>Default</p></th>
 <th class="head text-left"><p>Description</p></th>
 <th class="head text-center"><p>Units</p></th>
 </tr>
@@ -493,37 +494,37 @@ document.write(`
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_a\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">K_a</span></code></p></td>
-<td class="text-right"><p>100</p></td>
+<td class="text-left"><p>100</p></td>
 <td class="text-left"><p>AVR Gain</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(T_a\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_a</span></code></p></td>
-<td class="text-right"><p>0.1</p></td>
+<td class="text-left"><p>0.1</p></td>
 <td class="text-left"><p>Time Constant</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(T_b\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_b</span></code></p></td>
-<td class="text-right"><p>0.1</p></td>
+<td class="text-left"><p>0.1</p></td>
 <td class="text-left"><p>Time Constant</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(T_e\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T_e</span></code></p></td>
-<td class="text-right"><p>0.1</p></td>
+<td class="text-left"><p>0.1</p></td>
 <td class="text-left"><p>Time Constant</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(E_{\max}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">E_max</span></code></p></td>
-<td class="text-right"><p>10</p></td>
+<td class="text-left"><p>10</p></td>
 <td class="text-left"><p>Limiter</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(E_{\min}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">E_min</span></code></p></td>
-<td class="text-right"><p>-10</p></td>
+<td class="text-left"><p>-10</p></td>
 <td class="text-left"><p>Limiter</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
