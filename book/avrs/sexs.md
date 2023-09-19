@@ -44,14 +44,14 @@ The constant $K_{ai}$ (`K_ai`) can be left with its very small default value $K_
 
 ### Parameters
 
-| Variable   | Code        | Description    |  Units  |
-| :--------- |:----------  | :------------- | :------:| 
-| $K_a$      | ``K_a``     | AVR Gain       |  pu-m   | 
-| $T_a$      | ``T_a``     | Time Constant  |  s      |              
-| $T_b$      | ``T_b``     | Time Constant  |  s      |             
-| $T_e$      | ``T_e``     | Time Constant  |  s      |             
-| $E_{\max}$ | ``E_max``   | Limiter        |  pu-m   |                 
-| $E_{\min}$ | ``E_min``   | Limiter        |  pu-m   |                  
+| Variable   | Code        | Default   | Description    |  Units  |
+| :--------- |:----------  |:--------- | :------------- | :------:| 
+| $K_a$      | ``K_a``     | 100    | AVR Gain       |  pu-m   | 
+| $T_a$      | ``T_a``     | ``T_a``   | Time Constant  |  s      |              
+| $T_b$      | ``T_b``     | ``T_b``   | Time Constant  |  s      |             
+| $T_e$      | ``T_e``     | ``T_e``   | Time Constant  |  s      |             
+| $E_{\max}$ | ``E_max``   | ``E_max`` | Limiter        |  pu-m   |                 
+| $E_{\min}$ | ``E_min``   | ``E_min`` | Limiter        |  pu-m   |                  
 
 
 ### Outputs
