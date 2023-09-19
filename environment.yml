@@ -3,19 +3,17 @@ channels:
   - conda-forge
 dependencies:
   - python
-  - numpy=1.21
   - scipy
   - sympy
   - matplotlib
   - numba
-  - voila
-  - bokeh
   - nbsphinx
   - IPython
   - ipykernel
   - requests
   - pandas
   - ipympl
+  - cffi 
   - pip
   - pip:
     - nbgitpuller

@@ -91,16 +91,16 @@ class model:
         self.imax = 100 
         self.N_x = 16
         self.N_y = 19 
-        self.N_z = 14 
+        self.N_z = 10 
         self.N_store = 100000 
-        self.params_list = ['S_base', 'g_1_2', 'b_1_2', 'bs_1_2', 'U_1_n', 'U_2_n', 'S_n_1', 'Omega_b_1', 'H_1', 'T1d0_1', 'T1q0_1', 'X_d_1', 'X_q_1', 'X1d_1', 'X1q_1', 'D_1', 'R_a_1', 'K_delta_1', 'K_sec_1', 'K_a_1', 'K_ai_1', 'T_r_1', 'T_a_1', 'T_b_1', 'Droop_1', 'T_gov_1_1', 'T_gov_2_1', 'T_gov_3_1', 'D_t_1', 'omega_ref_1', 'T_wo_1', 'T_1_1', 'T_2_1', 'T_3_1', 'T_4_1', 'K_stab_1', 'V_lim_1', 'S_n_2', 'F_n_2', 'X_v_2', 'R_v_2', 'K_delta_2', 'K_alpha_2', 'K_rocov_2', 'K_p_agc', 'K_i_agc', 'K_xif'] 
+        self.params_list = ['S_base', 'g_1_2', 'b_1_2', 'bs_1_2', 'U_1_n', 'U_2_n', 'S_n_1', 'Omega_b_1', 'H_1', 'T1d0_1', 'T1q0_1', 'X_d_1', 'X_q_1', 'X1d_1', 'X1q_1', 'D_1', 'R_a_1', 'K_delta_1', 'K_sec_1', 'K_a_1', 'K_ai_1', 'T_r_1', 'T_a_1', 'T_b_1', 'Droop_1', 'T_gov_1_1', 'T_gov_2_1', 'T_gov_3_1', 'D_t_1', 'omega_ref_1', 'T_wo_pss_1', 'T_1_pss_1', 'T_2_pss_1', 'T_3_pss_1', 'T_4_pss_1', 'K_stab_1', 'V_lim_pss_1', 'S_n_2', 'F_n_2', 'X_v_2', 'R_v_2', 'K_delta_2', 'K_alpha_2', 'K_rocov_2', 'K_p_agc', 'K_i_agc', 'K_xif'] 
         self.params_values_list  = [100000000.0, 3.846153846153846, -19.23076923076923, -5e-07, 20000.0, 20000.0, 100000000.0, 314.1592653589793, 5.0, 8.0, 0.4, 1.8, 1.7, 0.3, 0.55, 1.0, 0.01, 0.0, 0.0, 200, 1e-06, 0.01, 1, 10, 0.05, 1.0, 1.0, 1.0, 0.0, 1.0, 10.0, 0.05, 0.02, 3.0, 5.4, 20, 0.1, 1000000000.0, 50.0, 0.001, 0.0, 0.001, 1e-06, 1e-06, 0.0, 0.0, 0.01] 
         self.inputs_ini_list = ['P_1', 'Q_1', 'P_2', 'Q_2', 'v_ref_1', 'p_c_1', 'alpha_2', 'v_ref_2', 'omega_ref_2', 'delta_ref_2', 'phi_2', 'rocov_2'] 
         self.inputs_ini_values_list  = [0.0, 0.0, 0.0, 0.0, 1.03, 0.8, 0, 1.0, 1.0, 0.0, 0.0, 0.0] 
         self.inputs_run_list = ['P_1', 'Q_1', 'P_2', 'Q_2', 'v_ref_1', 'p_c_1', 'alpha_2', 'v_ref_2', 'omega_ref_2', 'delta_ref_2', 'phi_2', 'rocov_2'] 
         self.inputs_run_values_list = [0.0, 0.0, 0.0, 0.0, 1.03, 0.8, 0, 1.0, 1.0, 0.0, 0.0, 0.0] 
-        self.outputs_list = ['V_1', 'V_2', 'p_line_1_2', 'q_line_1_2', 'p_line_2_1', 'q_line_2_1', 'p_e_1', 'v_f_1', 'p_m_1', 'v_ref_1', 'v_pss_1', 'p_c_1', 'alpha_2', 'Dv_2'] 
-        self.x_list = ['delta_1', 'omega_1', 'e1q_1', 'e1d_1', 'v_r_1', 'x_ab_1', 'xi_v_1', 'x_gov_1_1', 'x_gov_2_1', 'x_wo_1', 'x_12_1', 'x_34_1', 'delta_2', 'Domega_2', 'Dv_2', 'xi_freq'] 
+        self.outputs_list = ['V_1', 'V_2', 'p_e_1', 'v_f_1', 'p_m_1', 'v_ref_1', 'v_pss_1', 'p_c_1', 'alpha_2', 'Dv_2'] 
+        self.x_list = ['delta_1', 'omega_1', 'e1q_1', 'e1d_1', 'v_r_1', 'x_ab_1', 'xi_v_1', 'x_gov_1_1', 'x_gov_2_1', 'x_wo_pss_1', 'x_12_pss_1', 'x_34_pss_1', 'delta_2', 'Domega_2', 'Dv_2', 'xi_freq'] 
         self.y_run_list = ['V_1', 'theta_1', 'V_2', 'theta_2', 'i_d_1', 'i_q_1', 'p_g_1', 'q_g_1', 'v_f_1', 'p_m_ref_1', 'p_m_1', 'v_pss_1', 'omega_2', 'i_d_2', 'i_q_2', 'p_s_2', 'q_s_2', 'omega_coi', 'p_agc'] 
         self.xy_list = self.x_list + self.y_run_list 
         self.y_ini_list = ['V_1', 'theta_1', 'V_2', 'theta_2', 'i_d_1', 'i_q_1', 'p_g_1', 'q_g_1', 'v_f_1', 'p_m_ref_1', 'p_m_1', 'v_pss_1', 'omega_2', 'i_d_2', 'i_q_2', 'p_s_2', 'q_s_2', 'omega_coi', 'p_agc'] 
@@ -118,11 +118,11 @@ class model:
         self.u_run_list = self.inputs_run_list
         self.u_run_values_list = self.inputs_run_values_list
         self.N_u = len(self.u_run_list)
-        self.u_ini = np.array(self.inputs_ini_values_list)
-        self.p = np.array(self.params_values_list)
-        self.xy_0 = np.zeros((self.N_x+self.N_y,))
-        self.xy = np.zeros((self.N_x+self.N_y,))
-        self.z = np.zeros((self.N_z,))
+        self.u_ini = np.array(self.inputs_ini_values_list,dtype=np.float64)
+        self.p = np.array(self.params_values_list,dtype=np.float64)
+        self.xy_0 = np.zeros((self.N_x+self.N_y,),dtype=np.float64)
+        self.xy = np.zeros((self.N_x+self.N_y,),dtype=np.float64)
+        self.z = np.zeros((self.N_z,),dtype=np.float64)
         
         # numerical elements of jacobians computing:
         x = self.xy[:self.N_x]
@@ -1918,6 +1918,10 @@ def sp_H_jacs_run_eval(H_x,H_y,H_u,x,y,u,p,Dt):
     sp_Hy_run_xy_eval( H_y_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     sp_Hu_run_up_eval( H_u_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     sp_Hu_run_xy_eval( H_u_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
+
+
+
+
 
 def sp_jac_ini_vectors():
 
