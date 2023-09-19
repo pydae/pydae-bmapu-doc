@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>&lt;no title&gt; &#8212; pydae-bmapu</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,59 +61,91 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/pv_plant/pv_plant';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo_bmapu.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">pydae-bmapu</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo_bmapu.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_bmapu.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,437 +155,265 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../models.html">
-   Models
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../buses.html">
-     Buses
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../lines.html">
-     Lines
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../syns.html">
-     SYNSs
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../syns/milano4.html">
-       Milano 4
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../avrs.html">
-     AVRs
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../avrs/sexs.html">
-       SEXS equivalent
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../avrs/kundur_tgr.html">
-       Kundur TGR AVR equivalent
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../avrs/ntsst1.html">
-       ST1 equivalent
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../avrs/ntsst4.html">
-       ST4 equivalent
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../govs.html">
-     GOVs
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../govs/tgov1.html">
-       TGOV1 equivalent
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../govs/ntsieeeg1.html">
-       NTS IEEEG1 equivalent
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../psss.html">
-     PSSs
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../psss/ntspss2.html">
-       PSS2 equivalent
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../vscs.html">
-     VSCs
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../vscs/vsc_pq.html">
-       VSC in PQ mode
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../vscs/vsc_l.html">
-       VSC with coupling inductor
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../modeling.html">
-   Modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/parks.html">
-     EASY-RES
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../builder.html">
-   Builder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../ini.html">
-   Initialization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../simulation.html">
-   Simulation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../ssa.html">
-   SSA
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../examples.html">
-   Examples
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../smib/smib.html">
-     SMIB
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../k12p6/k12p6.html">
-     Kundur example 12.6
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../nts_base/nts_base.html">
-     NTS base case
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../models.html">Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../buses.html">Buses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lines.html">Lines</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../syns.html">SYNSs</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../syns/milano4.html">Milano 4</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../avrs.html">AVRs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../avrs/sexs.html">SEXS equivalent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../avrs/kundur_tgr.html">Kundur TGR AVR equivalent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../avrs/ntsst1.html">ST1 equivalent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../avrs/ntsst4.html">ST4 equivalent</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../govs.html">GOVs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../govs/tgov1.html">TGOV1 equivalent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../govs/ntsieeeg1.html">NTS IEEEG1 equivalent</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../psss.html">PSSs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../psss/ntspss2.html">PSS2 equivalent</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_pq.html">VSC in PQ mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_l.html">VSC with coupling inductor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modeling/parks.html">EASY-RES</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder.html">Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ini.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../simulation.html">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssa.html">SSA</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smib/smib.html">SMIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../k12p6/k12p6.html">Kundur example 12.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nts_base/nts_base.html">NTS base case</a></li>
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/pydae/pydae-bmapu-doc/main?urlpath=tree/book/examples/pv_plant/pv_plant.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pydae/pydae-bmapu-doc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pydae/pydae-bmapu-doc/issues/new?title=Issue%20on%20page%20%2Fexamples/pv_plant/pv_plant.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/examples/pv_plant/pv_plant.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/pydae/pydae-bmapu-doc"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/pydae/pydae-bmapu-doc/issues/new?title=Issue%20on%20page%20%2Fexamples/pv_plant/pv_plant.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/examples/pv_plant/pv_plant.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
@@ -589,143 +460,156 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_16088</span>\<span class="mf">4228694744.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">t_0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ini</span><span class="p">(</span><span class="n">syst</span><span class="o">.</span><span class="n">struct</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t_0</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">_compile_for_args</span><span class="nt">(self, *args, **kws)</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">return_val</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">419</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">420</span>             <span class="n">return_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">argtypes</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>         <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span>             <span class="c1"># Received request for compiler re-entry with the list of arguments</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\dispatcher.py:420,</span> in <span class="ni">_DispatcherBase._compile_for_args</span><span class="nt">(self, *args, **kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="n">return_val</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">return_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">argtypes</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>     <span class="c1"># Received request for compiler re-entry with the list of arguments</span>
+<span class="g g-Whitespace">    </span><span class="mi">423</span>     <span class="c1"># indicated by e.requested_args.</span>
+<span class="g g-Whitespace">    </span><span class="mi">424</span>     <span class="c1"># First, check if any of these args are already Literal-ized</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="n">already_lit_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">requested_args</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">types</span><span class="o">.</span><span class="n">Literal</span><span class="p">)]</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">compile</span><span class="nt">(self, sig)</span>
-<span class="g g-Whitespace">    </span><span class="mi">963</span>                 <span class="k">with</span> <span class="n">ev</span><span class="o">.</span><span class="n">trigger_event</span><span class="p">(</span><span class="s2">&quot;numba:compile&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">ev_details</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">964</span>                     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">965</span>                         <span class="n">cres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiler</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">966</span>                     <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">967</span>                         <span class="k">def</span> <span class="nf">folded</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kws</span><span class="p">):</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\dispatcher.py:965,</span> in <span class="ni">Dispatcher.compile</span><span class="nt">(self, sig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span> <span class="k">with</span> <span class="n">ev</span><span class="o">.</span><span class="n">trigger_event</span><span class="p">(</span><span class="s2">&quot;numba:compile&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">ev_details</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">965</span>         <span class="n">cres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiler</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span>     <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">967</span>         <span class="k">def</span> <span class="nf">folded</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kws</span><span class="p">):</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">compile</span><span class="nt">(self, args, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> 
-<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>         <span class="n">status</span><span class="p">,</span> <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_cached</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>             <span class="k">return</span> <span class="n">retval</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\dispatcher.py:125,</span> in <span class="ni">_FunctionCompiler.compile</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">125</span>     <span class="n">status</span><span class="p">,</span> <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_cached</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="k">return</span> <span class="n">retval</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">_compile_cached</span><span class="nt">(self, args, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span> 
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">139</span>             <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TypingError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_failed_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\dispatcher.py:139,</span> in <span class="ni">_FunctionCompiler._compile_cached</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>     <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TypingError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_failed_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\dispatcher.py</span> in <span class="ni">_compile_core</span><span class="nt">(self, args, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span> 
-<span class="g g-Whitespace">    </span><span class="mi">151</span>         <span class="n">impl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_implementation</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="p">{})</span>
-<span class="ne">--&gt; </span><span class="mi">152</span>         <span class="n">cres</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">typing_context</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span>                                       <span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">target_context</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span>                                       <span class="n">impl</span><span class="p">,</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\dispatcher.py:152,</span> in <span class="ni">_FunctionCompiler._compile_core</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="n">flags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customize_flags</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="n">impl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_implementation</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="p">{})</span>
+<span class="ne">--&gt; </span><span class="mi">152</span> <span class="n">cres</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">typing_context</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span>                               <span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">target_context</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span>                               <span class="n">impl</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span>                               <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="n">return_type</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>                               <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span>                               <span class="n">pipeline_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pipeline_class</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span> <span class="c1"># Check typing error if object mode is used</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="k">if</span> <span class="n">cres</span><span class="o">.</span><span class="n">typing_error</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">flags</span><span class="o">.</span><span class="n">enable_pyobject</span><span class="p">:</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
-<span class="g g-Whitespace">    </span><span class="mi">691</span>     <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">692</span>                               <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">693</span>     <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">694</span> 
-<span class="g g-Whitespace">    </span><span class="mi">695</span> 
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler.py:742,</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Compiler entry point</span>
+<span class="g g-Whitespace">    </span><span class="mi">719</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span><span class="sd"> Parameter</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span><span class="sd">     compiler pipeline</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">741</span>                           <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">742</span> <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(self, func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted</span> <span class="o">=</span> <span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span>         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted_from</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">429</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_bytecode</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span> 
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="k">def</span> <span class="nf">compile_ir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func_ir</span><span class="p">,</span> <span class="n">lifted</span><span class="o">=</span><span class="p">(),</span> <span class="n">lifted_from</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler.py:460,</span> in <span class="ni">CompilerBase.compile_extra</span><span class="nt">(self, func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted</span> <span class="o">=</span> <span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted_from</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">460</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_bytecode</span><span class="p">()</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_bytecode</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd">         assert self.state.func_ir is None</span>
-<span class="ne">--&gt; </span><span class="mi">497</span><span class="sd">         return self._compile_core()</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="sd">     def _compile_ir(self):</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler.py:528,</span> in <span class="ni">CompilerBase._compile_bytecode</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span><span class="sd"> Populate and run pipeline for bytecode input</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">func_ir</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">528</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">()</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">                 res = None</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="sd">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">463</span><span class="sd">                     pm.run(self.state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="sd">                     if self.state.cr is not None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd">                         break</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler.py:494,</span> in <span class="ni">CompilerBase._compile_core</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">pm</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">break</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="sd">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="sd">                 if isinstance(pass_inst, CompilerPass):</span>
-<span class="ne">--&gt; </span><span class="mi">341</span><span class="sd">                     self._runPass(idx, pass_inst, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="sd">                 else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="sd">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py:356,</span> in <span class="ni">PassManager.run</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span> <span class="n">pass_inst</span> <span class="o">=</span> <span class="n">_pass_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pss</span><span class="p">)</span><span class="o">.</span><span class="n">pass_inst</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pass_inst</span><span class="p">,</span> <span class="n">CompilerPass</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">356</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_runPass</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">pass_inst</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="k">raise</span> <span class="ne">BaseException</span><span class="p">(</span><span class="s2">&quot;Legacy pass in use&quot;</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">         def _acquire_compile_lock(*args, **kwargs):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             with self:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">                 return func(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">         return _acquire_compile_lock</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler_lock.py:35,</span> in <span class="ni">_CompilerLock.__call__.&lt;locals&gt;._acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="k">def</span> <span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">_runPass</span><span class="nt">(self, index, pss, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd">             mutated |= check(pss.run_initialization, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span><span class="sd">         with SimpleTimer() as pass_time:</span>
-<span class="ne">--&gt; </span><span class="mi">296</span><span class="sd">             mutated |= check(pss.run_pass, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span><span class="sd">         with SimpleTimer() as finalize_time:</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span><span class="sd">             mutated |= check(pss.run_finalizer, internal_state)</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py:311,</span> in <span class="ni">PassManager._runPass</span><span class="nt">(self, index, pss, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_initialization</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="k">with</span> <span class="n">SimpleTimer</span><span class="p">()</span> <span class="k">as</span> <span class="n">pass_time</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_pass</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="k">with</span> <span class="n">SimpleTimer</span><span class="p">()</span> <span class="k">as</span> <span class="n">finalize_time</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_finalizer</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py</span> in <span class="ni">check</span><span class="nt">(func, compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd">         def check(func, compiler_state):</span>
-<span class="ne">--&gt; </span><span class="mi">269</span><span class="sd">             mangled = func(compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd">             if mangled not in (True, False):</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="sd">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\compiler_machinery.py:273,</span> in <span class="ni">PassManager._runPass.&lt;locals&gt;.check</span><span class="nt">(func, compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">compiler_state</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">273</span>     <span class="n">mangled</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">compiler_state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="k">if</span> <span class="n">mangled</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;CompilerPass implementations should return True/False. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>                <span class="s2">&quot;CompilerPass with name &#39;</span><span class="si">%s</span><span class="s2">&#39; did not.&quot;</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\typed_passes.py</span> in <span class="ni">run_pass</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span><span class="sd">             with targetctx.push_code_library(library):</span>
-<span class="ne">--&gt; </span><span class="mi">392</span><span class="sd">                 lower = lowering.Lower(targetctx, library, fndesc, interp,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="sd">                                        metadata=metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span><span class="sd">                 lower.lower()</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\typed_passes.py:464,</span> in <span class="ni">BaseNativeLowering.run_pass</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span> <span class="n">fndesc</span> <span class="o">=</span> \
+<span class="g g-Whitespace">    </span><span class="mi">458</span>     <span class="n">funcdesc</span><span class="o">.</span><span class="n">PythonFunctionDescriptor</span><span class="o">.</span><span class="n">from_specialized_function</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>         <span class="n">interp</span><span class="p">,</span> <span class="n">typemap</span><span class="p">,</span> <span class="n">restype</span><span class="p">,</span> <span class="n">calltypes</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span>         <span class="n">mangler</span><span class="o">=</span><span class="n">targetctx</span><span class="o">.</span><span class="n">mangler</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="n">flags</span><span class="o">.</span><span class="n">forceinline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>         <span class="n">noalias</span><span class="o">=</span><span class="n">flags</span><span class="o">.</span><span class="n">noalias</span><span class="p">,</span> <span class="n">abi_tags</span><span class="o">=</span><span class="p">[</span><span class="n">flags</span><span class="o">.</span><span class="n">get_mangle_string</span><span class="p">()])</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="k">with</span> <span class="n">targetctx</span><span class="o">.</span><span class="n">push_code_library</span><span class="p">(</span><span class="n">library</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">464</span>     <span class="n">lower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lowering_class</span><span class="p">(</span><span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">fndesc</span><span class="p">,</span> <span class="n">interp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span>                                 <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="n">lower</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">flags</span><span class="o">.</span><span class="n">no_cpython_wrapper</span><span class="p">:</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">__init__</span><span class="nt">(self, context, library, fndesc, func_ir, metadata)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">         # Subclass initialization</span>
-<span class="ne">---&gt; </span><span class="mi">73</span><span class="sd">         self.init()</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="sd">     def init(self):</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\lowering.py:73,</span> in <span class="ni">BaseLower.__init__</span><span class="nt">(self, context, library, fndesc, func_ir, metadata)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="bp">self</span><span class="o">.</span><span class="n">debuginfo</span> <span class="o">=</span> <span class="n">dibuildercls</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>                               <span class="n">filepath</span><span class="o">=</span><span class="n">func_ir</span><span class="o">.</span><span class="n">loc</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>                               <span class="n">cgctx</span><span class="o">=</span><span class="n">context</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                               <span class="n">directives_only</span><span class="o">=</span><span class="n">directives_only</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="c1"># Subclass initialization</span>
+<span class="ne">---&gt; </span><span class="mi">73</span> <span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">init</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span><span class="sd">         super().init()</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span><span class="sd">         # find all singly assigned variables</span>
-<span class="ne">--&gt; </span><span class="mi">339</span><span class="sd">         self._find_singly_assigned_variable()</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span><span class="sd">     @property</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\lowering.py:360,</span> in <span class="ni">Lower.init</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="c1"># find all singly assigned variables</span>
+<span class="ne">--&gt; </span><span class="mi">360</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_singly_assigned_variable</span><span class="p">()</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">_find_singly_assigned_variable</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">                         [defblk] = var_assign_map[var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="sd">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
-<span class="ne">--&gt; </span><span class="mi">379</span><span class="sd">                         assigns = [stmt for stmt in assign_stmts</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="sd">                                    if stmt.target.name == var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="sd">                         if len(assigns) == 1:</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\lowering.py:404,</span> in <span class="ni">Lower._find_singly_assigned_variable</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span> <span class="p">[</span><span class="n">defblk</span><span class="p">]</span> <span class="o">=</span> <span class="n">var_assign_map</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="n">assign_stmts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">[</span><span class="n">defblk</span><span class="p">]</span><span class="o">.</span><span class="n">find_insts</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">Assign</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">404</span> <span class="n">assigns</span> <span class="o">=</span> <span class="p">[</span><span class="n">stmt</span> <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">assign_stmts</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>            <span class="k">if</span> <span class="n">stmt</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">var</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">assigns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">sav</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\lowering.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span><span class="sd">                         [defblk] = var_assign_map[var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span><span class="sd">                         assign_stmts = self.blocks[defblk].find_insts(ir.Assign)</span>
-<span class="ne">--&gt; </span><span class="mi">379</span><span class="sd">                         assigns = [stmt for stmt in assign_stmts</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="sd">                                    if stmt.target.name == var]</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="sd">                         if len(assigns) == 1:</span>
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\lowering.py:404,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span> <span class="p">[</span><span class="n">defblk</span><span class="p">]</span> <span class="o">=</span> <span class="n">var_assign_map</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="n">assign_stmts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">[</span><span class="n">defblk</span><span class="p">]</span><span class="o">.</span><span class="n">find_insts</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">Assign</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">404</span> <span class="n">assigns</span> <span class="o">=</span> <span class="p">[</span><span class="n">stmt</span> <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">assign_stmts</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>            <span class="k">if</span> <span class="n">stmt</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">var</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">assigns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">sav</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numba\core\ir.py</span> in <span class="ni">find_insts</span><span class="nt">(self, cls)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>         <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1226</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1227</span>                 <span class="k">yield</span> <span class="n">inst</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span> 
+<span class="nn">File ~\anaconda3\lib\site-packages\numba\core\ir.py:1281,</span> in <span class="ni">Block.find_insts</span><span class="nt">(self, cls)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1281</span>         <span class="k">yield</span> <span class="n">inst</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -832,9 +716,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d3fefe202a844c418bbf89a7e990c772", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d3fefe202a844c418bbf89a7e990c772", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1196,7 +1078,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./examples\pv_plant"
         },
         predefinedOutput: true
@@ -1204,36 +1086,87 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Juan Manuel Mauricio<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Juan Manuel Mauricio
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
