@@ -91,7 +91,7 @@ class model:
         self.imax = 100 
         self.N_x = 32
         self.N_y = 26 
-        self.N_z = 28 
+        self.N_z = 12 
         self.N_store = 100000 
         self.params_list = ['S_base', 'g_1_2', 'b_1_2', 'bs_1_2', 'g_2_3', 'b_2_3', 'bs_2_3', 'g_3_4', 'b_3_4', 'bs_3_4', 'g_5_2', 'b_5_2', 'bs_5_2', 'U_1_n', 'U_2_n', 'U_3_n', 'U_4_n', 'U_5_n', 'S_n_1', 'Omega_b_1', 'H_1', 'T1d0_1', 'T1q0_1', 'X_d_1', 'X_q_1', 'X1d_1', 'X1q_1', 'D_1', 'R_a_1', 'K_delta_1', 'K_sec_1', 'K_pr_1', 'K_ir_1', 'T_a_1', 'K_pm_1', 'K_im_1', 'K_p_1', 'Droop_1', 'T_gov_1_1', 'T_gov_2_1', 'T_gov_3_1', 'K_imw_1', 'omega_ref_1', 'T_pss_1_1', 'T_pss_2_1', 'T_pss_3_1', 'T_pss_4_1', 'T_pss_7_1', 'T_pss_9_1', 'T_wo1_1', 'T_wo2_1', 'T_wo3_1', 'K_s1_1', 'K_s2_1', 'K_s3_1', 'S_n_4', 'Omega_b_4', 'H_4', 'T1d0_4', 'T1q0_4', 'X_d_4', 'X_q_4', 'X1d_4', 'X1q_4', 'D_4', 'R_a_4', 'K_delta_4', 'K_sec_4', 'K_a_4', 'K_ai_4', 'T_c_4', 'T_b_4', 'K_gov_4', 'K_1_gov_4', 'K_3_gov_4', 'K_5_gov_4', 'K_7_gov_4', 'T_1_gov_4', 'T_2_gov_4', 'T_3_gov_4', 'T_4_gov_4', 'T_5_gov_4', 'T_6_gov_4', 'T_7_gov_4', 'K_2_gov_4', 'K_4_gov_4', 'K_6_gov_4', 'K_8_gov_4', 'U_0_gov_4', 'U_c_gov_4', 'P_max_gov_4', 'P_min_gov_4', 'K_awu_gov_4', 'K_p_agc', 'K_i_agc', 'K_xif'] 
         self.params_values_list  = [1000000000.0, 0.0, -9.999999999999998, 0.0, 0.0, -100.0, -0.0, 0.0, -33.333333333333336, 0.0, 0.0, -100.0, 0.0, 19000.0, 230000.0, 230000.0, 19000.0, 19000.0, 1500000000.0, 314.1592653589793, 6.3, 6.47, 0.61, 2.135, 2.046, 0.34, 0.573, 5.0, 0.0, 0.0, 0.0, 3.15, 3.15, 0.02, 1.0, 1e-06, 6.5, 100.0, 1.0, 1.0, 1.0, 0.0001, 1.0, 0.28, 0.04, 0.28, 0.12, 2.0, 0.1, 2.0, 2.0, 2.0, 17.069, 0.158, 1.0, 5000000000.0, 314.1592653589793, 6.175, 8.0, 0.4, 1.8, 1.7, 0.3, 0.55, 0.0, 0.01, 0.001, 1.0, 200.0, 1e-06, 1.0, 10.0, 20, 0.3, 0.3, 0.4, 0, 0, 0.0, 0.1, 0.3, 7, 0.6, 0, 0, 0, 0, 0, 0.5, -0.5, 1.0, 0.0, 100.0, 0.001, 0.001, 0.0] 
@@ -99,7 +99,7 @@ class model:
         self.inputs_ini_values_list  = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.9, 0.0, 1.0, 0.0, 0.9] 
         self.inputs_run_list = ['P_1', 'Q_1', 'P_2', 'Q_2', 'P_3', 'Q_3', 'P_4', 'Q_4', 'P_5', 'Q_5', 'v_ref_1', 'p_c_1', 'p_r_1', 'v_ref_4', 'v_pss_4', 'p_c_4'] 
         self.inputs_run_values_list = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.9, 0.0, 1.0, 0.0, 0.9] 
-        self.outputs_list = ['V_1', 'V_2', 'V_3', 'V_4', 'V_5', 'p_line_1_2', 'q_line_1_2', 'p_line_2_1', 'q_line_2_1', 'p_line_2_3', 'q_line_2_3', 'p_line_3_2', 'q_line_3_2', 'p_line_3_4', 'q_line_3_4', 'p_line_4_3', 'q_line_4_3', 'p_line_5_2', 'q_line_5_2', 'p_line_2_5', 'q_line_2_5', 'p_e_1', 'v_f_1', 'p_m_1', 'p_e_4', 'v_f_4', 'p_m_4', 'v_ref_4'] 
+        self.outputs_list = ['V_1', 'V_2', 'V_3', 'V_4', 'V_5', 'p_e_1', 'v_f_1', 'p_m_1', 'p_e_4', 'v_f_4', 'p_m_4', 'v_ref_4'] 
         self.x_list = ['delta_1', 'omega_1', 'e1q_1', 'e1d_1', 'xi_v_1', 'x_a_1', 'xi_m_1', 'x_gov_1_1', 'x_gov_2_1', 'xi_imw_1', 'x_wo1_1', 'x_wo2_1', 'x_wo3_1', 'x_lpf7_1', 'x_9_1_1', 'x_9_2_1', 'x_9_3_1', 'x_9_4_1', 'x_9_5_1', 'x_ll1_1', 'x_ll3_1', 'delta_4', 'omega_4', 'e1q_4', 'e1d_4', 'x_cb_4', 'xi_v_4', 'x_3_gov_4', 'x_4_gov_4', 'x_5_gov_4', 'x_6_gov_4', 'xi_freq'] 
         self.y_run_list = ['V_1', 'theta_1', 'V_2', 'theta_2', 'V_3', 'theta_3', 'V_4', 'theta_4', 'V_5', 'theta_5', 'i_d_1', 'i_q_1', 'p_g_1', 'q_g_1', 'v_f_1', 'p_m_ref_1', 'p_m_1', 'v_pss_1', 'i_d_4', 'i_q_4', 'p_g_4', 'q_g_4', 'v_f_4', 'p_m_4', 'omega_coi', 'p_agc'] 
         self.xy_list = self.x_list + self.y_run_list 
@@ -118,11 +118,11 @@ class model:
         self.u_run_list = self.inputs_run_list
         self.u_run_values_list = self.inputs_run_values_list
         self.N_u = len(self.u_run_list)
-        self.u_ini = np.array(self.inputs_ini_values_list)
-        self.p = np.array(self.params_values_list)
-        self.xy_0 = np.zeros((self.N_x+self.N_y,))
-        self.xy = np.zeros((self.N_x+self.N_y,))
-        self.z = np.zeros((self.N_z,))
+        self.u_ini = np.array(self.inputs_ini_values_list,dtype=np.float64)
+        self.p = np.array(self.params_values_list,dtype=np.float64)
+        self.xy_0 = np.zeros((self.N_x+self.N_y,),dtype=np.float64)
+        self.xy = np.zeros((self.N_x+self.N_y,),dtype=np.float64)
+        self.z = np.zeros((self.N_z,),dtype=np.float64)
         
         # numerical elements of jacobians computing:
         x = self.xy[:self.N_x]
@@ -1918,6 +1918,10 @@ def sp_H_jacs_run_eval(H_x,H_y,H_u,x,y,u,p,Dt):
     sp_Hy_run_xy_eval( H_y_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     sp_Hu_run_up_eval( H_u_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
     sp_Hu_run_xy_eval( H_u_ptr,x_c_ptr,y_c_ptr,u_c_ptr,p_c_ptr,Dt)
+
+
+
+
 
 def sp_jac_ini_vectors():
 
