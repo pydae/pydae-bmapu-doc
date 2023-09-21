@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>VSC in PQ mode &#8212; pydae-bmapu</title>
+    <title>PV model considering inverter &#8212; pydae-bmapu</title>
   
   
   
@@ -184,11 +184,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 has-children"><a class="reference internal" href="../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../vscs/vsc_pq.html">VSC in PQ mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vscs/vsc_l.html">VSC with coupling inductor</a></li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vsc_ctrls.html">VSC CTRLs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vsc_ctrls/vsc_l_pq.html">VSC Control in PQ mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pvs.html">PVs</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../modeling/parks.html">EASY-RES</a></li>
 
 
@@ -204,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ini.html">Initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation.html">Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssa.html">SSA</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/smib/smib.html">SMIB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/k12p6/k12p6.html">Kundur example 12.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/nts_base/nts_base.html">NTS base case</a></li>
@@ -395,7 +403,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>VSC in PQ mode</h1>
+    <h1>PV model considering inverter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,8 +425,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="vsc-in-pq-mode">
-<span id="vscpq"></span><h1>VSC in PQ mode<a class="headerlink" href="#vsc-in-pq-mode" title="Permalink to this heading">#</a></h1>
+  <section id="pv-model-considering-inverter">
+<span id="pv-dq"></span><h1>PV model considering inverter<a class="headerlink" href="#pv-model-considering-inverter" title="Permalink to this heading">#</a></h1>
 <figure class="align-default" id="vsc-pq">
 <a class="reference internal image-reference" href="pvs/vsc_pq.svg"><img alt="pvs/vsc_pq.svg" height="100px" src="pvs/vsc_pq.svg" /></a>
 <figcaption>

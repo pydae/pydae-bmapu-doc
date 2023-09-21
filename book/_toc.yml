@@ -31,9 +31,13 @@ chapters:
     - file: vscs/vsc_l
   - file: vsc_ctrls
     sections:
-    - file: vsc_ctrls/vsg_l
+    - file: vsc_ctrls/vsc_l_pq
+  - file: pvs
+    sections:
+    - file: vscs/pv_vsc
 - file: modeling
   sections:
+    - file: modeling/control
     - file: modeling/parks
 - file: builder
 - file: ini

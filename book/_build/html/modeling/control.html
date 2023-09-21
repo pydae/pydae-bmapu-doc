@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeling/control';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EASY-RES" href="parks.html" />
+    <link rel="prev" title="Modeling" href="../modeling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../models.html">Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../buses.html">Buses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lines.html">Lines</a></li>
@@ -182,11 +184,23 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 has-children"><a class="reference internal" href="../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../vscs/vsc_pq.html">VSC in PQ mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vscs/vsc_l.html">VSC with coupling inductor</a></li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vsc_ctrls.html">VSC CTRLs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vsc_ctrls/vsc_l_pq.html">VSC Control in PQ mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pvs.html">PVs</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../modeling.html">Modeling</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic dynamics</a></li>
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="parks.html">EASY-RES</a></li>
 
 
@@ -202,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ini.html">Initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation.html">Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssa.html">SSA</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/smib/smib.html">SMIB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/k12p6/k12p6.html">Kundur example 12.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/nts_base/nts_base.html">NTS base case</a></li>
@@ -311,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/modeling/control.md" target="_blank"
+      <li><a href="../_sources/modeling/control.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -472,7 +486,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1e7f8f00640&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2424ef64610&gt;]
 </pre></div>
 </div>
 <img alt="../_images/371ae42e70dec49b6bb2de352b6b7f5084680b2252d9e28557c0da6e7678e325.png" src="../_images/371ae42e70dec49b6bb2de352b6b7f5084680b2252d9e28557c0da6e7678e325.png" />
@@ -518,7 +532,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1e7fb159090&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x242511b8fa0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/224acaf6964941009edb530d78a41a8e9a18882cdae34ed1a82def6e8744cd21.png" src="../_images/224acaf6964941009edb530d78a41a8e9a18882cdae34ed1a82def6e8744cd21.png" />
@@ -585,7 +599,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e7fb0cc1f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x24251202d70&gt;
 </pre></div>
 </div>
 <img alt="../_images/d57ca209c3d19e3509dedc03f06e406e32516c9ea762c28e07c7d729676fb7da.png" src="../_images/d57ca209c3d19e3509dedc03f06e406e32516c9ea762c28e07c7d729676fb7da.png" />
@@ -634,7 +648,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1e7fb268ca0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x242512c8cd0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/b9bf5b907c537073581a626ffc8bc2ae5c8edccaa0ff22a7c571cd509bd0c266.png" src="../_images/b9bf5b907c537073581a626ffc8bc2ae5c8edccaa0ff22a7c571cd509bd0c266.png" />
@@ -711,7 +725,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e7fb2aa350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x24251332c20&gt;
 </pre></div>
 </div>
 <img alt="../_images/f23e977cfaa3159267783a0bec1c49ef5490baa77badec1d7e1f5b6ff645781a.png" src="../_images/f23e977cfaa3159267783a0bec1c49ef5490baa77badec1d7e1f5b6ff645781a.png" />
@@ -750,6 +764,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../modeling.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modeling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="parks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EASY-RES</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

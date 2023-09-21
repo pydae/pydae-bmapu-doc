@@ -182,11 +182,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_pq.html">VSC in PQ mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_l.html">VSC with coupling inductor</a></li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../vsc_ctrls.html">VSC CTRLs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../vsc_ctrls/vsc_l_pq.html">VSC Control in PQ mode</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../modeling/parks.html">EASY-RES</a></li>
 
 
@@ -202,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../ini.html">Initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../simulation.html">Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssa.html">SSA</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../smib/smib.html">SMIB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../k12p6/k12p6.html">Kundur example 12.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nts_base/nts_base.html">NTS base case</a></li>
@@ -441,7 +446,7 @@ document.write(`
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="d0b39a08-b784-4042-8279-4fae20ed9a8e">Loading BokehJS ...</span>
+        <span id="e43586fb-f06b-4d64-a5bf-4a5d7bee86e3">Loading BokehJS ...</span>
     </div>
 </div><script type="application/javascript">(function(root) {
   function now() {
@@ -600,7 +605,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded() {
-    const el = document.getElementById("d0b39a08-b784-4042-8279-4fae20ed9a8e");
+    const el = document.getElementById("e43586fb-f06b-4d64-a5bf-4a5d7bee86e3");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -2078,7 +2083,7 @@ if (force === true) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("d0b39a08-b784-4042-8279-4fae20ed9a8e")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("e43586fb-f06b-4d64-a5bf-4a5d7bee86e3")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }

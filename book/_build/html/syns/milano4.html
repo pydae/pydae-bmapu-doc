@@ -186,11 +186,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 has-children"><a class="reference internal" href="../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../vscs/vsc_pq.html">VSC in PQ mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vscs/vsc_l.html">VSC with coupling inductor</a></li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vsc_ctrls.html">VSC CTRLs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vsc_ctrls/vsc_l_pq.html">VSC Control in PQ mode</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../modeling/parks.html">EASY-RES</a></li>
 
 
@@ -206,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ini.html">Initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation.html">Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssa.html">SSA</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/smib/smib.html">SMIB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/k12p6/k12p6.html">Kundur example 12.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/nts_base/nts_base.html">NTS base case</a></li>
@@ -407,7 +412,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-equations">Algebraic equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-algebraic-equations-model">Differential algebraic equations model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliar-equations">Auxiliar equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferential-equations">Diferential equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-equations">Algebraic equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-and-algebraic-states">Dynamic and algebraic states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">Inputs and outputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-states">Dynamic states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-states">Algebraic states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs">Inputs</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -419,13 +435,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="milano-4">
+  <section class="tex2jax_ignore mathjax_ignore" id="milano-4">
 <span id="milano4"></span><h1>Milano 4<a class="headerlink" href="#milano-4" title="Permalink to this heading">#</a></h1>
 <p>Synchronous machine model of order 4 from Federico Milano book.</p>
 <figure class="align-default" id="sm-grid">
-<a class="reference internal image-reference" href="../_images/sm_grid.svg"><img alt="../_images/sm_grid.svg" height="400px" src="../_images/sm_grid.svg" /></a>
+<a class="reference internal image-reference" href="../_images/sm_grid.svg"><img alt="../_images/sm_grid.svg" height="500px" src="../_images/sm_grid.svg" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">ST1 equivalent AVR implemented in pydae</span><a class="headerlink" href="#sm-grid" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Synchronous Machine (SM)</span><a class="headerlink" href="#sm-grid" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
@@ -433,52 +449,116 @@ document.write(`
       <span class="p">{</span><span class="s2">&quot;bus&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;S_n&quot;</span><span class="p">:</span><span class="mf">1500e6</span><span class="p">,</span>
        <span class="s2">&quot;X_d&quot;</span><span class="p">:</span><span class="mf">2.135</span><span class="p">,</span><span class="s2">&quot;X1d&quot;</span><span class="p">:</span><span class="mf">0.34</span><span class="p">,</span> <span class="s2">&quot;T1d0&quot;</span><span class="p">:</span><span class="mf">6.47</span><span class="p">,</span>    
        <span class="s2">&quot;X_q&quot;</span><span class="p">:</span><span class="mf">2.046</span><span class="p">,</span><span class="s2">&quot;X1q&quot;</span><span class="p">:</span><span class="mf">0.573</span><span class="p">,</span><span class="s2">&quot;T1q0&quot;</span><span class="p">:</span><span class="mf">0.61</span><span class="p">,</span>  
-       <span class="s2">&quot;R_a&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;X_l&quot;</span><span class="p">:</span> <span class="mf">0.234</span><span class="p">,</span> 
+       <span class="s2">&quot;R_a&quot;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span><span class="s2">&quot;X_l&quot;</span><span class="p">:</span> <span class="mf">0.234</span><span class="p">,</span> 
        <span class="s2">&quot;H&quot;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span>
-       <span class="s2">&quot;Omega_b&quot;</span><span class="p">:</span><span class="mf">314.159</span><span class="p">,</span><span class="s2">&quot;omega_s&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;K_sec&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span>
-       <span class="s2">&quot;avr&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ntsst4&quot;</span><span class="p">,</span><span class="s2">&quot;K_pr&quot;</span><span class="p">:</span><span class="mf">3.15</span><span class="p">,</span><span class="s2">&quot;K_ir&quot;</span><span class="p">:</span><span class="mf">3.15</span><span class="p">,</span><span class="s2">&quot;V_rmax&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;V_rmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">0.87</span><span class="p">,</span><span class="s2">&quot;T_a&quot;</span><span class="p">:</span><span class="mf">0.02</span><span class="p">,</span><span class="s2">&quot;K_pm&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;K_im&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;K_p&quot;</span><span class="p">:</span><span class="mf">6.5</span><span class="p">,</span><span class="s2">&quot;v_ref&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">},</span> 
-         <span class="s2">&quot;gov&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;agov1&quot;</span><span class="p">,</span><span class="s2">&quot;Droop&quot;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s2">&quot;T_1&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;T_2&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;T_3&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;p_c&quot;</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span><span class="s2">&quot;omega_ref&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;K_imw&quot;</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">},</span>
-       <span class="s2">&quot;pss&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;pss2&quot;</span><span class="p">,</span><span class="s2">&quot;K_s3&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s2">&quot;T_wo1&quot;</span><span class="p">:</span><span class="mf">2.0</span><span class="p">,</span><span class="s2">&quot;T_wo2&quot;</span><span class="p">:</span><span class="mf">2.0</span><span class="p">,</span><span class="s2">&quot;T_9&quot;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span>
-              <span class="s2">&quot;K_s1&quot;</span><span class="p">:</span><span class="mf">17.069</span><span class="p">,</span><span class="s2">&quot;T_1&quot;</span><span class="p">:</span><span class="mf">0.28</span><span class="p">,</span><span class="s2">&quot;T_2&quot;</span><span class="p">:</span><span class="mf">0.04</span><span class="p">,</span><span class="s2">&quot;T_3&quot;</span><span class="p">:</span><span class="mf">0.28</span><span class="p">,</span><span class="s2">&quot;T_4&quot;</span><span class="p">:</span><span class="mf">0.12</span><span class="p">,</span><span class="s2">&quot;T_wo3&quot;</span><span class="p">:</span><span class="mf">2.0</span><span class="p">,</span><span class="s2">&quot;K_s2&quot;</span><span class="p">:</span> <span class="mf">0.158</span><span class="p">,</span><span class="s2">&quot;T_7&quot;</span><span class="p">:</span><span class="mf">2.0</span><span class="p">},</span> 
-         <span class="s2">&quot;K_delta&quot;</span><span class="p">:</span><span class="mf">0.00</span><span class="p">},</span> 
+       <span class="s2">&quot;Omega_b&quot;</span><span class="p">:</span><span class="mf">314.159</span><span class="p">,</span><span class="s2">&quot;omega_s&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+       <span class="s2">&quot;K_sec&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="s2">&quot;K_delta&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">},</span> 
+       <span class="p">]</span>
 <span class="o">...</span>
 </pre></div>
 </div>
-<p><strong>Auxiliar equations</strong></p>
+<section id="differential-algebraic-equations-model">
+<h2>Differential algebraic equations model<a class="headerlink" href="#differential-algebraic-equations-model" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{eqnarray}
-    v_d &amp;=&amp; V \sin(\delta - \theta) \\
-    v_q &amp;=&amp; V \cos(\delta - \theta) \\
-    p_e &amp;=&amp; i_d \left(v_d + R_a i_d\right) + i_q \left(v_q + R_a i_q\right)  \\   
-    \omega_s &amp;=&amp; \omega_{coi}
-\end{eqnarray} 
+\begin{split}   \nonumber
+\mathbf {\dot x}  &amp;   =  \mathbf{f (x,y,u,p) } \\
+\mathbf 0 &amp;   =  \mathbf{g (x,y,u,p) }  \\
+\mathbf z &amp;   =  \mathbf{h (x,y,u,p) } 
+\end{split}
 \end{split}\]</div>
-<p><strong>Dynamic equations</strong></p>
+<p>with:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathbf x\)</span>: dynamic states</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf y\)</span>: algebraic states</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf u\)</span>: known inputs</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf p\)</span>: parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf f\)</span>: differential equations</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf g\)</span>: algebraic equations</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf z\)</span>: outputs</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathbf h\)</span>: outputs functions</p></li>
+</ul>
+<section id="auxiliar-equations">
+<h3>Auxiliar equations<a class="headerlink" href="#auxiliar-equations" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{eqnarray}
-    \frac{ d\delta}{dt} &amp;=&amp; \Omega_b \left(\omega - \omega_s \right) - K_{\delta} \delta  \\
-    \frac{ d\omega}{dt} &amp;=&amp; \frac{1}{2H} \left(p_m - p_e - D  \left(\omega - \omega_s \right) \right)  \\
-    \frac{ de'_q}{dt} &amp;=&amp; \frac{1}{T'_{d0}} \left(-e'_q - \left(X_d - X'_d\right) i_d + v_f\right)  \\
-    \frac{ de'_d}{dt} &amp;=&amp; \frac{1}{T'_{q0}} \left(-e'_d + \left(X_q - X'_q\right) i_q\right)
-\end{eqnarray} 
+\begin{align}
+    v_d &amp;=  V \sin(\delta - \theta) \\
+    v_q &amp;=  V \cos(\delta - \theta) \\
+    p_e &amp;=  i_d \left(v_d + R_a i_d\right) + i_q \left(v_q + R_a i_q\right)  \\   
+    \omega_s &amp;=  \omega_{coi}
+\end{align} 
 \end{split}\]</div>
+</section>
+<section id="diferential-equations">
+<h3>Diferential equations<a class="headerlink" href="#diferential-equations" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    \frac{ d\delta}{dt} &amp;= \Omega_b \left(\omega - \omega_s \right) - K_{\delta} \delta  \\
+    \frac{ d\omega}{dt} &amp;= \frac{1}{2H} \left(p_m - p_e - D  \left(\omega - \omega_s \right) \right)  \\
+    \frac{ de'_q}{dt} &amp;= \frac{1}{T'_{d0}} \left(-e'_q - \left(X_d - X'_d\right) i_d + v_f\right)  \\
+    \frac{ de'_d}{dt} &amp;= \frac{1}{T'_{q0}} \left(-e'_d + \left(X_q - X'_q\right) i_q\right)
+\end{align} 
+\end{split}\]</div>
+</section>
 <section id="algebraic-equations">
-<h2>Algebraic equations<a class="headerlink" href="#algebraic-equations" title="Permalink to this heading">#</a></h2>
+<h3>Algebraic equations<a class="headerlink" href="#algebraic-equations" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{eqnarray}
-        0  &amp;=&amp; v_q + R_a i_q + X'_d i_d - e'_q \\
-        0  &amp;=&amp; v_d + R_a i_d - X'_q i_q - e'_d \\
-        0  &amp;=&amp; i_d v_d + i_q v_q - p_g  \\
-        0  &amp;=&amp; i_d v_q - i_q v_d - q_g 
-\end{eqnarray} 
+\begin{align}
+        0  &amp;= v_q + R_a i_q + X'_d i_d - e'_q \\
+        0  &amp;= v_d + R_a i_d - X'_q i_q - e'_d \\
+        0  &amp;= i_d v_d + i_q v_q - p_g  \\
+        0  &amp;= i_d v_q - i_q v_d - q_g 
+\end{align} 
 \end{split}\]</div>
+</section>
+<section id="dynamic-and-algebraic-states">
+<h3>Dynamic and algebraic states<a class="headerlink" href="#dynamic-and-algebraic-states" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\mathbf x = \left[
+\begin{array}{c} 
+\delta \\ 
+\omega \\ 
+e'_q \\ 
+e'_d
+\end{array} \right] \;\;\;\;\;\;
+\mathbf y = \left[
+\begin{array}{c} 
+ i_d \\ 
+ i_q \\ 
+ p_g \\ 
+ q_g
+\end{array} \right]
+\end{split}\]</div>
+</section>
+<section id="inputs-and-outputs">
+<h3>Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\mathbf u = \left[
+\begin{array}{c} 
+ v_f \\ 
+ p_m 
+\end{array} \right] \;\;\;\;\;\;
+\mathbf z = \left[
+\begin{array}{c} 
+ p_e \\ 
+ v_f \\
+ p_m 
+\end{array} \right] 
+\end{split}\]</div>
+</section>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
-<th class="head text-left"><p>Code</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Constant</p></th>
+<th class="head text-left"><p>Data</p></th>
+<th class="head text-left"><p>pydae</p></th>
+<th class="head text-right"><p>Default</p></th>
 <th class="head text-left"><p>Description</p></th>
 <th class="head text-center"><p>Units</p></th>
 </tr>
@@ -486,154 +566,186 @@ document.write(`
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(S_n\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">S_n</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">S_n_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>20e6</p></td>
 <td class="text-left"><p>Nominal power</p></td>
 <td class="text-center"><p>VA</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(H\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">H_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>5.0</p></td>
 <td class="text-left"><p>Inertia constaant</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(S_n\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">S_n</span></code></p></td>
-<td class="text-left"><p>Nominal power</p></td>
-<td class="text-center"><p>VA</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(D\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(D\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">D</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">D_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1.0</p></td>
 <td class="text-left"><p>Damping coefficient</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(X_q\)</span></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(X_q\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X_q</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X_q_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1.70</p></td>
 <td class="text-left"><p>q-axis synchronous reactance</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(X'_q\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(X'_q\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X1q</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X1q_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>0.55</p></td>
 <td class="text-left"><p>q-axis transient reactance</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(T'_{q0}\)</span></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(T'_{q0}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T1q0</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T1q0_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>0.40</p></td>
 <td class="text-left"><p>q-axis open circuit transient time constant</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(X_d\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(X_d\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X_d</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X_d_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1.8</p></td>
 <td class="text-left"><p>d-axis synchronous reactance</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(X'_d\)</span></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(X'_d\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X1d</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">X1d_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>0.3</p></td>
 <td class="text-left"><p>d-axis transient reactance</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(T'_{d0}\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(T'_{d0}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T1d0</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">T1d0_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>8.0</p></td>
 <td class="text-left"><p>d-axis open circuit transient time constant</p></td>
 <td class="text-center"><p>s</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(R_a\)</span></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(R_a\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">R_a</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">R_a_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>0.01</p></td>
 <td class="text-left"><p>Armature resistance</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_{\delta}\)</span></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_{\delta}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">K_delta</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">K_delta_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>0.0</p></td>
 <td class="text-left"><p>Reference machine constant</p></td>
 <td class="text-center"><p>-</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_{sec}\)</span></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(K_{sec}\)</span></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">K_sec</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">K_sec_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1.0</p></td>
 <td class="text-left"><p>Secondary frequency control participation</p></td>
 <td class="text-center"><p>-</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="dynamic-states">
+<h3>Dynamic states<a class="headerlink" href="#dynamic-states" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
-<th class="head text-left"><p>Code</p></th>
+<th class="head text-left"><p>pydae</p></th>
 <th class="head text-left"><p>Description</p></th>
 <th class="head text-center"><p>Units</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\delta\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">delta</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">delta_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>Rotor angle</p></td>
 <td class="text-center"><p>rad</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\omega\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">omega</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">omega_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>Rotor speed</p></td>
 <td class="text-center"><p>pu</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(e'_q  \)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">e1q</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">e1q_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>q-axis transient voltage</p></td>
 <td class="text-center"><p>pu</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(e'_d  \)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">e1d</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">e1d_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>d-axis transient voltage</p></td>
 <td class="text-center"><p>pu</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="algebraic-states">
+<h3>Algebraic states<a class="headerlink" href="#algebraic-states" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
-<th class="head text-left"><p>Code</p></th>
+<th class="head text-left"><p>pydae</p></th>
 <th class="head text-left"><p>Description</p></th>
 <th class="head text-center"><p>Units</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(i_d\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">i_d</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">i_d_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>d-axis current</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(i_q\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">i_q</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">i_q_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>q-axis current</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(p_g\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">p_g</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">p_g_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>Active power</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(q_g\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">q_g</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">q_g_&lt;id&gt;</span></code></p></td>
 <td class="text-left"><p>Reactive power</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="inputs">
+<h3>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">#</a></h3>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
-<th class="head text-left"><p>Code</p></th>
+<th class="head text-left"><p>pydae</p></th>
+<th class="head text-right"><p>Default</p></th>
 <th class="head text-left"><p>Description</p></th>
 <th class="head text-center"><p>Units</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(v_f\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">v_f</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">v_f_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>1.5</p></td>
 <td class="text-left"><p>Field voltage</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(p_m\)</span></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">p_m</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">p_m_&lt;id&gt;</span></code></p></td>
+<td class="text-right"><p>0.5</p></td>
 <td class="text-left"><p>Mechanical power</p></td>
 <td class="text-center"><p>pu-m</p></td>
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 </section>
 
@@ -704,7 +816,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-equations">Algebraic equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-algebraic-equations-model">Differential algebraic equations model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliar-equations">Auxiliar equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferential-equations">Diferential equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-equations">Algebraic equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-and-algebraic-states">Dynamic and algebraic states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">Inputs and outputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-states">Dynamic states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-states">Algebraic states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs">Inputs</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

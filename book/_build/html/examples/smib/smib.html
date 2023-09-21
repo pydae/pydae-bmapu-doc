@@ -184,11 +184,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_pq.html">VSC in PQ mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_l.html">VSC with coupling inductor</a></li>
+
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../vsc_ctrls.html">VSC CTRLs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../vsc_ctrls/vsc_l_pq.html">VSC Control in PQ mode</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../modeling/parks.html">EASY-RES</a></li>
 
 
@@ -204,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../ini.html">Initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../simulation.html">Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssa.html">SSA</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">SMIB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../k12p6/k12p6.html">Kundur example 12.6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nts_base/nts_base.html">NTS base case</a></li>
@@ -752,7 +757,65 @@ p_agc =  0.00
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c20806f550098d3ec275ffc32cf61361eccdfc7359106c218ff63b8585f46217.svg" src="../../_images/c20806f550098d3ec275ffc32cf61361eccdfc7359106c218ff63b8585f46217.svg" /></div>
+<img alt="../../_images/377d8555e61b6fa1d0d7badc3fbc6e61ba41b1a9bd70dab2268fdc6464a4488c.svg" src="../../_images/377d8555e61b6fa1d0d7badc3fbc6e61ba41b1a9bd70dab2268fdc6464a4488c.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">report_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S_base =100000000.00
+g_1_2 = 3.85
+b_1_2 =-19.23
+bs_1_2 =-0.00
+U_1_n =20000.00
+U_2_n =20000.00
+S_n_1 =100000000.00
+Omega_b_1 =314.16
+H_1   = 5.00
+T1d0_1 = 8.00
+T1q0_1 = 0.40
+X_d_1 = 1.80
+X_q_1 = 1.70
+X1d_1 = 0.30
+X1q_1 = 0.55
+D_1   = 1.00
+R_a_1 = 0.01
+K_delta_1 = 0.00
+K_sec_1 = 0.00
+K_a_1 =200.00
+K_ai_1 = 0.00
+T_r_1 = 0.01
+T_a_1 = 1.00
+T_b_1 =10.00
+Droop_1 = 0.05
+T_gov_1_1 = 1.00
+T_gov_2_1 = 1.00
+T_gov_3_1 = 1.00
+D_t_1 = 0.00
+omega_ref_1 = 1.00
+T_wo_pss_1 =10.00
+T_1_pss_1 = 0.05
+T_2_pss_1 = 0.02
+T_3_pss_1 = 3.00
+T_4_pss_1 = 5.40
+K_stab_1 =20.00
+V_lim_pss_1 = 0.10
+S_n_2 =1000000000.00
+F_n_2 =50.00
+X_v_2 = 0.00
+R_v_2 = 0.00
+K_delta_2 = 0.00
+K_alpha_2 = 0.00
+K_rocov_2 = 0.00
+K_p_agc = 0.00
+K_i_agc = 0.00
+K_xif = 0.01
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>

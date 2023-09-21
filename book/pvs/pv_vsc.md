@@ -1,13 +1,28 @@
-(vscpq)=
-## VSC in PQ mode
+(pv_vsc)=
+# PV model considering inverter
 
-```{figure} ./vsc_pq.svg
-:height: 100px
+```{figure} ./pv_vsc_ctrl.svg
+:height: 300px
 :name: vsc_pq
 
 VSC in PQ mode with saturation 
 ```
 
+```{figure} ./pv_module_data.svg
+:height: 300px
+:name: pv_module
+
+VSC in PQ mode with saturation 
+```
+
+```{figure} ./pv_module.svg
+:height: 300px
+:name: pv_module
+
+VSC in PQ mode with saturation 
+```
+
+VSC in PQ mode 
 
 
         K_b 
@@ -19,8 +34,54 @@ VSC in PQ mode with saturation
         eq_i_pv = -i_pv + I_ph - I_d - (v_pv+i_pv*R_pv_s)/R_pv_sh 
 
         I_d = I_0*(sym.exp((v_mpp+i_pv_mpp*R_pv_s)/(V_t*N_s))-1)
-        I_ph = I_sc_t*irrad/I_rrad_sts
+        I_ph = I_sc_t*q/I_rrad_sts
         eq_i_pv_mpp  = -i_pv_mpp + I_ph - I_d - (v_mpp+i_pv_mpp*R_pv_s)/R_pv_sh
+
+
+
+The PV module datasheet gives the open circuit voltage $V_{oc}$ and the short circuit current $I_{sc}$.
+Also the maximum power point voltage $V_{mp}$ and current $I_{mp}$. These values are defined for a given temperature (i.e. $T_{stc}$ =25.0ºC). For other temperatures manufacturers give the factors $K_{vt}$ and $K_{it}$. With this values and the total number of PV modules in series and parallel, $N_s$ and $N_p$, the following voltages and currents can be obtained:        
+
+
+$$
+V_{oc}^t = N_s V_{oc} \left(1 + \frac{K_{vt}}{100} \left( T - T_{stc} \right)\right)
+$$
+$$
+V_{mp}^t = N_s V_{mp} \left(1 + \frac{K_{vt}}{100} \left( T - T_{stc} \right)\right)
+$$
+
+$$
+I_{sc}^t = N_p I_{sc} \left(1 + \frac{K_{it}}{100} \left(T -T_k^{stc}\right)\right)
+$$
+$$
+I_{mp}^t = N_p I_{mp} \left(1 + \frac{K_{it}}{100} \left(T -T_k^{stc}\right)\right)
+$$
+
+Considering the irradiance $E_e$ the following current is obtained, 
+$$
+    I_{mp}^i = I_{sc}^t \frac{E_e}{1000}
+$$
+
+$$
+ i_{pv} = \frac{p_s S_n}{v_{dcv}}
+$$
+
+$$
+0 = -v_{dcv} + V_{mp}^t - \frac{\left(I_{mp}^i - i_{pv}\right) \left(V_{mp}^t - V_{oc}^t\right)}{I_{mp}^i}
+$$
+
+$$
+v_{dc} = \frac{v_{dcv}}{V_{dcb}}
+$$
+
+$$
+  p_{mp} = \frac{V{_mp}^t I_{mp}^i}{S_n}
+$$
+
+
+
+
+
 
 
 
@@ -28,13 +89,8 @@ $$
  V_t = \frac{K_d K_b T_k^{stc}}{E_c} 
 $$
 
-$$
-V_{oc}^t = V_{oc} \left(1 + \frac{K_{vt}}{100} \left( T_k - T_k^{stc} \right)\right)
-$$
 
-$$
-I_{sc}^t = I_{sc} \left(1 + \frac{K_{it}}{100} \left(T_k -T_k^{stc}\right)\right)
-$$
+
 
 $$
 I_0 =\left(I_{sc}^t - \frac{V_{oc}^t - I_{sc}^t  R_s}{R_{sh}} \right) e^{\left(\frac{-V_{oc}^t}{N_s V_t}\right)}
