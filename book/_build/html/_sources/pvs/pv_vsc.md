@@ -22,22 +22,7 @@ VSC in PQ mode with saturation
 VSC in PQ mode with saturation 
 ```
 
-VSC in PQ mode 
-
-
-        K_b 
-       
-
-
-        I_ph = I_sc_t*irrad/I_rrad_sts
-        
-        eq_i_pv = -i_pv + I_ph - I_d - (v_pv+i_pv*R_pv_s)/R_pv_sh 
-
-        I_d = I_0*(sym.exp((v_mpp+i_pv_mpp*R_pv_s)/(V_t*N_s))-1)
-        I_ph = I_sc_t*q/I_rrad_sts
-        eq_i_pv_mpp  = -i_pv_mpp + I_ph - I_d - (v_mpp+i_pv_mpp*R_pv_s)/R_pv_sh
-
-
+## PV panel model
 
 The PV module datasheet gives the open circuit voltage $V_{oc}$ and the short circuit current $I_{sc}$.
 Also the maximum power point voltage $V_{mp}$ and current $I_{mp}$. These values are defined for a given temperature (i.e. $T_{stc}$ =25.0ºC). For other temperatures manufacturers give the factors $K_{vt}$ and $K_{it}$. With this values and the total number of PV modules in series and parallel, $N_s$ and $N_p$, the following voltages and currents can be obtained:        
@@ -51,13 +36,15 @@ V_{mp}^t = N_s V_{mp} \left(1 + \frac{K_{vt}}{100} \left( T - T_{stc} \right)\ri
 $$
 
 $$
-I_{sc}^t = N_p I_{sc} \left(1 + \frac{K_{it}}{100} \left(T -T_k^{stc}\right)\right)
+I_{sc}^t = N_p I_{sc} \left(1 + \frac{K_{it}}{100} \left(T -T_{stc}\right)\right)
 $$
+
 $$
-I_{mp}^t = N_p I_{mp} \left(1 + \frac{K_{it}}{100} \left(T -T_k^{stc}\right)\right)
+I_{mp}^t = N_p I_{mp} \left(1 + \frac{K_{it}}{100} \left(T -T_{stc}\right)\right)
 $$
 
 Considering the irradiance $E_e$ the following current is obtained, 
+
 $$
     I_{mp}^i = I_{sc}^t \frac{E_e}{1000}
 $$
@@ -67,54 +54,170 @@ $$
 $$
 
 $$
-0 = -v_{dcv} + V_{mp}^t - \frac{\left(I_{mp}^i - i_{pv}\right) \left(V_{mp}^t - V_{oc}^t\right)}{I_{mp}^i}
-$$
-
-$$
-v_{dc} = \frac{v_{dcv}}{V_{dcb}}
-$$
-
-$$
-  p_{mp} = \frac{V{_mp}^t I_{mp}^i}{S_n}
+\begin{equation}
+0 =  V_{mp}^t - \frac{\left(I_{mp}^i - i_{pv}\right) \left(V_{mp}^t - V_{oc}^t\right)}{I_{mp}^i} - v_{dc}  V_{dcb} 
+\end{equation}
 $$
 
 
-
-
-
-
-
-
 $$
- V_t = \frac{K_d K_b T_k^{stc}}{E_c} 
+  p_{mp} = \frac{V_{mp}^t I_{mp}^i}{S_n}
 $$
 
 
+## VSC model
+       
 
-
-$$
-I_0 =\left(I_{sc}^t - \frac{V_{oc}^t - I_{sc}^t  R_s}{R_{sh}} \right) e^{\left(\frac{-V_{oc}^t}{N_s V_t}\right)}
-$$
-
-$$
-i_d = I_0 \left(e^{\left(\frac{v_{pv}+i_{pv} R_s}{V_t N_s}\right)}-1\right)
-$$
+### Auxiliar equations
 
 $$
-i_{ph} = I_{sc}^t \frac{i_r}{I_{r}^{stc}}
+v_{sm} = \sqrt{v_{sd}^2 + v_{sq}^2}
 $$
 
 $$
-i_{sh} = \frac{v_{pv}+i_{pv} R_s}{R_{sh}} 
+\begin{align}
+    i_{sdar}^\star &= \frac{i_{sa}^\star v_{sd} + i_{sr}^\star v_{sq}}{v_{sm}} \\
+    i_{sqar}^\star &= \frac{i_{sa}^\star v_{sq} - i_{sr}^\star v_{sd}}{v_{sm}} 
+\end{align}
 $$
 
 $$
-i_{pv} = i_{ph} - i_d - i_{sh}
+\begin{align}
+    i_{sdpq}^\star &= \frac{p_s^\star v_{sd} + q_s^\star v_{sq}}{v_{sd}^2 + v_{sq}^2} \\
+    i_{sqpq}^\star &= \frac{p_s^\star v_{sq} - q_s^\star v_{sd}}{v_{sd}^2 + v_{sq}^2}
+\end{align}
 $$
 
 $$
-p_{pv} = i_{pv} v_{pv}
+\begin{align}
+    i_{sd}^{'\star} = \left(1-k_{lv} \right) i_{sdpq}^\star + k_{lv} i_{sdar}^\star  \\
+    i_{sq}^{'\star} = \left(1-k_{lv} \right) i_{sqpq}^\star + k_{lv} i_{sqar}^\star 
+\end{align}
 $$
+
+$$
+\begin{equation}
+ i_{sd}^{\star} =
+    \begin{cases}
+        -I_{\max} & \text{if } i_{sd}^{'\star} < -I_{\max} \\
+        i_{sd}^{'\star} & \text{if }   -I_{\max}\le i_{sd}^{'\star}\le I_{\max} \\
+       I_{\max} & \text{if } i_{sd}^{'\star} > I_{\max}
+    \end{cases}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+ i_{sq}^{\star} =
+    \begin{cases}
+        -I_{\max} & \text{if } i_{sq}^{'\star} < -I_{\max} \\
+        i_{sq}^{'\star} & \text{if }   -I_{\max}\le i_{sq}^{'\star}\le I_{\max} \\
+       I_{\max} & \text{if } i_{sq}^{'\star} > I_{\max}
+    \end{cases}
+\end{equation}
+$$
+
+$$
+\begin{align}
+    v_{td}^\star &=  R_s i_{sd}^\star - X_s i_{sq}^\star + v_{sd}  \\
+    v_{tq}^\star &=  R_s i_{sq}^\star + X_s i_{sd}^\star + v_{sq} 
+\end{align}
+$$
+
+$$
+\begin{align}
+    v_{tD}^\star &= v_{td}^\star \cos(\delta) + v_{tq}^\star \sin(\delta) \\  
+    v_{tQ}^\star &=-v_{td}^\star \sin(\delta) + v_{tq}^\star \cos(\delta)    
+\end{align}
+$$
+
+
+$$
+\begin{align}
+    v_{ti}^\star &= v_{tD}^\star \\
+    v_{tr}^\star &= v_{tQ}^\star   
+\end{align}
+$$
+
+$$
+    m^\star = \frac{\sqrt{v_{tr}^{\star 2} + v_{ti}^{\star 2}}}{v_{dc}}
+$$
+
+$$
+\theta_t^\star = \arctan\left(v_{ti}^\star,v_{tr}^\star\right) 
+$$
+
+$$
+\begin{align}
+    v_{si} = V_s \sin(\theta_s)\\
+    v_{sr} = V_s \cos(\theta_s) 
+\end{align}
+$$
+
+$$
+    \Omega_b = 2 \pi F_n
+$$ 
+
+$$
+\begin{align}
+m &= m^\star \\
+\theta_t &= \theta_t^\star
+\end{align}
+$$
+
+$$
+\begin{align}
+    v_{tm} &= m v_{dc} \\
+    v_{tr} &= v_{tm}\cos(\theta_t) \\
+    v_{ti} &= v_{tm}\sin(\theta_t)
+\end{align}
+$$
+
+$$
+\begin{align}
+  v_{ti} &= v_{ti}^\star \\
+  v_{tr} &= v_{tr}^\star \\
+  i_{sr} &= \frac{R_s\left(v_{tr} - v_{sr} \right)+ X_s \left( v_{si} - v_{ti}\right)}{R_s^2 + X_s^2} \\
+  i_{si} &= \frac{R_s \left(v_{ti} - v_{si}  \right) + X_s \left(v_{tr} -  v_{sr} \right) }{R_s^2 + X_s^2}  
+\end{align}
+$$
+
+
+$$
+\begin{equation}
+ k_{lv} =
+    \begin{cases}
+        0 & \text{if } v_{sm} > V_{lv} \\
+        1 & \text{if } v_{sm} \le V_{lv}  
+    \end{cases}
+\end{equation}
+$$
+
+
+$$
+\begin{equation}
+ p_s^\star =
+    \begin{cases}
+        p_s^{ppc} & \text{if } p_s^{ppc} < p_{mp} \\
+        p_{mp}    & \text{if } p_s^{ppc} \ge p_{mp} \\
+    \end{cases}
+\end{equation}
+$$
+
+$$
+p_s^\star = q_s^{ppc}
+$$
+
+
+### Algebraic equations   
+  
+$$
+\begin{align}
+    0  &= i_{si} v_{si} + i_{sr} v_{sr} - p_s  \\
+    0  &= i_{si} v_{sr} - i_{sr} v_{si} - q_s 
+\end{align}
+$$
+
 ### Example input
 
 ```{code} 

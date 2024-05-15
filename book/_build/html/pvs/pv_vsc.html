@@ -417,7 +417,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-input">Example input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pv-panel-model">PV panel model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vsc-model">VSC model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliar-equations">Auxiliar equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-equations">Algebraic equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-input">Example input</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -449,20 +455,8 @@ document.write(`
 <p><span class="caption-text">VSC in PQ mode with saturation</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>VSC in PQ mode</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    K_b 
-   
-
-
-    I_ph = I_sc_t*irrad/I_rrad_sts
-    
-    eq_i_pv = -i_pv + I_ph - I_d - (v_pv+i_pv*R_pv_s)/R_pv_sh 
-
-    I_d = I_0*(sym.exp((v_mpp+i_pv_mpp*R_pv_s)/(V_t*N_s))-1)
-    I_ph = I_sc_t*q/I_rrad_sts
-    eq_i_pv_mpp  = -i_pv_mpp + I_ph - I_d - (v_mpp+i_pv_mpp*R_pv_s)/R_pv_sh
-</pre></div>
-</div>
+<section id="pv-panel-model">
+<h2>PV panel model<a class="headerlink" href="#pv-panel-model" title="Permalink to this heading">#</a></h2>
 <p>The PV module datasheet gives the open circuit voltage <span class="math notranslate nohighlight">\(V_{oc}\)</span> and the short circuit current <span class="math notranslate nohighlight">\(I_{sc}\)</span>.
 Also the maximum power point voltage <span class="math notranslate nohighlight">\(V_{mp}\)</span> and current <span class="math notranslate nohighlight">\(I_{mp}\)</span>. These values are defined for a given temperature (i.e. <span class="math notranslate nohighlight">\(T_{stc}\)</span> =25.0ºC). For other temperatures manufacturers give the factors <span class="math notranslate nohighlight">\(K_{vt}\)</span> and <span class="math notranslate nohighlight">\(K_{it}\)</span>. With this values and the total number of PV modules in series and parallel, <span class="math notranslate nohighlight">\(N_s\)</span> and <span class="math notranslate nohighlight">\(N_p\)</span>, the following voltages and currents can be obtained:</p>
 <div class="math notranslate nohighlight">
@@ -475,62 +469,184 @@ V_{mp}^t = N_s V_{mp} \left(1 + \frac{K_{vt}}{100} \left( T - T_{stc} \right)\ri
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-I_{sc}^t = N_p I_{sc} \left(1 + \frac{K_{it}}{100} \left(T -T_k^{stc}\right)\right)
+I_{sc}^t = N_p I_{sc} \left(1 + \frac{K_{it}}{100} \left(T -T_{stc}\right)\right)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-I_{mp}^t = N_p I_{mp} \left(1 + \frac{K_{it}}{100} \left(T -T_k^{stc}\right)\right)
+I_{mp}^t = N_p I_{mp} \left(1 + \frac{K_{it}}{100} \left(T -T_{stc}\right)\right)
 \]</div>
-<p>Considering the irradiance <span class="math notranslate nohighlight">\(E_e\)</span> the following current is obtained,
-$<span class="math notranslate nohighlight">\(
+<p>Considering the irradiance <span class="math notranslate nohighlight">\(E_e\)</span> the following current is obtained,</p>
+<div class="math notranslate nohighlight">
+\[
     I_{mp}^i = I_{sc}^t \frac{E_e}{1000}
-\)</span>$</p>
+\]</div>
 <div class="math notranslate nohighlight">
 \[
  i_{pv} = \frac{p_s S_n}{v_{dcv}}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-0 = -v_{dcv} + V_{mp}^t - \frac{\left(I_{mp}^i - i_{pv}\right) \left(V_{mp}^t - V_{oc}^t\right)}{I_{mp}^i}
+\begin{equation}
+0 =  V_{mp}^t - \frac{\left(I_{mp}^i - i_{pv}\right) \left(V_{mp}^t - V_{oc}^t\right)}{I_{mp}^i} - v_{dc}  V_{dcb} 
+\end{equation}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-v_{dc} = \frac{v_{dcv}}{V_{dcb}}
+  p_{mp} = \frac{V_{mp}^t I_{mp}^i}{S_n}
+\]</div>
+</section>
+<section id="vsc-model">
+<h2>VSC model<a class="headerlink" href="#vsc-model" title="Permalink to this heading">#</a></h2>
+<section id="auxiliar-equations">
+<h3>Auxiliar equations<a class="headerlink" href="#auxiliar-equations" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+v_{sm} = \sqrt{v_{sd}^2 + v_{sq}^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    i_{sdar}^\star &amp;= \frac{i_{sa}^\star v_{sd} + i_{sr}^\star v_{sq}}{v_{sm}} \\
+    i_{sqar}^\star &amp;= \frac{i_{sa}^\star v_{sq} - i_{sr}^\star v_{sd}}{v_{sm}} 
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    i_{sdpq}^\star &amp;= \frac{p_s^\star v_{sd} + q_s^\star v_{sq}}{v_{sd}^2 + v_{sq}^2} \\
+    i_{sqpq}^\star &amp;= \frac{p_s^\star v_{sq} - q_s^\star v_{sd}}{v_{sd}^2 + v_{sq}^2}
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    i_{sd}^{'\star} = \left(1-k_{lv} \right) i_{sdpq}^\star + k_{lv} i_{sdar}^\star  \\
+    i_{sq}^{'\star} = \left(1-k_{lv} \right) i_{sqpq}^\star + k_{lv} i_{sqar}^\star 
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+ i_{sd}^{\star} =
+    \begin{cases}
+        -I_{\max} &amp; \text{if } i_{sd}^{'\star} &lt; -I_{\max} \\
+        i_{sd}^{'\star} &amp; \text{if }   -I_{\max}\le i_{sd}^{'\star}\le I_{\max} \\
+       I_{\max} &amp; \text{if } i_{sd}^{'\star} &gt; I_{\max}
+    \end{cases}
+\end{equation}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+ i_{sq}^{\star} =
+    \begin{cases}
+        -I_{\max} &amp; \text{if } i_{sq}^{'\star} &lt; -I_{\max} \\
+        i_{sq}^{'\star} &amp; \text{if }   -I_{\max}\le i_{sq}^{'\star}\le I_{\max} \\
+       I_{\max} &amp; \text{if } i_{sq}^{'\star} &gt; I_{\max}
+    \end{cases}
+\end{equation}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    v_{td}^\star &amp;=  R_s i_{sd}^\star - X_s i_{sq}^\star + v_{sd}  \\
+    v_{tq}^\star &amp;=  R_s i_{sq}^\star + X_s i_{sd}^\star + v_{sq} 
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    v_{tD}^\star &amp;= v_{td}^\star \cos(\delta) + v_{tq}^\star \sin(\delta) \\  
+    v_{tQ}^\star &amp;=-v_{td}^\star \sin(\delta) + v_{tq}^\star \cos(\delta)    
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    v_{ti}^\star &amp;= v_{tD}^\star \\
+    v_{tr}^\star &amp;= v_{tQ}^\star   
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+    m^\star = \frac{\sqrt{v_{tr}^{\star 2} + v_{ti}^{\star 2}}}{v_{dc}}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-  p_{mp} = \frac{V{_mp}^t I_{mp}^i}{S_n}
+\theta_t^\star = \arctan\left(v_{ti}^\star,v_{tr}^\star\right) 
 \]</div>
 <div class="math notranslate nohighlight">
-\[
- V_t = \frac{K_d K_b T_k^{stc}}{E_c} 
-\]</div>
+\[\begin{split}
+\begin{align}
+    v_{si} = V_s \sin(\theta_s)\\
+    v_{sr} = V_s \cos(\theta_s) 
+\end{align}
+\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[
-I_0 =\left(I_{sc}^t - \frac{V_{oc}^t - I_{sc}^t  R_s}{R_{sh}} \right) e^{\left(\frac{-V_{oc}^t}{N_s V_t}\right)}
+    \Omega_b = 2 \pi F_n
 \]</div>
 <div class="math notranslate nohighlight">
-\[
-i_d = I_0 \left(e^{\left(\frac{v_{pv}+i_{pv} R_s}{V_t N_s}\right)}-1\right)
-\]</div>
+\[\begin{split}
+\begin{align}
+m &amp;= m^\star \\
+\theta_t &amp;= \theta_t^\star
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    v_{tm} &amp;= m v_{dc} \\
+    v_{tr} &amp;= v_{tm}\cos(\theta_t) \\
+    v_{ti} &amp;= v_{tm}\sin(\theta_t)
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+  v_{ti} &amp;= v_{ti}^\star \\
+  v_{tr} &amp;= v_{tr}^\star \\
+  i_{sr} &amp;= \frac{R_s\left(v_{tr} - v_{sr} \right)+ X_s \left( v_{si} - v_{ti}\right)}{R_s^2 + X_s^2} \\
+  i_{si} &amp;= \frac{R_s \left(v_{ti} - v_{si}  \right) + X_s \left(v_{tr} -  v_{sr} \right) }{R_s^2 + X_s^2}  
+\end{align}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+ k_{lv} =
+    \begin{cases}
+        0 &amp; \text{if } v_{sm} &gt; V_{lv} \\
+        1 &amp; \text{if } v_{sm} \le V_{lv}  
+    \end{cases}
+\end{equation}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+ p_s^\star =
+    \begin{cases}
+        p_s^{ppc} &amp; \text{if } p_s^{ppc} &lt; p_{mp} \\
+        p_{mp}    &amp; \text{if } p_s^{ppc} \ge p_{mp} \\
+    \end{cases}
+\end{equation}
+\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[
-i_{ph} = I_{sc}^t \frac{i_r}{I_{r}^{stc}}
+p_s^\star = q_s^{ppc}
 \]</div>
+</section>
+<section id="algebraic-equations">
+<h3>Algebraic equations<a class="headerlink" href="#algebraic-equations" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[
-i_{sh} = \frac{v_{pv}+i_{pv} R_s}{R_{sh}} 
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-i_{pv} = i_{ph} - i_d - i_{sh}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-p_{pv} = i_{pv} v_{pv}
-\]</div>
+\[\begin{split}
+\begin{align}
+    0  &amp;= i_{si} v_{si} + i_{sr} v_{sr} - p_s  \\
+    0  &amp;= i_{si} v_{sr} - i_{sr} v_{si} - q_s 
+\end{align}
+\end{split}\]</div>
+</section>
 <section id="example-input">
-<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this heading">#</a></h2>
+<h3>Example input<a class="headerlink" href="#example-input" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>...
 ``&quot;vscs&quot;:[{&quot;type&quot;:&quot;vsc_pq&quot;,&quot;bus&quot;:&quot;1&quot;,&quot;p_in&quot;:0.5,&quot;S_n&quot;:10e6,&quot;K_delta&quot;:0.0}],
 </pre></div>
@@ -635,6 +751,7 @@ p_{pv} = i_{pv} v_{pv}
 </table>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -685,7 +802,13 @@ p_{pv} = i_{pv} v_{pv}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-input">Example input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pv-panel-model">PV panel model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vsc-model">VSC model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliar-equations">Auxiliar equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-equations">Algebraic equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-input">Example input</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
