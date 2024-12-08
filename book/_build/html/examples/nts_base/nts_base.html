@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>NTS base case &#8212; pydae-bmapu</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'examples/nts_base/nts_base';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -74,19 +70,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +108,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,9 +136,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -140,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo_bmapu.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo_bmapu.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo_bmapu.png" class="logo__image only-light" alt="pydae-bmapu - Home"/>
+    <script>document.write(`<img src="../../_static/logo_bmapu.png" class="logo__image only-dark" alt="pydae-bmapu - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -156,43 +179,50 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../models.html">Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../models.html">Models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../buses.html">Buses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lines.html">Lines</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../syns.html">SYNSs</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../syns.html">SYNSs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../syns/milano4.html">Milano 4</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../avrs.html">AVRs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../avrs.html">AVRs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../avrs/sexs.html">SEXS equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../avrs/kundur_tgr.html">Kundur TGR AVR equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../avrs/ntsst1.html">ST1 equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../avrs/ntsst4.html">ST4 equivalent</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../govs.html">GOVs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../govs.html">GOVs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../govs/tgov1.html">TGOV1 equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../govs/ntsieeeg1.html">NTS IEEEG1 equivalent</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../psss.html">PSSs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../psss.html">PSSs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../psss/pss_kundur_2.html">PSS Kundur 2 equivalent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../psss/ntspss2.html">PSS2 equivalent</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../vscs.html">VSCs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../vscs.html">VSCs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_pq.html">VSC in PQ mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../vscs/vsc_l.html">VSC with coupling inductor</a></li>
 
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../vsc_ctrls.html">VSC CTRLs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../vsc_ctrls.html">VSC CTRLs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../vsc_ctrls/vsc_l_pq.html">VSC Control in PQ mode</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../pvs.html">PVs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modeling.html">Modeling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modeling/control.html">Basic dynamics</a></li>
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../../modeling/parks.html">EASY-RES</a></li>
 
 
@@ -203,19 +233,21 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../builder.html">Builder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ini.html">Initialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../simulation.html">Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssa.html">SSA</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../examples.html">Examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../smib/smib.html">SMIB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../k12p6/k12p6.html">Kundur example 12.6</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">NTS base case</a></li>
 
 
+
+
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -231,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -240,14 +272,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -369,26 +401,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -410,9 +444,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NTS base case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#system-building-and-compilation">System building and compilation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-flow-and-initialization">Power flow and initialization</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-analysis">Small signal analysis</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#participation-factors">Participation factors</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-shapes">Mode shapes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-impedance-sweep">Line impedance sweep</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-domain-simulation">Time domain simulation</a></li>
@@ -426,11 +463,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="nts-base-case">
-<h1>NTS base case<a class="headerlink" href="#nts-base-case" title="Permalink to this heading">#</a></h1>
+<h1>NTS base case<a class="headerlink" href="#nts-base-case" title="Link to this heading">#</a></h1>
 <img src="nts.png" width="600">
+</section>
+<section id="system-building-and-compilation">
+<h1>System building and compilation<a class="headerlink" href="#system-building-and-compilation" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydae.bmapu</span> <span class="kn">import</span> <span class="n">bmapu_builder</span>
@@ -440,7 +480,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;nts_base.json&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bmapu_builder</span><span class="o">.</span><span class="n">bmapu</span><span class="p">(</span><span class="s1">&#39;nts_base.hjson&#39;</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">checker</span><span class="p">()</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">uz_jacs</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span>
@@ -449,13 +489,21 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="power-flow-and-initialization">
+<h1>Power flow and initialization<a class="headerlink" href="#power-flow-and-initialization" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LinearSegmentedColormap</span><span class="p">,</span> <span class="n">ListedColormap</span>
 <span class="kn">from</span> <span class="nn">pydae.bmapu.lines</span> <span class="kn">import</span>  <span class="n">change_line</span>
 <span class="kn">import</span> <span class="nn">pydae.ssa</span> <span class="k">as</span> <span class="nn">ssa</span>
 <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">SVG</span>
+<span class="kn">from</span> <span class="nn">pydae.plot_tools</span> <span class="kn">import</span> <span class="n">set_style</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">set_style</span><span class="p">(</span><span class="n">plt</span><span class="p">)</span>
+<span class="n">cmap_boot</span><span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;cmap_boot&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
 <span class="kn">import</span> <span class="nn">nts</span>
 </pre></div>
 </div>
@@ -463,59 +511,39 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lf</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p_c_1&#39;</span><span class="p">:</span><span class="mf">0.935</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span> <span class="c1"># generator at bus 1 power reference</span>
-          <span class="s1">&#39;P_2&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">1250e6</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span><span class="s1">&#39;P_3&#39;</span><span class="p">:</span><span class="o">-</span><span class="mf">4000e6</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span> <span class="c1"># loads</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lf</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;p_c_1&#39;</span><span class="p">:</span><span class="mi">1350</span><span class="o">/</span><span class="mi">1500</span><span class="o">*</span><span class="n">lf</span><span class="p">,</span> <span class="c1"># generator at bus 1 power reference</span>
           <span class="p">}</span>
-
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">nts</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
 
 <span class="n">change_line</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">R_pu</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">X_pu</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">S_mva</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;xy_0.json&#39;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">save_xy_0</span><span class="p">(</span><span class="s1">&#39;xy_1.json&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;xy_60.json&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save_xy_0</span><span class="p">(</span><span class="s1">&#39;xy_60.json&#39;</span><span class="p">)</span>
 
-<span class="n">S_n_1</span><span class="p">,</span><span class="n">S_n_4</span><span class="p">,</span><span class="n">p_g_1</span><span class="p">,</span><span class="n">p_g_4</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_mvalue</span><span class="p">([</span><span class="s1">&#39;S_n_1&#39;</span><span class="p">,</span><span class="s1">&#39;S_n_4&#39;</span><span class="p">,</span><span class="s1">&#39;p_g_1&#39;</span><span class="p">,</span><span class="s1">&#39;p_g_4&#39;</span><span class="p">])</span>
+<span class="n">S_n_1</span><span class="p">,</span><span class="n">S_n_4</span><span class="p">,</span><span class="n">p_g_1</span><span class="p">,</span><span class="n">p_g_4</span><span class="p">,</span><span class="n">q_g_1</span><span class="p">,</span><span class="n">q_g_4</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_mvalue</span><span class="p">([</span><span class="s1">&#39;S_n_1&#39;</span><span class="p">,</span><span class="s1">&#39;S_n_4&#39;</span><span class="p">,</span><span class="s1">&#39;p_g_1&#39;</span><span class="p">,</span><span class="s1">&#39;p_g_4&#39;</span><span class="p">,</span><span class="s1">&#39;q_g_1&#39;</span><span class="p">,</span><span class="s1">&#39;q_g_4&#39;</span><span class="p">])</span>
+<span class="n">v_f_1</span><span class="p">,</span><span class="n">v_f_4</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_mvalue</span><span class="p">([</span><span class="s1">&#39;v_f_1&#39;</span><span class="p">,</span><span class="s1">&#39;v_f_4&#39;</span> <span class="p">])</span>
+<span class="n">V_1</span><span class="p">,</span><span class="n">V_2</span><span class="p">,</span><span class="n">V_3</span><span class="p">,</span><span class="n">V_4</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_mvalue</span><span class="p">([</span><span class="s1">&#39;V_1&#39;</span><span class="p">,</span><span class="s1">&#39;V_2&#39;</span><span class="p">,</span><span class="s1">&#39;V_3&#39;</span><span class="p">,</span><span class="s1">&#39;V_4&#39;</span> <span class="p">])</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;P_g1 = </span><span class="si">{</span><span class="n">p_g_1</span><span class="o">*</span><span class="n">S_n_1</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">0.0f</span><span class="si">}</span><span class="s1"> MW, P_g4 = </span><span class="si">{</span><span class="n">p_g_4</span><span class="o">*</span><span class="n">S_n_4</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">0.0f</span><span class="si">}</span><span class="s1"> MW&#39;</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">report_y</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Q_g1 = </span><span class="si">{</span><span class="n">q_g_1</span><span class="o">*</span><span class="n">S_n_1</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1"> Mvar, Q_g4 = </span><span class="si">{</span><span class="n">q_g_4</span><span class="o">*</span><span class="n">S_n_4</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1"> Mvar&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;v_f_1 = </span><span class="si">{</span><span class="n">v_f_1</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, v_f_4 = </span><span class="si">{</span><span class="n">v_f_4</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;V_1 = </span><span class="si">{</span><span class="n">V_1</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, V_2 = </span><span class="si">{</span><span class="n">V_2</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, V_3 = </span><span class="si">{</span><span class="n">V_3</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">, V_4 = </span><span class="si">{</span><span class="n">V_4</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P_g1 = 1389 MW, P_g4 = 3861 MW
-V_1   =  1.00
-theta_1 =  0.22
-V_2   =  0.98
-theta_2 =  0.07
-V_3   =  0.99
-theta_3 = -0.95
-V_4   =  1.00
-theta_4 = -0.83
-V_5   =  0.98
-theta_5 =  0.07
-i_d_1 =  0.86
-i_q_1 =  0.40
-p_g_1 =  0.93
-q_g_1 =  0.18
-v_f_1 =  2.42
-p_m_ref_1 =  0.93
-p_m_1 =  0.93
-v_pss_1 = -0.00
-i_d_4 =  0.64
-i_q_4 =  0.44
-p_g_4 =  0.77
-q_g_4 =  0.11
-v_f_4 =  1.84
-p_m_4 =  0.78
-omega_coi =  1.00
-p_agc = -0.12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P_g1 = 1350 MW, P_g4 = 3900 MW
+Q_g1 = 215.69 Mvar, Q_g4 = 489.67 Mvar
+v_f_1 = 2.31, v_f_4 = 1.70
+V_1 = 1.012, V_2 = 1.000, V_3 = 1.000, V_4 = 1.008
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="small-signal-analysis">
-<h1>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Permalink to this heading">#</a></h1>
+<h1>Small signal analysis<a class="headerlink" href="#small-signal-analysis" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
@@ -546,155 +574,217 @@ p_agc = -0.12
       <th>Imag</th>
       <th>Freq.</th>
       <th>Damp</th>
+      <th>Participation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Mode 15</th>
-      <td>-0.17</td>
-      <td>-1.24</td>
-      <td>0.20</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>Mode 14</th>
-      <td>-0.17</td>
-      <td>1.24</td>
-      <td>0.20</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>Mode 22</th>
-      <td>-0.21</td>
-      <td>-0.38</td>
-      <td>0.06</td>
-      <td>0.48</td>
-    </tr>
-    <tr>
-      <th>Mode 21</th>
-      <td>-0.21</td>
-      <td>0.38</td>
-      <td>0.06</td>
-      <td>0.48</td>
-    </tr>
-    <tr>
-      <th>Mode 12</th>
-      <td>-2.01</td>
-      <td>-1.96</td>
-      <td>0.31</td>
-      <td>0.71</td>
-    </tr>
-    <tr>
-      <th>Mode 11</th>
-      <td>-2.01</td>
-      <td>1.96</td>
-      <td>0.31</td>
-      <td>0.71</td>
-    </tr>
-    <tr>
-      <th>Mode 17</th>
-      <td>-1.53</td>
-      <td>0.96</td>
+      <th>Mode 24</th>
+      <td>-0.20</td>
+      <td>-1.32</td>
+      <td>0.21</td>
       <td>0.15</td>
-      <td>0.85</td>
+      <td>[delta_1, omega_1, omega_4]</td>
     </tr>
     <tr>
-      <th>Mode 18</th>
-      <td>-1.53</td>
-      <td>-0.96</td>
+      <th>Mode 23</th>
+      <td>-0.20</td>
+      <td>1.32</td>
+      <td>0.21</td>
       <td>0.15</td>
-      <td>0.85</td>
-    </tr>
-    <tr>
-      <th>Mode 7</th>
-      <td>-9.59</td>
-      <td>-3.67</td>
-      <td>0.58</td>
-      <td>0.93</td>
-    </tr>
-    <tr>
-      <th>Mode 6</th>
-      <td>-9.59</td>
-      <td>3.67</td>
-      <td>0.58</td>
-      <td>0.93</td>
-    </tr>
-    <tr>
-      <th>Mode 9</th>
-      <td>-6.67</td>
-      <td>1.50</td>
-      <td>0.24</td>
-      <td>0.98</td>
-    </tr>
-    <tr>
-      <th>Mode 10</th>
-      <td>-6.67</td>
-      <td>-1.50</td>
-      <td>0.24</td>
-      <td>0.98</td>
-    </tr>
-    <tr>
-      <th>Mode 5</th>
-      <td>-13.11</td>
-      <td>-2.04</td>
-      <td>0.33</td>
-      <td>0.99</td>
-    </tr>
-    <tr>
-      <th>Mode 4</th>
-      <td>-13.11</td>
-      <td>2.04</td>
-      <td>0.33</td>
-      <td>0.99</td>
-    </tr>
-    <tr>
-      <th>Mode 28</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 27</th>
-      <td>-0.41</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 29</th>
-      <td>-0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
+      <td>[delta_1, omega_1, omega_4]</td>
     </tr>
     <tr>
       <th>Mode 30</th>
+      <td>-0.14</td>
+      <td>-0.36</td>
+      <td>0.06</td>
+      <td>0.36</td>
+      <td>[omega_4, x_5_gov_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 29</th>
+      <td>-0.14</td>
+      <td>0.36</td>
+      <td>0.06</td>
+      <td>0.36</td>
+      <td>[omega_4, x_5_gov_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 18</th>
+      <td>-2.56</td>
+      <td>-2.54</td>
+      <td>0.40</td>
+      <td>0.71</td>
+      <td>[omega_1, e1q_1, x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 17</th>
+      <td>-2.56</td>
+      <td>2.54</td>
+      <td>0.40</td>
+      <td>0.71</td>
+      <td>[omega_1, e1q_1, x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 21</th>
+      <td>-1.43</td>
+      <td>1.33</td>
+      <td>0.21</td>
+      <td>0.73</td>
+      <td>[e1q_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 22</th>
+      <td>-1.43</td>
+      <td>-1.33</td>
+      <td>0.21</td>
+      <td>0.73</td>
+      <td>[e1q_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 12</th>
+      <td>-9.81</td>
+      <td>4.25</td>
+      <td>0.68</td>
+      <td>0.92</td>
+      <td>[x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 13</th>
+      <td>-9.81</td>
+      <td>-4.25</td>
+      <td>0.68</td>
+      <td>0.92</td>
+      <td>[x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 11</th>
+      <td>-12.60</td>
+      <td>-4.48</td>
+      <td>0.71</td>
+      <td>0.94</td>
+      <td>[x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 10</th>
+      <td>-12.60</td>
+      <td>4.48</td>
+      <td>0.71</td>
+      <td>0.94</td>
+      <td>[x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 19</th>
+      <td>-2.59</td>
+      <td>0.61</td>
+      <td>0.10</td>
+      <td>0.97</td>
+      <td>[e1q_4, e1d_4, x_4_gov_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 20</th>
+      <td>-2.59</td>
+      <td>-0.61</td>
+      <td>0.10</td>
+      <td>0.97</td>
+      <td>[e1q_4, e1d_4, x_4_gov_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 15</th>
+      <td>-7.22</td>
+      <td>1.42</td>
+      <td>0.23</td>
+      <td>0.98</td>
+      <td>[x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 16</th>
+      <td>-7.22</td>
+      <td>-1.42</td>
+      <td>0.23</td>
+      <td>0.98</td>
+      <td>[x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 32</th>
+      <td>-0.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_wo3_1, x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 33</th>
+      <td>-0.50</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_wo3_1, x_lpf7_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 31</th>
+      <td>-0.31</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_wo1_1, x_wo2_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 34</th>
       <td>-0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[delta_4]</td>
     </tr>
     <tr>
-      <th>Mode 26</th>
-      <td>-0.50</td>
+      <th>Mode 35</th>
+      <td>-0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[xi_freq]</td>
     </tr>
     <tr>
-      <th>Mode 25</th>
-      <td>-0.50</td>
+      <th>Mode 36</th>
+      <td>-0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[xi_m_1]</td>
     </tr>
     <tr>
-      <th>Mode 24</th>
-      <td>-0.63</td>
+      <th>Mode 37</th>
+      <td>-0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[xi_v_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 38</th>
+      <td>-10.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[p_z_f_2]</td>
+    </tr>
+    <tr>
+      <th>Mode 39</th>
+      <td>-10.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[q_z_f_2]</td>
+    </tr>
+    <tr>
+      <th>Mode 28</th>
+      <td>-1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_gov_1_1]</td>
     </tr>
     <tr>
       <th>Mode 1</th>
@@ -702,76 +792,119 @@ p_agc = -0.12
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[x_gov_2_1]</td>
     </tr>
     <tr>
-      <th>Mode 16</th>
-      <td>-2.42</td>
+      <th>Mode 26</th>
+      <td>-1.63</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[x_6_gov_4]</td>
     </tr>
     <tr>
-      <th>Mode 20</th>
-      <td>-1.88</td>
-      <td>-0.08</td>
-      <td>0.01</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 19</th>
-      <td>-1.88</td>
-      <td>0.08</td>
-      <td>0.01</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Mode 31</th>
-      <td>-0.00</td>
+      <th>Mode 25</th>
+      <td>-2.03</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[omega_1, e1q_1, e1d_1, xi_v_1, x_lpf7_1]</td>
     </tr>
     <tr>
-      <th>Mode 13</th>
-      <td>-3.45</td>
+      <th>Mode 40</th>
+      <td>-10.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[p_z_f_3]</td>
+    </tr>
+    <tr>
+      <th>Mode 14</th>
+      <td>-10.23</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_3_gov_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 9</th>
+      <td>-14.17</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_lpf7_1]</td>
     </tr>
     <tr>
       <th>Mode 8</th>
-      <td>-10.18</td>
+      <td>-20.62</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[e2d_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 7</th>
+      <td>-29.32</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[e2q_4]</td>
+    </tr>
+    <tr>
+      <th>Mode 6</th>
+      <td>-34.83</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[e2d_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 5</th>
+      <td>-48.13</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_a_1]</td>
+    </tr>
+    <tr>
+      <th>Mode 4</th>
+      <td>-50.27</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>[x_a_1]</td>
     </tr>
     <tr>
       <th>Mode 3</th>
-      <td>-23.74</td>
+      <td>-52.62</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[v_f_4]</td>
     </tr>
     <tr>
       <th>Mode 2</th>
-      <td>-47.29</td>
+      <td>-50.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[v_r_4]</td>
     </tr>
     <tr>
-      <th>Mode 23</th>
-      <td>-1.00</td>
+      <th>Mode 27</th>
+      <td>-0.86</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[xi_v_1]</td>
     </tr>
     <tr>
-      <th>Mode 32</th>
-      <td>-0.00</td>
+      <th>Mode 41</th>
+      <td>-10.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
+      <td>[q_z_f_3]</td>
     </tr>
   </tbody>
 </table>
@@ -784,125 +917,129 @@ p_agc = -0.12
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/62b9ac45e64a867ef7dad92e71dd178e754f15df76f038a202a41646fb315035.png" src="../../_images/62b9ac45e64a867ef7dad92e71dd178e754f15df76f038a202a41646fb315035.png" />
+<img alt="../../_images/5278cba4787cfaf3a3d57f13a18df0c7778f1b6cfa8e61fc58c15187103ee6fe.png" src="../../_images/5278cba4787cfaf3a3d57f13a18df0c7778f1b6cfa8e61fc58c15187103ee6fe.png" />
 </div>
 </div>
 <section id="participation-factors">
-<h2>Participation factors<a class="headerlink" href="#participation-factors" title="Permalink to this heading">#</a></h2>
+<h2>Participation factors<a class="headerlink" href="#participation-factors" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">participation</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s1">&#39;Mode 15&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">participation</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s1">&#39;Mode 21&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>delta_1      0.39
-omega_1      0.30
-omega_4      0.19
-delta_4      0.12
-x_lpf7_1     0.06
-x_wo2_1      0.04
-x_wo1_1      0.04
-xi_v_1       0.03
-x_ll1_1      0.03
-x_4_gov_4    0.02
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e1q_4        1.50
+x_cb_4       0.97
+omega_4      0.32
+e1d_4        0.22
+delta_1      0.17
+x_lpf7_1     0.13
+omega_1      0.13
+x_4_gov_4    0.09
+e2q_4        0.09
+e1q_1        0.06
+v_f_4        0.06
+delta_4      0.05
+x_ll1_1      0.05
+x_wo2_1      0.05
+x_wo1_1      0.05
+x_ll3_1      0.04
+x_wo3_1      0.03
+xi_v_1       0.02
+x_6_gov_4    0.02
 x_5_gov_4    0.02
-x_wo3_1      0.02
-e1q_1        0.02
-x_ll3_1      0.02
-x_3_gov_4    0.01
-x_6_gov_4    0.01
-e1d_1        0.01
-e1q_4        0.01
-xi_v_4       0.00
-x_cb_4       0.00
-e1d_4        0.00
-x_9_3_1      0.00
-x_9_5_1      0.00
-x_9_4_1      0.00
-x_9_2_1      0.00
-x_9_1_1      0.00
-xi_imw_1     0.00
-x_gov_2_1    0.00
+e1d_1        0.02
+x_3_gov_4    0.02
+e2d_4        0.02
 x_gov_1_1    0.00
 xi_m_1       0.00
-x_a_1        0.00
-xi_freq      0.00
-Name: Mode 15, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">participation</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s1">&#39;Mode 15&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>delta_1      0.39
-omega_1      0.30
-omega_4      0.19
-delta_4      0.12
-x_lpf7_1     0.06
-x_wo2_1      0.04
-x_wo1_1      0.04
-xi_v_1       0.03
-x_ll1_1      0.03
-x_4_gov_4    0.02
-x_5_gov_4    0.02
-x_wo3_1      0.02
-e1q_1        0.02
-x_ll3_1      0.02
-x_3_gov_4    0.01
-x_6_gov_4    0.01
-e1d_1        0.01
-e1q_4        0.01
-xi_v_4       0.00
-x_cb_4       0.00
-e1d_4        0.00
-x_9_3_1      0.00
-x_9_5_1      0.00
-x_9_4_1      0.00
-x_9_2_1      0.00
+q_z_f_3      0.00
+p_z_f_3      0.00
+q_z_f_2      0.00
+p_z_f_2      0.00
 x_9_1_1      0.00
-xi_imw_1     0.00
+x_9_2_1      0.00
+x_9_3_1      0.00
+x_9_4_1      0.00
+e2q_1        0.00
+xi_v_4       0.00
+e2d_1        0.00
+v_r_4        0.00
+x_9_5_1      0.00
 x_gov_2_1    0.00
-x_gov_1_1    0.00
-xi_m_1       0.00
 x_a_1        0.00
 xi_freq      0.00
-Name: Mode 15, dtype: float64
+Name: Mode 21, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="mode-shapes">
-<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Permalink to this heading">#</a></h2>
+<h2>Mode shapes<a class="headerlink" href="#mode-shapes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssa</span><span class="o">.</span><span class="n">shape2df</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-<span class="n">SVG</span><span class="p">(</span><span class="n">ssa</span><span class="o">.</span><span class="n">plot_shapes</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Mode 15&#39;</span><span class="p">,</span>    <span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;omega_1&#39;</span><span class="p">,</span> <span class="s1">&#39;omega_4&#39;</span><span class="p">]))</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">ssa</span><span class="o">.</span><span class="n">plot_shapes</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Mode 21&#39;</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;omega_1&#39;</span><span class="p">,</span> <span class="s1">&#39;omega_4&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6bbbda15586ecfa33f56d78926510de67afaa0ad74a2f02c2bcea2b105eac286.svg" src="../../_images/6bbbda15586ecfa33f56d78926510de67afaa0ad74a2f02c2bcea2b105eac286.svg" /></div>
+<img alt="../../_images/1a3c02584f23baafe3e5317afdfade43841581a31c1cb87fb5dca5c00cfeb705.svg" src="../../_images/1a3c02584f23baafe3e5317afdfade43841581a31c1cb87fb5dca5c00cfeb705.svg" /></div>
+</div>
+</section>
+<section id="line-impedance-sweep">
+<h2>Line impedance sweep<a class="headerlink" href="#line-impedance-sweep" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">nts</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">it</span><span class="p">,</span><span class="n">X</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.61</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)):</span>
+    
+    <span class="n">change_line</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">R_pu</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">X_pu</span><span class="o">=</span><span class="n">X</span><span class="p">,</span><span class="n">S_mva</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;xy_0.json&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">({})</span>
+
+    <span class="n">ssa</span><span class="o">.</span><span class="n">A_eval</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
+    <span class="n">ssa</span><span class="o">.</span><span class="n">damp_report</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+    <span class="n">cmap_value</span> <span class="o">=</span> <span class="n">X</span><span class="o">/</span><span class="mf">0.6</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">ssa</span><span class="o">.</span><span class="n">plot_eig</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">eigvalues</span><span class="p">,</span> <span class="n">x_min</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span><span class="n">x_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">y_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y_max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">cmap_boot</span><span class="p">(</span><span class="n">cmap_value</span><span class="p">));</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">ssa</span><span class="o">.</span><span class="n">plot_eig</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">eigvalues</span><span class="p">,</span> <span class="n">x_min</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span><span class="n">x_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">y_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y_max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">mark</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap_boot</span><span class="p">(</span><span class="n">cmap_value</span><span class="p">));</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;X=1%&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;X=60%&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18071703250&gt;
+</pre></div>
+</div>
+<img alt="../../_images/1fe3943e70f43ab0a71f5fbd563ad7e75742d1aa40a17d46010e2ea96f33a0cc.png" src="../../_images/1fe3943e70f43ab0a71f5fbd563ad7e75742d1aa40a17d46010e2ea96f33a0cc.png" />
+</div>
 </div>
 </section>
 </section>
 <section id="time-domain-simulation">
-<h1>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Permalink to this heading">#</a></h1>
+<h1>Time domain simulation<a class="headerlink" href="#time-domain-simulation" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">Dt</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;T_b_4&#39;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span><span class="s1">&#39;v_ref_1&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s1">&#39;v_ref_4&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="s1">&#39;K_a_4&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="s2">&quot;Droop_1&quot;</span><span class="p">:</span><span class="mf">1000.0</span><span class="p">})</span>
+<span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">({})</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">ini</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="s1">&#39;xy_1.json&#39;</span><span class="p">)</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,{</span><span class="s1">&#39;v_ref_4&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">})</span>
-<span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="mf">40.0</span><span class="p">,{</span><span class="s1">&#39;v_ref_4&#39;</span><span class="p">:</span><span class="mf">1.02</span><span class="p">})</span>
+<span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,{</span><span class="s1">&#39;v_ref_1&#39;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">})</span>
+<span class="n">model</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="mf">40.0</span><span class="p">,{</span><span class="s1">&#39;v_ref_1&#39;</span><span class="p">:</span><span class="mf">1.02</span><span class="p">})</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">post</span><span class="p">();</span>
 </pre></div>
@@ -921,11 +1058,13 @@ Name: Mode 15, dtype: float64
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e60f83b92503fd4d73eecb0431253a98e019670deb3f45f947c2390319266ef0.png" src="../../_images/e60f83b92503fd4d73eecb0431253a98e019670deb3f45f947c2390319266ef0.png" />
+<img alt="../../_images/cd53050980b0b710fe4578fbb8d2266424ee9e7e09ba7ca859f9303666410712.png" src="../../_images/cd53050980b0b710fe4578fbb8d2266424ee9e7e09ba7ca859f9303666410712.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -934,16 +1073,16 @@ Name: Mode 15, dtype: float64
 
 <span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span>  <span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;omega_1&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega_1&#39;</span><span class="p">)</span>
 <span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span>  <span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;omega_4&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega_4&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span>  <span class="n">model</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="s1">&#39;omega_coi&#39;</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;omega_coi&#39;</span><span class="p">)</span>
+
 <span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x236f8573460&gt;
-</pre></div>
-</div>
-<img alt="../../_images/800d549fda2b913c9d6c669f77cc96b673b2ea9437a694c6b1fc719846130a88.png" src="../../_images/800d549fda2b913c9d6c669f77cc96b673b2ea9437a694c6b1fc719846130a88.png" />
+<img alt="../../_images/0d36f05f3e1b4967997ac142950033dbcd8c17eea334bda9aaa37d152b48a134.png" src="../../_images/0d36f05f3e1b4967997ac142950033dbcd8c17eea334bda9aaa37d152b48a134.png" />
 </div>
 </div>
 </section>
@@ -973,11 +1112,10 @@ Name: Mode 15, dtype: float64
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../k12p6/k12p6.html"
@@ -988,10 +1126,7 @@ Name: Mode 15, dtype: float64
         <p class="prev-next-title">Kundur example 12.6</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1000,6 +1135,7 @@ Name: Mode 15, dtype: float64
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1007,9 +1143,12 @@ Name: Mode 15, dtype: float64
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NTS base case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#system-building-and-compilation">System building and compilation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-flow-and-initialization">Power flow and initialization</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-analysis">Small signal analysis</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#participation-factors">Participation factors</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mode-shapes">Mode shapes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-impedance-sweep">Line impedance sweep</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#time-domain-simulation">Time domain simulation</a></li>
@@ -1035,9 +1174,10 @@ By Juan Manuel Mauricio
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1061,8 +1201,8 @@ By Juan Manuel Mauricio
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

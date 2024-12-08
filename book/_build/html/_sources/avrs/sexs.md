@@ -26,7 +26,7 @@ This is an equivalent model for the SEXS AVR. Some differences must be considere
 
 ```{code} 
 ...
- {'type':'sexs','K_a':100.0,'T_a':0.1,'T_b':0.1,'T_e':0.1,'E_min':-10.0,'E_max':10.0}
+    "avr": {"type":"sexs","K_a":100.0,"T_a":0.1,"T_b":0.1,"T_e":0.1,"E_min":-10.0,"E_max":10.0,"v_ref":1.0},
 ...
 ```
 

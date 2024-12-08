@@ -35,6 +35,9 @@ chapters:
   - file: pvs
     sections:
     - file: vscs/pv_vsc
+  - file: sources
+    sections:
+    - file: sources/genape
 - file: modeling
   sections:
     - file: modeling/control
